@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ürünlerimiz | Bilgiteknik Büro Makinaları</title>
+<meta name="description" content="Kyocera fotokopi ve yazıcı modelleri — A4, A3, siyah beyaz, renkli. Satış ve kiralama seçenekleriyle Bilgiteknik'te.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1565C0;--blue2:#1976D2;--blue3:#E3F0FF;--blue4:#0D47A1;
+  --orange:#F57C00;--orange2:#FF9800;--orange-pale:#FFF3E0;
+  --white:#FFFFFF;--gray1:#F8F9FC;--gray2:#F0F2F7;--gray3:#E4E8F0;
+  --gray4:#B0BBC8;--ink:#1A2332;--mid:#5A6A80;--light:#8C9BAD;
+  --border:#DCE3EE;--shadow:0 2px 16px rgba(21,101,192,.07);
+  --shadow2:0 8px 40px rgba(21,101,192,.13);--rad:12px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:'Inter',sans-serif;overflow-x:hidden}
+
+/* ── TOP BAR ── */
+.topbar{background:var(--blue4);color:rgba(255,255,255,.85);font-size:.75rem;padding:.45rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.topbar a{color:rgba(255,255,255,.85);text-decoration:none}.topbar a:hover{color:#fff}
+.topbar-left{display:flex;gap:2rem;align-items:center}
+.topbar-right{display:flex;gap:1.5rem;align-items:center}
+.topbar-badge{background:var(--orange);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.08em;padding:.2rem .6rem;border-radius:3px;text-transform:uppercase}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:800;background:#fff;border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 3rem;height:70px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nav-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex-shrink:0}
+.logo-icon{width:40px;height:40px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;position:relative}
+.logo-icon::after{content:'';position:absolute;width:12px;height:12px;background:var(--orange);border-radius:50%;top:-4px;right:-4px}
+.logo-name{font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:700;color:var(--ink)}
+.logo-name span{color:var(--blue)}
+.nav-menu{display:flex;gap:0;list-style:none}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:.35rem;padding:.5rem 1.1rem;font-size:.84rem;font-weight:500;color:var(--mid);text-decoration:none;white-space:nowrap;transition:color .2s;cursor:pointer;height:70px}
+.nav-link:hover,.nav-link.active{color:var(--blue)}
+.nav-link svg{width:12px;height:12px;transition:transform .2s}
+.nav-item:hover .nav-link svg{transform:rotate(180deg)}
+.dropdown{position:absolute;top:100%;left:0;min-width:220px;background:#fff;border:1px solid var(--border);border-radius:0 0 var(--rad) var(--rad);box-shadow:var(--shadow2);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .2s;z-index:100}
+.nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown a{display:block;padding:.7rem 1.2rem;font-size:.82rem;color:var(--mid);text-decoration:none;transition:background .15s,color .15s;border-bottom:1px solid var(--gray3)}
+.dropdown a:last-child{border-bottom:none;border-radius:0 0 var(--rad) var(--rad)}
+.dropdown a:hover{background:var(--blue3);color:var(--blue)}
+.dropdown a.dd-header{font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--light);pointer-events:none;background:var(--gray1);padding:.45rem 1.2rem;cursor:default}
+.nav-right{display:flex;align-items:center;gap:.8rem;flex-shrink:0}
+.nav-phone{font-size:.82rem;font-weight:600;color:var(--ink);text-decoration:none}
+.nav-phone:hover{color:var(--blue)}
+.btn-whatsapp{display:flex;align-items:center;gap:.4rem;padding:.55rem 1.1rem;background:#25D366;color:#fff;border-radius:6px;font-size:.78rem;font-weight:600;text-decoration:none;transition:background .2s}
+.btn-whatsapp:hover{background:#1ebe5d}
+.btn-teklif-nav{padding:.55rem 1.4rem;background:var(--orange);color:#fff;border-radius:6px;font-size:.82rem;font-weight:700;text-decoration:none;transition:background .2s;white-space:nowrap}
+.btn-teklif-nav:hover{background:var(--orange2)}
+
+/* ── BREADCRUMB ── */
+.breadcrumb{background:var(--gray1);border-bottom:1px solid var(--border);padding:.8rem 3rem}
+.breadcrumb-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:var(--light)}
+.breadcrumb a{color:var(--mid);text-decoration:none}.breadcrumb a:hover{color:var(--blue)}
+
+/* ── HERO ── */
+.page-hero{background:linear-gradient(135deg,var(--blue4),var(--blue2));padding:3.5rem 3rem;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero-inner{max-width:1280px;margin:0 auto;position:relative;z-index:2}
+.page-hero h1{font-family:'Poppins',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:#fff;margin-bottom:.6rem}
+.page-hero h1 em{font-style:normal;color:var(--orange2)}
+.page-hero p{font-size:.9rem;color:rgba(255,255,255,.7);max-width:540px;line-height:1.7;margin-bottom:2rem}
+
+/* ── SEARCH BAR ── */
+.search-bar{display:flex;gap:.8rem;max-width:600px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:.5rem .5rem .5rem 1rem;backdrop-filter:blur(4px)}
+.search-bar input{flex:1;background:none;border:none;outline:none;font-size:.9rem;color:#fff;font-family:'Inter',sans-serif}
+.search-bar input::placeholder{color:rgba(255,255,255,.5)}
+.search-bar button{padding:.6rem 1.4rem;background:var(--orange);color:#fff;border:none;border-radius:7px;font-size:.85rem;font-weight:700;cursor:pointer;transition:background .2s;white-space:nowrap;display:flex;align-items:center;gap:.5rem}
+.search-bar button:hover{background:var(--orange2)}
+.search-bar button svg{width:16px;height:16px}
+.search-count{margin-top:.8rem;font-size:.78rem;color:rgba(255,255,255,.55)}
+.search-count strong{color:rgba(255,255,255,.9)}
+
+/* ── FILTER BAR ── */
+.filter-bar{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:70px;z-index:700;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.filter-inner{max-width:1280px;margin:0 auto;padding:.9rem 3rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.filter-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--light);flex-shrink:0}
+.filter-tags{display:flex;gap:.5rem;flex-wrap:wrap;flex:1}
+.ftag{padding:.45rem 1rem;border:1.5px solid var(--border);border-radius:20px;font-size:.78rem;font-weight:600;color:var(--mid);background:#fff;cursor:pointer;transition:all .18s;white-space:nowrap}
+.ftag:hover{border-color:var(--blue2);color:var(--blue)}
+.ftag.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.ftag.orange.active{background:var(--orange);border-color:var(--orange);color:#fff}
+.filter-sep{width:1px;height:24px;background:var(--border);flex-shrink:0}
+.sort-select{padding:.45rem .9rem;border:1.5px solid var(--border);border-radius:8px;font-size:.78rem;font-weight:600;color:var(--mid);background:#fff;cursor:pointer;outline:none;font-family:'Inter',sans-serif}
+
+/* ── LAYOUT ── */
+.products-layout{max-width:1280px;margin:0 auto;padding:2.5rem 3rem;display:grid;grid-template-columns:240px 1fr;gap:2.5rem;align-items:start}
+
+/* ── SIDEBAR ── */
+.sidebar{position:sticky;top:130px}
+.sb-box{background:#fff;border:1px solid var(--border);border-radius:var(--rad);overflow:hidden;margin-bottom:1rem}
+.sb-head{background:var(--blue4);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.75rem 1.2rem;display:flex;align-items:center;gap:.5rem}
+.sb-head svg{width:14px;height:14px;opacity:.7}
+.sb-list{list-style:none}
+.sb-list li a{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.2rem;font-size:.82rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--gray3);transition:all .15s}
+.sb-list li:last-child a{border-bottom:none}
+.sb-list li a:hover,.sb-list li a.active{background:var(--blue3);color:var(--blue)}
+.sb-list li a span{background:var(--gray2);color:var(--light);font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:10px}
+.sb-list li a.active span{background:rgba(21,101,192,.12);color:var(--blue)}
+.sb-cta{background:var(--orange);border-radius:var(--rad);padding:1.5rem;text-align:center}
+.sb-cta-title{font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.4rem}
+.sb-cta-sub{font-size:.75rem;color:rgba(255,255,255,.8);margin-bottom:1.2rem;line-height:1.6}
+.sb-cta a{display:block;background:#fff;color:var(--orange);font-size:.82rem;font-weight:700;padding:.65rem 1rem;border-radius:8px;text-decoration:none;transition:all .2s}
+.sb-cta a:hover{background:var(--orange-pale)}
+
+/* ── PRODUCT GRID ── */
+.prod-main{}
+.cat-section{margin-bottom:3.5rem}
+.cat-section:last-child{margin-bottom:0}
+.cat-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:2px solid var(--gray3)}
+.cat-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cat-icon.blue{background:var(--blue3)}
+.cat-icon.blue svg{color:var(--blue)}
+.cat-icon.orange{background:var(--orange-pale)}
+.cat-icon.orange svg{color:var(--orange)}
+.cat-title-wrap h2{font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:.1rem}
+.cat-title-wrap p{font-size:.78rem;color:var(--light)}
+.cat-count{margin-left:auto;background:var(--gray2);color:var(--mid);font-size:.72rem;font-weight:700;padding:.3rem .8rem;border-radius:20px;flex-shrink:0}
+
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+
+/* ── PRODUCT CARD ── */
+.prod-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--rad);overflow:hidden;transition:all .22s;cursor:pointer;position:relative}
+.prod-card:hover{box-shadow:var(--shadow2);transform:translateY(-3px);border-color:transparent}
+.prod-card[data-hidden="true"]{display:none}
+
+.prod-img{background:var(--gray1);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.prod-img img{width:100%;height:100%;object-fit:contain;padding:1rem}
+.prod-img .ph-icon{color:var(--gray3)}
+.prod-img img ~ .ph-icon{display:none!important}
+.prod-ribbon{position:absolute;top:.7rem;left:.7rem;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .65rem;border-radius:4px;color:#fff}
+.prod-ribbon.blue{background:var(--blue)}
+.prod-ribbon.gold{background:#b45309}
+.prod-ribbon.green{background:#15803d}
+.prod-ribbon.navy{background:#1e3a5f}
+.prod-ribbon.red{background:#dc2626}
+.prod-badge-rent{position:absolute;top:.7rem;right:.7rem;background:var(--orange);color:#fff;font-size:.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .55rem;border-radius:4px}
+
+.prod-body{padding:1.1rem}
+.prod-brand{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--light);margin-bottom:.25rem}
+.prod-model{font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.2rem;line-height:1.2}
+.prod-name{font-size:.78rem;color:var(--mid);margin-bottom:.8rem;line-height:1.5}
+.prod-specs{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.9rem}
+.prod-spec{display:flex;align-items:center;gap:.4rem;font-size:.72rem;color:var(--mid)}
+.prod-spec::before{content:'';width:5px;height:5px;background:var(--blue3);border-radius:50%;flex-shrink:0;border:1.5px solid var(--blue)}
+.prod-foot{display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding-top:.8rem;border-top:1px solid var(--gray3)}
+.prod-price{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;color:var(--blue4);line-height:1}
+.prod-price small{display:block;font-family:'Inter',sans-serif;font-size:.62rem;font-weight:500;color:var(--light);margin-top:.1rem}
+.prod-price.call{font-size:.82rem;color:var(--orange)}
+.btn-teklif{padding:.5rem 1rem;background:var(--blue);color:#fff;border:none;border-radius:6px;font-size:.75rem;font-weight:700;cursor:pointer;transition:background .2s;white-space:nowrap}
+.btn-teklif:hover{background:var(--blue4)}
+.btn-teklif.sent{background:#16a34a}
+
+/* ── NO RESULTS ── */
+.no-results{text-align:center;padding:4rem 2rem;color:var(--light);display:none}
+.no-results svg{margin-bottom:1rem;opacity:.3}
+.no-results h3{font-size:1rem;font-weight:600;color:var(--mid);margin-bottom:.4rem}
+.no-results p{font-size:.82rem}
+
+/* ── FLOATING WA ── */
+.float-wa{position:fixed;right:1.5rem;bottom:1.5rem;z-index:999;display:flex;align-items:center;gap:.6rem}
+.wa-label{background:rgba(0,0,0,.75);color:#fff;font-size:.72rem;font-weight:600;padding:.4rem .8rem;border-radius:6px;backdrop-filter:blur(6px);opacity:0;transform:translateX(8px);transition:all .2s;pointer-events:none}
+.float-wa:hover .wa-label{opacity:1;transform:translateX(0)}
+.wa-btn{width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);animation:waPulse 2s infinite}
+.wa-btn svg{width:26px;height:26px}
+
+/* ── CTA BANNER ── */
+.cta-banner{background:linear-gradient(135deg,var(--blue4),var(--blue2));padding:3.5rem;border-radius:20px;display:flex;align-items:center;justify-content:space-between;gap:2rem;margin:3rem 3rem 3rem;max-width:calc(1280px - 0px)}
+.cta-banner-wrap{max-width:1280px;margin:0 auto;padding:0 3rem}
+.cta-banner h2{font-family:'Poppins',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:.5rem}
+.cta-banner p{font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.7}
+.cta-banner-btns{display:flex;gap:.8rem;flex-wrap:wrap;flex-shrink:0}
+.btn-cta-p{padding:.85rem 1.8rem;background:var(--orange);color:#fff;border-radius:8px;font-size:.9rem;font-weight:700;text-decoration:none;white-space:nowrap;transition:all .2s}
+.btn-cta-p:hover{background:var(--orange2);transform:translateY(-2px)}
+.btn-cta-g{padding:.85rem 1.8rem;background:rgba(255,255,255,.12);color:#fff;border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.3);white-space:nowrap;transition:background .2s}
+.btn-cta-g:hover{background:rgba(255,255,255,.2)}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:3.5rem 3rem 1.5rem}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:2.5rem}
+.footer-logo-name{font-family:'Poppins',sans-serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.footer-logo-name span{color:var(--blue2)}
+.footer-desc{font-size:.82rem;line-height:1.8;color:rgba(255,255,255,.5);margin-bottom:1.2rem}
+.footer-social{display:flex;gap:.6rem}
+.f-soc{width:32px;height:32px;background:rgba(255,255,255,.08);border-radius:6px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.72rem;font-weight:700;text-decoration:none;transition:background .2s}
+.f-soc:hover{background:var(--blue);color:#fff}
+footer h4{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:1rem}
+.f-links{list-style:none}
+.f-links li{margin-bottom:.5rem}
+.f-links a{font-size:.82rem;color:rgba(255,255,255,.5);text-decoration:none;transition:color .15s}
+.f-links a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+.f-copy{font-size:.75rem;color:rgba(255,255,255,.35)}
+
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 28px rgba(37,211,102,.7)}}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:1024px){
+  .products-layout{grid-template-columns:1fr;padding:2rem 1.5rem}
+  .sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .sb-cta{grid-column:1/-1}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .topbar,.breadcrumb,.filter-inner,.page-hero,.footer{padding-left:1.5rem;padding-right:1.5rem}
+  .nav-inner{padding:0 1.2rem}
+  .prod-grid{grid-template-columns:1fr}
+  .cta-banner{flex-direction:column;margin:2rem 1.5rem;padding:2rem}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .sidebar{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span>📍 Sancaktepe, İstanbul</span>
+    <a href="tel:+905326944862">📞 0532 694 48 62</a>
+    <a href="mailto:info@bilgiteknik.com.tr">✉ info@bilgiteknik.com.tr</a>
+  </div>
+  <div class="topbar-right">
+    <span>Pzt–Cum 09:00–18:00 · Cumartesi 10:00–15:00</span>
+    <span class="topbar-badge">2000'den Bu Yana</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="bilgiteknik.html" class="nav-logo">
+      <div class="logo-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <rect x="3" y="8" width="16" height="11" rx="1.5" stroke="white" stroke-width="1.5"/>
+          <rect x="6" y="3" width="10" height="6" rx="1" stroke="white" stroke-width="1.5"/>
+          <rect x="6" y="14" width="10" height="3" rx=".5" fill="white" opacity=".4"/>
+        </svg>
+      </div>
+      <span class="logo-name">Bilgi<span>teknik</span></span>
+    </a>
+        <ul class="nav-menu">
+      <li class="nav-item"><a href="fotokopi-kiralama.html" class="nav-link">Fotokopi Kiralama</a></li>
+      <li class="nav-item"><a href="yazici-kiralama.html" class="nav-link">Yazıcı Kiralama</a></li>
+      <li class="nav-item">
+        <a href="urunler.html" class="nav-link active">Ürünler
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
+
+        <div class="dropdown">
+          <a href="urunler.html#a4-sb-fotokopi" class="dd-header">Fotokopiler</a>
+          <a href="urunler.html#a4-sb-fotokopi">A4 Siyah Beyaz Fotokopi</a>
+          <a href="urunler.html#a4-renkli-fotokopi">A4 Renkli Fotokopi</a>
+          <a href="urunler.html#a3-sb-fotokopi">A3 Siyah Beyaz Fotokopi</a>
+          <a href="urunler.html#a3-renkli-fotokopi">A3 Renkli Fotokopi</a>
+          <a href="urunler.html#a4-sb-yazici" class="dd-header">Yazıcılar</a>
+          <a href="urunler.html#a4-sb-yazici">A4 Siyah Beyaz Yazıcı</a>
+          <a href="urunler.html#a4-renkli-yazici">A4 Renkli Yazıcı</a>
+          <a href="urunler.html#a3-yazici">A3 Yazıcılar</a>
+          <a href="urunler.html#diger" class="dd-header">Diğer Ürünler</a>
+          <a href="urunler.html#diger">Evrak İmhacıları</a>
+          <a href="urunler.html#diger">Para Sayma Makineleri</a>
+          <a href="urunler.html#diger">Toner &amp; Sarf Malzemeleri</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+905326944862" class="nav-phone">0532 694 48 62</a>
+      <a href="https://wa.me/905326944862" class="btn-whatsapp" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.11 1.523 5.833L.044 23.956l6.29-1.483A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.48-5.16-1.33l-.37-.21-3.73.88.9-3.64-.23-.38A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp
+      </a>
+      <a href="bilgiteknik.html#iletisim" class="btn-teklif-nav">Teklif Al!</a>
+    </div>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="bilgiteknik.html">Ana Sayfa</a>
+    <span>›</span>
+    <span>Ürünlerimiz</span>
+  </div>
+</div>
+
+<!-- HERO + SEARCH -->
+<section class="page-hero">
+  <div class="hero-inner">
+    <h1>Kyocera Ürün <em>Kataloğu</em></h1>
+    <p>Kyocera, Canon, HP, Toshiba, Oki ve Olympia markalarına ait fotokopi ve yazıcı modellerini inceleyin. Teklif ve kiralama için bizi arayın.</p>
+    <div class="search-bar">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="color:rgba(255,255,255,.5);flex-shrink:0"><circle cx="7.5" cy="7.5" r="5.5" stroke="currentColor" stroke-width="1.8"/><path d="M13 13l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <input type="text" id="searchInput" placeholder="Model ara… (örn: ECOSYS, TASKalfa, MA4500)">
+      <button onclick="doSearch()">
+        <svg viewBox="0 0 18 18" fill="none"><circle cx="7.5" cy="7.5" r="5.5" stroke="white" stroke-width="1.8"/><path d="M13 13l3 3" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Ara
+      </button>
+    </div>
+    <div class="search-count" id="searchCount"><strong id="visibleCount">59</strong> ürün listeleniyor</div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <span class="filter-label">Filtre</span>
+    <div class="filter-tags">
+      <button class="ftag active" data-filter="all">Tümü</button>
+      <button class="ftag" data-filter="fotokopi">Fotokopiler</button>
+      <button class="ftag" data-filter="yazici">Yazıcılar</button>
+      <button class="ftag" data-filter="diger">Diğer</button>
+      <div class="filter-sep"></div>
+      <button class="ftag" data-filter="a4">A4</button>
+      <button class="ftag" data-filter="a3">A3</button>
+      <div class="filter-sep"></div>
+      <button class="ftag" data-filter="mono">Siyah Beyaz</button>
+      <button class="ftag" data-filter="renkli">Renkli</button>
+      <div class="filter-sep"></div>
+      <button class="ftag" data-filter="kyocera">Kyocera</button>
+      <button class="ftag" data-filter="canon">Canon</button>
+      <button class="ftag" data-filter="hp">HP</button>
+      <button class="ftag" data-filter="toshiba">Toshiba</button>
+      <button class="ftag" data-filter="oki">Oki</button>
+      <button class="ftag" data-filter="olympia">Olympia</button>
+      <div class="filter-sep"></div>
+      <button class="ftag orange" data-filter="kiralik">🔑 Kiralık</button>
+    </div>
+    <select class="sort-select" id="sortSelect" onchange="sortProducts()">
+      <option value="default">Varsayılan Sıralama</option>
+      <option value="az">A → Z</option>
+      <option value="za">Z → A</option>
+    </select>
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="products-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sb-box">
+      <div class="sb-head">
+        <svg viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 7h6M4 9.5h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Kategoriler
+      </div>
+      <ul class="sb-list">
+        <li><a href="#a4-sb-fotokopi">A4 SB Fotokopi <span>10</span></a></li>
+        <li><a href="#a4-renkli-fotokopi">A4 Renkli Fotokopi <span>10</span></a></li>
+        <li><a href="#a3-sb-fotokopi">A3 SB Fotokopi <span>11</span></a></li>
+        <li><a href="#a3-renkli-fotokopi">A3 Renkli Fotokopi <span>10</span></a></li>
+        <li><a href="#a4-sb-yazici">A4 SB Yazıcı <span>8</span></a></li>
+        <li><a href="#a4-renkli-yazici">A4 Renkli Yazıcı <span>7</span></a></li>
+        <li><a href="#diger">Diğer Ürünler <span>3</span></a></li>
+      </ul>
+    </div>
+    <div class="sb-cta">
+      <div class="sb-cta-title">Özel Teklif Alın</div>
+      <div class="sb-cta-sub">Kurumunuza özel fiyat ve kiralama paketi için hemen ulaşın.</div>
+      <a href="bilgiteknik.html#iletisim">Ücretsiz Teklif →</a>
+    </div>
+  </aside>
+
+  <!-- PRODUCTS -->
+  <main class="prod-main" id="prodMain">
+
+    <div class="no-results" id="noResults">
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><circle cx="26" cy="26" r="18" stroke="currentColor" stroke-width="2"/><path d="M40 40l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 26h12M26 20v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <h3>Ürün Bulunamadı</h3>
+      <p>Arama veya filtre kriterlerinize uygun ürün yok. Lütfen farklı bir arama deneyin.</p>
+    </div>
+
+    <!-- ── A4 SİYAH BEYAZ FOTOKOPİ ── -->
+    <div class="cat-section reveal" id="a4-sb-fotokopi" data-cat="a4-sb-fotokopi">
+      <div class="cat-header">
+        <div class="cat-icon blue">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="5" y="2" width="10" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="5" y="12" width="10" height="2.5" rx=".5" fill="currentColor" opacity=".25"/></svg>
+        </div>
+        <div class="cat-title-wrap">
+          <h2>A4 Siyah Beyaz Fotokopi</h2>
+          <p>Kyocera ECOSYS serisi — düşük maliyet, uzun ömür</p>
+        </div>
+        <span class="cat-count">13 ürün</span>
+      </div>
+      <div class="prod-grid">
+
+        <div class="prod-card" data-tags="kyocera fotokopi a4 mono kiralik">
+          <div class="prod-img">
+            <div class="prod-ribbon blue">Öne Çıkan</div>
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/ECOSYSMA4500X/square-540x540.ECOSYS-MA4500x.png" alt="ECOSYS MA4500x" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS MA4500x</div>
+            <div class="prod-name">A4 Mono Çok Fonksiyonlu Yazıcı</div>
+            <div class="prod-specs">
+              <div class="prod-spec">45 sayfa/dak baskı hızı</div>
+              <div class="prod-spec">1200 dpi çözünürlük</div>
+              <div class="prod-spec">WiFi + USB + Ethernet</div>
+              <div class="prod-spec">Çift taraflı baskı (dupleks)</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a4 mono kiralik">
+          <div class="prod-img">
+             <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/ECOSYSMA6000IFX/MFP_MA6000ifx_left_comb01_01_updated.png" alt="ECOSYS MM6000IFX" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+            <svg class="ph-icon" width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 36L18 24l10 10 12-14 18 20" stroke="currentColor" stroke-width="1.5" opacity=".4"/><circle cx="20" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity=".4"/></svg>
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS MA6000ifx</div>
+            <div class="prod-name">A4 Mono MFP — 60 spm</div>
+            <div class="prod-specs">
+              <div class="prod-spec">60 sayfa/dak</div>
+              <div class="prod-spec">Faks + Tarayıcı dahil</div>
+              <div class="prod-spec">Çift taraflı dupleks</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a4 mono kiralik">
+          <div class="prod-img">
+             <img src="https://www.officeequipments.ae/wp-content/uploads/2024/01/Untitled-design-53.jpg  " alt="ECOSYS M2040DN" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+            <svg class="ph-icon" width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 36L18 24l10 10 12-14 18 20" stroke="currentColor" stroke-width="1.5" opacity=".4"/><circle cx="20" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity=".4"/></svg>
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS M2040dn</div>
+            <div class="prod-name">A4 Mono MFP — Giriş Seviye</div>
+            <div class="prod-specs">
+              <div class="prod-spec">40 sayfa/dak</div>
+              <div class="prod-spec">Ağ bağlantısı</div>
+              <div class="prod-spec">Düşük toplam sahip olma maliyeti</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a4 mono">
+          <div class="prod-img">
+            <img src="https://www.bilsarf.com.tr/upload/kyocera-m3645idn.jpg" alt="ECOSYS M3645idn" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS M3645idn</div>
+            <div class="prod-name">A4 Siyah Beyaz Çok Fonksiyonlu</div>
+            <div class="prod-specs">
+              <div class="prod-spec">45 sayfa/dak</div>
+              <div class="prod-spec">500 yaprak kapasite</div>
+              <div class="prod-spec">Otomatik dupleks</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a4 mono">
+          <div class="prod-img">
+            <img src="https://elektrocopy.com.tr/wp-content/uploads/kyocera-ecosys-m3145idn-fotokopi-makinesi-s-b.jpg" alt="ECOSYS M3145idn" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS M3145idn</div>
+            <div class="prod-name">A4 Siyah Beyaz Çok Fonksiyonlu</div>
+            <div class="prod-specs">
+              <div class="prod-spec">40 sayfa/dak</div>
+              <div class="prod-spec">Gelişmiş toner sistemi</div>
+              <div class="prod-spec">USB + Ethernet</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a4 mono kiralik">
+          <div class="prod-img">
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://www.batuburo.com/wp-content/uploads/2021/02/cq5dam.resized.img_.540.medium.time1572607568655.png" alt="ECOSYS M2640idw" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS M2640idw</div>
+            <div class="prod-name">A4 Siyah Beyaz Kablosuz MFP</div>
+            <div class="prod-specs">
+              <div class="prod-spec">40 sayfa/dak</div>
+              <div class="prod-spec">WiFi + mobil baskı</div>
+              <div class="prod-spec">Tarayıcı dahil</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a4 mono">
+          <div class="prod-img">
+            <img src="https://www.batuburo.com/wp-content/uploads/2021/02/cq5dam.resized.img_.540.medium.time1572607568655.png" alt="ECOSYS M2735dw" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS M2735dw</div>
+            <div class="prod-name">A4 Siyah Beyaz Kablosuz</div>
+            <div class="prod-specs">
+              <div class="prod-spec">35 sayfa/dak</div>
+              <div class="prod-spec">WiFi + NFC baskı</div>
+              <div class="prod-spec">Otomatik dupleks</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a4 mono kiralik">
+          <div class="prod-img">
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/ECOSYSM3860IDNF/square-540x540-product-information-ECOSYS-3860idnf.png" alt="ECOSYS M3860idnf" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS M3860idnf</div>
+            <div class="prod-name">A4 Siyah Beyaz Yüksek Hızlı</div>
+            <div class="prod-specs">
+              <div class="prod-spec">60 sayfa/dak</div>
+              <div class="prod-spec">Faks + Tarayıcı + Kopyalayıcı</div>
+              <div class="prod-spec">1.000 yaprak kapasite</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="prod-card" data-tags="toshiba fotokopi a4 mono">
+          <div class="prod-img">
+            <div class="prod-ribbon green">Enerji Tasarruflu</div>
+            
+            <img src="https://www.toshiba-turkiye.com/images/urunler/Dragon3/eS2329_On.png" alt="e-STUDIO 2329A" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Toshiba</div>
+            <div class="prod-model">e-STUDIO 2329A</div>
+            <div class="prod-name">A4 Mono Çok Fonksiyonlu</div>
+            <div class="prod-specs">
+              <div class="prod-spec">23 sayfa/dak</div>
+              <div class="prod-spec">Sezgisel dokunmatik panel</div>
+              <div class="prod-spec">Düşük TCO</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+        <div class="prod-card" data-tags="oki fotokopi a4 mono">
+          <div class="prod-img">
+            
+            
+            <img src="https://yildizburo.com/image/cache/catalog/OKI/OKI%20YAZICI/COK%20FONKS%C4%B0YONLU/MC363DN-600x600.jpg" alt="MC363dn" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Oki</div>
+            <div class="prod-model">MC363dn</div>
+            <div class="prod-name">A4 Mono Çok Fonksiyonlu</div>
+            <div class="prod-specs">
+              <div class="prod-spec">33 sayfa/dak</div>
+              <div class="prod-spec">LED yazıcı teknolojisi</div>
+              <div class="prod-spec">Otomatik dupleks</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /a4-sb-fotokopi -->
+
+    <!-- ── A4 RENKLİ FOTOKOPİ ── -->
+    <div class="cat-section reveal" id="a4-renkli-fotokopi" data-cat="a4-renkli-fotokopi">
+      <div class="cat-header">
+        <div class="cat-icon orange">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="6" cy="9" r="1.5" fill="currentColor" opacity=".5"/><circle cx="10" cy="9" r="1.5" fill="currentColor" opacity=".5"/><circle cx="14" cy="9" r="1.5" fill="currentColor" opacity=".5"/></svg>
+        </div>
+        <div class="cat-title-wrap">
+          <h2>A4 Renkli Fotokopi</h2>
+          <p>Canlı renk baskı, kompakt tasarım</p>
+        </div>
+        <span class="cat-count">11 ürün</span>
+      </div>
+      <div class="prod-grid">
+
+        <div class="prod-card" data-tags="kyocera fotokopi a4 renkli kiralik">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/printers/ECOSYSPA2100CX/mfp-ecosys-pa2100cx_540x540.png" alt="ECOSYS PA2100cx" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS PA2100cx</div>
+            <div class="prod-name">A4 Renkli Lazer Yazıcı</div>
+            <div class="prod-specs">
+              <div class="prod-spec">21 renkli sayfa/dak</div>
+              <div class="prod-spec">WiFi + mobil baskı</div>
+              <div class="prod-spec">Ekonomik toner tüketimi</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a4 renkli">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/ECOSYSM5526CDN/imagegallery-1180x663-ECOSYS-M5526cdn-angle.jpg" alt="ECOSYS M5526cdn" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS M5526cdn</div>
+            <div class="prod-name">A4 Renkli Çok Fonksiyonlu</div>
+            <div class="prod-specs">
+              <div class="prod-spec">26 renkli sayfa/dak</div>
+              <div class="prod-spec">Ağ bağlantısı</div>
+              <div class="prod-spec">Otomatik dupleks</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a4 renkli kiralik">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/ECOSYSM5526CDW/imagegallery-1180x663-ECOSYS-M5526cdw-angle.jpg" alt="ECOSYS M5526cdw" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS M5526cdw</div>
+            <div class="prod-name">A4 Renkli Kablosuz MFP</div>
+            <div class="prod-specs">
+              <div class="prod-spec">26 renkli sayfa/dak</div>
+              <div class="prod-spec">WiFi + NFC</div>
+              <div class="prod-spec">Mobil baskı desteği</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a4 renkli">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            <img src="https://elektrocopy.com.tr/wp-content/uploads/6230-760x760-1-1.jpg" alt="ECOSYS M6230cidn" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS M6230cidn</div>
+            <div class="prod-name">A4 Renkli Çok Fonksiyonlu</div>
+            <div class="prod-specs">
+              <div class="prod-spec">23 renkli sayfa/dak</div>
+              <div class="prod-spec">Gelişmiş toner sistemi</div>
+              <div class="prod-spec">250+50 yaprak kapasite</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a4 renkli">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA308CI/media-image-large-1178x663-gallery-TASKalfa_308ci_Comb01_F.jpg" alt="TASKalfa 308ci" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">TASKalfa 308ci</div>
+            <div class="prod-name">A4 Renkli Çok Fonksiyonlu</div>
+            <div class="prod-specs">
+              <div class="prod-spec">32 renkli sayfa/dak</div>
+              <div class="prod-spec">HyPAS uygulama desteği</div>
+              <div class="prod-spec">Dokunmatik panel</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a4 renkli kiralik">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://www.aryaburo.com/assets/img/products/kyocera-taskalfa-352ci..png" alt="TASKalfa 352ci" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">TASKalfa 352ci</div>
+            <div class="prod-name">A4 Renkli Yüksek Hızlı MFP</div>
+            <div class="prod-specs">
+              <div class="prod-spec">35 renkli sayfa/dak</div>
+              <div class="prod-spec">Bulut entegrasyon</div>
+              <div class="prod-spec">Güvenli baskı özelliği</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="prod-card" data-tags="canon fotokopi a4 renkli">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            
+            <img src="https://cdn.media.amplience.net/i/canon/imagerunner-advance-dx-c3800-series-cst-frt_gallery_a208fc226fe541978f55adfb8b7bf99e" alt="imageRUNNER ADVANCE DX C3826i" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Canon</div>
+            <div class="prod-model">imageRUNNER ADVANCE DX C3826i</div>
+            <div class="prod-name">A4 Renkli Çok Fonksiyonlu</div>
+            <div class="prod-specs">
+              <div class="prod-spec">26 renkli sayfa/dak</div>
+              <div class="prod-spec">Canlı renk kalitesi</div>
+              <div class="prod-spec">Dokunmatik panel</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+        <div class="prod-card" data-tags="oki fotokopi a4 renkli">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            
+            <img src="https://www.poyraztoner.com/oki-mc573dn-multifunction-colour-laser-printer-50666-14-O.jpg" alt="MC573dn" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Oki</div>
+            <div class="prod-model">MC573dn</div>
+            <div class="prod-name">A4 Renkli MFP — LED</div>
+            <div class="prod-specs">
+              <div class="prod-spec">30 renkli sayfa/dak</div>
+              <div class="prod-spec">LED baskı teknolojisi</div>
+              <div class="prod-spec">A4 tarayıcı dahil</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+        <div class="prod-card" data-tags="hp fotokopi a4 renkli kiralik">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://starcgt.com/wp-content/uploads/2025/09/E77830.jpg" alt="Color LaserJet MFP E77830" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">HP</div>
+            <div class="prod-model">Color LaserJet MFP E77830</div>
+            <div class="prod-name">A4 Renkli Çok Fonksiyonlu</div>
+            <div class="prod-specs">
+              <div class="prod-spec">30 renkli sayfa/dak</div>
+              <div class="prod-spec">HP Wolf Security</div>
+              <div class="prod-spec">Bulut + mobil baskı</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+        <div class="prod-card" data-tags="olympia fotokopi a4 renkli">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            
+            <svg class="ph-icon" width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 36L18 24l10 10 12-14 18 20" stroke="currentColor" stroke-width="1.5" opacity=".4"/><circle cx="20" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity=".4"/></svg>
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Olympia</div>
+            <div class="prod-model">DPC 2520 Color</div>
+            <div class="prod-name">A4 Renkli Dijital Fotokopi</div>
+            <div class="prod-specs">
+              <div class="prod-spec">25 renkli sayfa/dak</div>
+              <div class="prod-spec">Kompakt ofis tasarımı</div>
+              <div class="prod-spec">USB baskı desteği</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── A3 SİYAH BEYAZ FOTOKOPİ ── -->
+    <div class="cat-section reveal" id="a3-sb-fotokopi" data-cat="a3-sb-fotokopi">
+      <div class="cat-header">
+        <div class="cat-icon blue">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1" y="4" width="18" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="4" y="1" width="12" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
+        </div>
+        <div class="cat-title-wrap">
+          <h2>A3 Siyah Beyaz Fotokopi</h2>
+          <p>Kurumsal ve yüksek hacimli baskı için TASKalfa serisi</p>
+        </div>
+        <span class="cat-count">8 ürün</span>
+      </div>
+      <div class="prod-grid">
+
+        <div class="prod-card" data-tags="canon fotokopi a3 mono kiralik">
+          <div class="prod-img">
+            
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://s7d1.scene7.com/is/image/canon/4055C002_imagerunner-advance-dx-4735i_primary?wid=800" alt="imageRUNNER ADVANCE DX 4735i" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Canon</div>
+            <div class="prod-model">imageRUNNER ADVANCE DX 4735i</div>
+            <div class="prod-name">A4 Mono MFP — 35 spm</div>
+            <div class="prod-specs">
+              <div class="prod-spec">35 sayfa/dak</div>
+              <div class="prod-spec">Güvenli baskı özelliği</div>
+              <div class="prod-spec">Bulut entegrasyonu</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="canon fotokopi a3 mono">
+          <div class="prod-img">
+            <div class="prod-ribbon blue">Çok Fonksiyonlu</div>
+            
+            <img src="https://s7d1.scene7.com/is/image/canon/4056C002_imagerunner-advance-dx-4725i_primary?wid=800" alt="imageRUNNER ADVANCE DX 4725i" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Canon</div>
+            <div class="prod-model">imageRUNNER ADVANCE DX 4725i</div>
+            <div class="prod-name">A4 Mono Çok Fonksiyonlu</div>
+            <div class="prod-specs">
+              <div class="prod-spec">25 sayfa/dak</div>
+              <div class="prod-spec">WiFi + Ethernet</div>
+              <div class="prod-spec">Dokunmatik ekran, ADF dahil</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="toshiba fotokopi a3 mono kiralik">
+          <div class="prod-img">
+            
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://www.toshibatec.eu/assets/product-images/multifunctional-systems-and-printers/a3-monochrome/e-STUDIO6528A-series/eS5528A_DSDF_LCF_1114_R_wo_shadow__PadWzEwMDAsNzAwLCJGRkZGRkYiLDBd.png" alt="e-STUDIO 4528A" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Toshiba</div>
+            <div class="prod-model">e-STUDIO 4528A</div>
+            <div class="prod-name">A4 Mono Yüksek Hızlı MFP</div>
+            <div class="prod-specs">
+              <div class="prod-spec">45 sayfa/dak</div>
+              <div class="prod-spec">Faks + Tarayıcı dahil</div>
+              <div class="prod-spec">Gelişmiş güvenlik</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a3 mono kiralik">
+          <div class="prod-img">
+            <div class="prod-ribbon navy">Kurumsal</div>
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA5004I/square-540x540-TASKalfa-5004i.png" alt="TASKalfa 5004i" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">TASKalfa 5004i</div>
+            <div class="prod-name">A3 Mono Kurumsal MFP</div>
+            <div class="prod-specs">
+              <div class="prod-spec">50 sayfa/dak mono</div>
+              <div class="prod-spec">A3 tarama kapasitesi</div>
+              <div class="prod-spec">Gelişmiş ağ güvenliği</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a3 mono kiralik">
+          <div class="prod-img">
+            <div class="prod-ribbon navy">Kurumsal</div>
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://www.aryaburo.com/assets/img/products/kyocera-taskalfa-6004i3.png" alt="TASKalfa 6004i" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">TASKalfa 6004i</div>
+            <div class="prod-name">A3 Mono — 60 spm Yüksek Hacim</div>
+            <div class="prod-specs">
+              <div class="prod-spec">60 sayfa/dak</div>
+              <div class="prod-spec">4.000 yaprak kapasite</div>
+              <div class="prod-spec">Finisher desteği</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a3 mono">
+          <div class="prod-img">
+            <img src="https://www.kyoceradocumentsolutions.us/content/dam/kyocera-americas/us/products/mfp/TASKALFA4004I/square-540x540-TASKalfa_4004i_Comb18_L.png" alt="TASKalfa 4004i" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">TASKalfa 4004i</div>
+            <div class="prod-name">A3 Mono MFP — 40 spm</div>
+            <div class="prod-specs">
+              <div class="prod-spec">40 sayfa/dak</div>
+              <div class="prod-spec">A3 fotokopi + tarama</div>
+              <div class="prod-spec">USB + Ethernet + WiFi</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a3 mono kiralik">
+          <div class="prod-img">
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://www.aryaburo.com/assets/img/products/kyocera-taskalfa-3212i1.png" alt="TASKalfa 3212i" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">TASKalfa 3212i</div>
+            <div class="prod-name">A3 Mono Giriş Kurumsal</div>
+            <div class="prod-specs">
+              <div class="prod-spec">32 sayfa/dak</div>
+              <div class="prod-spec">1.150 yaprak standart kapasite</div>
+              <div class="prod-spec">HyPAS desteği</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="prod-card" data-tags="canon fotokopi a3 mono navy">
+          <div class="prod-img">
+            <div class="prod-ribbon navy">Kurumsal</div>
+            
+            <img src="https://copiersonsale.com/wp-content/uploads/2025/04/Canon-imageRUNNER-ADVANCE-DX-6855i.jpg" alt="imageRUNNER ADVANCE DX 6855i" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Canon</div>
+            <div class="prod-model">imageRUNNER ADVANCE DX 6855i</div>
+            <div class="prod-name">A3 Mono Kurumsal MFP</div>
+            <div class="prod-specs">
+              <div class="prod-spec">55 sayfa/dak</div>
+              <div class="prod-spec">A3 fotokopi + tarama</div>
+              <div class="prod-spec">Finisher uyumlu</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+        <div class="prod-card" data-tags="toshiba fotokopi a3 mono kiralik">
+          <div class="prod-img">
+            <div class="prod-ribbon navy">Kurumsal</div>
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://business.toshiba.com/app/uploads/2023/07/5528A_6528A_FR_LG-scaled.jpg" alt="e-STUDIO 5528A" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Toshiba</div>
+            <div class="prod-model">e-STUDIO 5528A</div>
+            <div class="prod-name">A3 Mono Yüksek Hacimli</div>
+            <div class="prod-specs">
+              <div class="prod-spec">55 sayfa/dak</div>
+              <div class="prod-spec">4.000 yaprak kapasite</div>
+              <div class="prod-spec">HDD depolama</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+        <div class="prod-card" data-tags="toshiba fotokopi a3 mono">
+          <div class="prod-img">
+            
+            
+            <img src="https://www.toshibatec.eu/assets/product-images/multifunctional-systems-and-printers/a3-monochrome/e-STUDIO6528A-series/eS5528A_DSDF_LCF_1114_R_wo_shadow__PadWzEwMDAsNzAwLCJGRkZGRkYiLDBd.png" alt="e-STUDIO 3528A" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Toshiba</div>
+            <div class="prod-model">e-STUDIO 3528A</div>
+            <div class="prod-name">A3 Mono Orta Seviye MFP</div>
+            <div class="prod-specs">
+              <div class="prod-spec">35 sayfa/dak</div>
+              <div class="prod-spec">Otomatik dupleks</div>
+              <div class="prod-spec">Enerji tasarruf modu</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+        <div class="prod-card" data-tags="canon fotokopi a3 mono kiralik">
+          <div class="prod-img">
+            
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://cdn.media.amplience.net/i/canon/ir-adv-dx-4700-series_800x800-5942fabe-287f-11ea-82aa-e454e85e15bf?$support-hero-header$" alt="imageRUNNER ADVANCE DX 4745i" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Canon</div>
+            <div class="prod-model">imageRUNNER ADVANCE DX 4745i</div>
+            <div class="prod-name">A3 Mono MFP — 45 spm</div>
+            <div class="prod-specs">
+              <div class="prod-spec">45 sayfa/dak</div>
+              <div class="prod-spec">Güvenli yazıcı özelliği</div>
+              <div class="prod-spec">1.200 yaprak kapasite</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── A3 RENKLİ FOTOKOPİ ── -->
+    <div class="cat-section reveal" id="a3-renkli-fotokopi" data-cat="a3-renkli-fotokopi">
+      <div class="cat-header">
+        <div class="cat-icon orange">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1" y="4" width="18" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="6" cy="9" r="1.5" fill="currentColor" opacity=".5"/><circle cx="10" cy="9" r="1.5" fill="currentColor" opacity=".5"/><circle cx="14" cy="9" r="1.5" fill="currentColor" opacity=".5"/></svg>
+        </div>
+        <div class="cat-title-wrap">
+          <h2>A3 Renkli Fotokopi</h2>
+          <p>Ofis ve üretim için profesyonel renk çözümleri</p>
+        </div>
+        <span class="cat-count">9 ürün</span>
+      </div>
+      <div class="prod-grid">
+
+        <div class="prod-card" data-tags="toshiba fotokopi a3 renkli kiralik">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://printmatik.com/Uploads/productsimages/Large/b587816e-d1f7-422b-961d-831dd67617d7.png" alt="e-STUDIO 2020AC" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Toshiba</div>
+            <div class="prod-model">e-STUDIO 2020AC</div>
+            <div class="prod-name">A4 Renkli MFP — Kompakt</div>
+            <div class="prod-specs">
+              <div class="prod-spec">20 renkli sayfa/dak</div>
+              <div class="prod-spec">WiFi + NFC</div>
+              <div class="prod-spec">Mobil baskı desteği</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a3 renkli kiralik">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA2554CI/square-540x540-taskalfa-2554ci-main-image.png" alt="TASKalfa 2554ci" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">TASKalfa 2554ci</div>
+            <div class="prod-name">A3 Renkli Çok Fonksiyonlu</div>
+            <div class="prod-specs">
+              <div class="prod-spec">25 renkli sayfa/dak</div>
+              <div class="prod-spec">A3 / A4 format desteği</div>
+              <div class="prod-spec">HyPAS uygulama desteği</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a3 renkli kiralik">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA4054CI/square-540x540-TASKalfa_4054ci.png" alt="TASKalfa 4054ci" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">TASKalfa 4054ci</div>
+            <div class="prod-name">A3 Renkli MFP — Orta Segment</div>
+            <div class="prod-specs">
+              <div class="prod-spec">40 renkli sayfa/dak</div>
+              <div class="prod-spec">Gelişmiş güvenlik özellikleri</div>
+              <div class="prod-spec">Bulut entegrasyon desteği</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a3 renkli">
+          <div class="prod-img">
+            <div class="prod-ribbon red">Üretim</div>
+            <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA7054CI/square-540x540-TASKalfa_7054ci.png" alt="TASKalfa 7054ci" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">TASKalfa 7054ci</div>
+            <div class="prod-name">A3 Renkli Üretim Sistemi</div>
+            <div class="prod-specs">
+              <div class="prod-spec">70 renkli sayfa/dak</div>
+              <div class="prod-spec">Tam üretim kapasiteli</div>
+              <div class="prod-spec">Gelişmiş sonlandırıcı</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a3 renkli">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            <img src="https://fotokopimakinesi.com/wp-content/uploads/2021/04/2553-1.jpg" alt="TASKalfa 2553ci" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">TASKalfa 2553ci</div>
+            <div class="prod-name">A3 Renkli MFP — Giriş</div>
+            <div class="prod-specs">
+              <div class="prod-spec">25 renkli sayfa/dak</div>
+              <div class="prod-spec">WiFi + ağ bağlantısı</div>
+              <div class="prod-spec">Dokunmatik 7" ekran</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera fotokopi a3 renkli kiralik">
+          <div class="prod-img">
+            <div class="prod-ribbon red">Üretim</div>
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA5054CI/media-image-large-1180x663-TASKalfa-5054ci-combo1.jpg" alt="TASKalfa 5054ci" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">TASKalfa 5054ci</div>
+            <div class="prod-name">A3 Renkli Üretim — 50 spm</div>
+            <div class="prod-specs">
+              <div class="prod-spec">50 renkli sayfa/dak</div>
+              <div class="prod-spec">Çok istasyonlu yazdırma</div>
+              <div class="prod-spec">Güvenli baskı + şifreleme</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── A4 SB YAZICI ── -->
+    <div class="cat-section reveal" id="a4-sb-yazici" data-cat="a4-sb-yazici">
+      <div class="cat-header">
+        <div class="cat-icon blue">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="7" width="16" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M5 7V5a3 3 0 016 0v2M5 12h2M9 12h2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="cat-title-wrap">
+          <h2>A4 Siyah Beyaz Yazıcı</h2>
+          <p>ECOSYS serisi lazer yazıcılar</p>
+        </div>
+        <span class="cat-count">8 ürün</span>
+      </div>
+      <div class="prod-grid">
+
+        <div class="prod-card" data-tags="kyocera yazici a4 mono kiralik">
+          <div class="prod-img">
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/printers/ECOSYSPA4500X/square-540x540.ECOSYS-PA4500x.png" alt="ECOSYS PA4500x" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS PA4500x</div>
+            <div class="prod-name">A4 Mono Lazer Yazıcı — 45 spm</div>
+            <div class="prod-specs">
+              <div class="prod-spec">45 sayfa/dak</div>
+              <div class="prod-spec">USB + Ethernet</div>
+              <div class="prod-spec">Dupleks baskı</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera yazici a4 mono">
+          <div class="prod-img">
+            <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/printers/ECOSYSPA3500CX/square-540x540-PA3500cx.png" alt="ECOSYS PA3500cx" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS PA3500cx</div>
+            <div class="prod-name">A4 Mono Lazer Yazıcı — 35 spm</div>
+            <div class="prod-specs">
+              <div class="prod-spec">35 sayfa/dak</div>
+              <div class="prod-spec">WiFi + Ethernet</div>
+              <div class="prod-spec">Uzun ömürlü drum</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera yazici a4 mono kiralik">
+          <div class="prod-img">
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://www.kyoceradocumentsolutions.com/asia/en/products/printer/pa2000w/assets/images/index-pa2000w_3.jpg" alt="ECOSYS PA2000" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS PA2000</div>
+            <div class="prod-name">A4 Mono — Giriş Seviye</div>
+            <div class="prod-specs">
+              <div class="prod-spec">20 sayfa/dak</div>
+              <div class="prod-spec">USB bağlantısı</div>
+              <div class="prod-spec">Kompakt tasarım</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera yazici a4 mono">
+          <div class="prod-img">
+            <div class="prod-ribbon green">Yüksek Hız</div>
+            <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/printers/ECOSYSPA6000X/square-540x540.ECOSYS-PA6000x.png" alt="ECOSYS PA6000x" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS PA6000x</div>
+            <div class="prod-name">A4 Mono — 60 spm Kurumsal</div>
+            <div class="prod-specs">
+              <div class="prod-spec">60 sayfa/dak</div>
+              <div class="prod-spec">1.000 yaprak kapasite</div>
+              <div class="prod-spec">Çift USB + Ethernet</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="prod-card" data-tags="hp yazici a4 mono">
+          <div class="prod-img">
+            <div class="prod-ribbon blue">Hızlı</div>
+            
+            <img src="https://hk-media.apjonlinecdn.com/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/1/P/1PV87A-1_T1678866989.png" alt="LaserJet Enterprise M507dn" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">HP</div>
+            <div class="prod-model">LaserJet Enterprise M507dn</div>
+            <div class="prod-name">A4 Mono Lazer Yazıcı</div>
+            <div class="prod-specs">
+              <div class="prod-spec">43 sayfa/dak</div>
+              <div class="prod-spec">Otomatik dupleks</div>
+              <div class="prod-spec">Ethernet + USB</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+        <div class="prod-card" data-tags="canon yazici a4 mono kiralik">
+          <div class="prod-img">
+            
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://cdn.media.amplience.net/i/canon/i-sensys-lbp243dw-ii_hero_8fd63be3d6824d0bb89c4334b1fed9a5" alt="i-SENSYS LBP243DW" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Canon</div>
+            <div class="prod-model">i-SENSYS LBP243DW</div>
+            <div class="prod-name">A4 Mono Lazer — 38 spm</div>
+            <div class="prod-specs">
+              <div class="prod-spec">38 sayfa/dak</div>
+              <div class="prod-spec">Dupleks baskı</div>
+              <div class="prod-spec">WiFi opsiyonel</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+        <div class="prod-card" data-tags="oki yazici a4 mono">
+          <div class="prod-img">
+            
+            
+            <img src="https://cdn.idealo.com/folder/Product/4696/6/4696652/s4_produktbild_max/oki-systems-b432dn.jpg" alt="B432dn" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Oki</div>
+            <div class="prod-model">B432dn</div>
+            <div class="prod-name">A4 Mono LED Yazıcı</div>
+            <div class="prod-specs">
+              <div class="prod-spec">40 sayfa/dak</div>
+              <div class="prod-spec">LED baskı teknolojisi</div>
+              <div class="prod-spec">Ethernet dahil</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+        <div class="prod-card" data-tags="olympia yazici a4 mono">
+          <div class="prod-img">
+            
+            
+            <svg class="ph-icon" width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="10" y="20" width="44" height="28" rx="3" stroke="currentColor" stroke-width="2"/><path d="M16 20V14a2 2 0 012-2h28a2 2 0 012 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Olympia</div>
+            <div class="prod-model">LP 2045</div>
+            <div class="prod-name">A4 Mono Lazer Yazıcı</div>
+            <div class="prod-specs">
+              <div class="prod-spec">20 sayfa/dak</div>
+              <div class="prod-spec">USB bağlantı</div>
+              <div class="prod-spec">Kompakt ofis yazıcısı</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── A4 RENKLİ YAZICI ── -->
+    <div class="cat-section reveal" id="a4-renkli-yazici" data-cat="a4-renkli-yazici">
+      <div class="cat-header">
+        <div class="cat-icon orange">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="7" width="16" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M5 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="6" cy="12" r="1" fill="currentColor" opacity=".5"/><circle cx="9.5" cy="12" r="1" fill="currentColor" opacity=".5"/><circle cx="13" cy="12" r="1" fill="currentColor" opacity=".5"/></svg>
+        </div>
+        <div class="cat-title-wrap">
+          <h2>A4 Renkli Yazıcı</h2>
+          <p>Ofis için kompakt renkli lazer çözümleri</p>
+        </div>
+        <span class="cat-count">3 ürün</span>
+      </div>
+      <div class="prod-grid">
+
+        <div class="prod-card" data-tags="kyocera yazici a4 renkli kiralik">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/printers/ECOSYSPA2100CX/mfp-ecosys-pa2100cx_540x540.png" alt="ECOSYS PA2100cx" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS PA2100cx</div>
+            <div class="prod-name">A4 Renkli Lazer Yazıcı</div>
+            <div class="prod-specs">
+              <div class="prod-spec">21 renkli sayfa/dak</div>
+              <div class="prod-spec">WiFi + mobil baskı</div>
+              <div class="prod-spec">Ekonomik toner tüketimi</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera yazici a4 renkli">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/printers/ECOSYSPA3500CX/square-540x540-PA3500cx.png" alt="ECOSYS PA3500cx" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS PA3500cx</div>
+            <div class="prod-name">A4 Renkli Lazer — 35 spm</div>
+            <div class="prod-specs">
+              <div class="prod-spec">35 renkli sayfa/dak</div>
+              <div class="prod-spec">WiFi + Ethernet + USB</div>
+              <div class="prod-spec">Dupleks baskı</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera yazici a4 renkli">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/printers/ECOSYSPA4500CX/square-540x540-PA4500cx.png" alt="ECOSYS PA4500cx" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">ECOSYS PA4500cx</div>
+            <div class="prod-name">A4 Renkli Lazer — 45 spm</div>
+            <div class="prod-specs">
+              <div class="prod-spec">45 renkli sayfa/dak</div>
+              <div class="prod-spec">1.200 yaprak kapasite</div>
+              <div class="prod-spec">Güvenli baskı özelliği</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="prod-card" data-tags="hp yazici a4 renkli">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            
+            <img src="https://hp.widen.net/content/vou5miisyd/webp/vou5miisyd.png?w=320&h=240&dpi=72&color=ffffff00" alt="Color LaserJet Enterprise M554dn" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">HP</div>
+            <div class="prod-model">Color LaserJet Enterprise M554dn</div>
+            <div class="prod-name">A4 Renkli Lazer Yazıcı</div>
+            <div class="prod-specs">
+              <div class="prod-spec">33 renkli sayfa/dak</div>
+              <div class="prod-spec">HP Wolf Security</div>
+              <div class="prod-spec">Ethernet + USB</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+        <div class="prod-card" data-tags="canon yazici a4 renkli">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            
+            <img src="https://cdn.akakce.com/canon/canon-i-sensys-lbp654cx-z.jpg" alt="i-SENSYS LBP654Cx" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Canon</div>
+            <div class="prod-model">i-SENSYS LBP654Cx</div>
+            <div class="prod-name">A4 Renkli Lazer — 27 spm</div>
+            <div class="prod-specs">
+              <div class="prod-spec">27 renkli sayfa/dak</div>
+              <div class="prod-spec">WiFi + NFC</div>
+              <div class="prod-spec">Dupleks baskı</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+        <div class="prod-card" data-tags="oki yazici a4 renkli kiralik">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            <div class="prod-badge-rent">Kiralık</div>
+            <img src="https://www.oki.com/eu/printing/images/C532dn_34_tcm70-84984.jpg" alt="C532dn" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Oki</div>
+            <div class="prod-model">C532dn</div>
+            <div class="prod-name">A4 Renkli LED Yazıcı</div>
+            <div class="prod-specs">
+              <div class="prod-spec">30 renkli sayfa/dak</div>
+              <div class="prod-spec">LED baskı teknolojisi</div>
+              <div class="prod-spec">Ethernet + USB</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+        <div class="prod-card" data-tags="olympia yazici a4 renkli">
+          <div class="prod-img">
+            <div class="prod-ribbon gold">Renkli</div>
+            
+            <svg class="ph-icon" width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="10" y="20" width="44" height="28" rx="3" stroke="currentColor" stroke-width="2"/><path d="M16 20V14a2 2 0 012-2h28a2 2 0 012 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Olympia</div>
+            <div class="prod-model">CP 3522</div>
+            <div class="prod-name">A4 Renkli Lazer Yazıcı</div>
+            <div class="prod-specs">
+              <div class="prod-spec">22 renkli sayfa/dak</div>
+              <div class="prod-spec">WiFi destekli</div>
+              <div class="prod-spec">Mobil baskı uyumlu</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── DİĞER ÜRÜNLER ── -->
+    <div class="cat-section reveal" id="diger" data-cat="diger">
+      <div class="cat-header">
+        <div class="cat-icon blue">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="2" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
+        </div>
+        <div class="cat-title-wrap">
+          <h2>Diğer Büro Ürünleri</h2>
+          <p>Evrak imhacıları, para sayma makineleri ve sarf malzemeleri</p>
+        </div>
+        <span class="cat-count">3 ürün</span>
+      </div>
+      <div class="prod-grid">
+
+        <div class="prod-card" data-tags="fellowes diger">
+          <div class="prod-img">
+            <img src="https://i0.wp.com/fellowes-tr.com/wp-content/uploads/2019/02/99CI_Straight.jpg?fit=500%2C500&ssl=1" alt="Fellowes Powershred 99Ci" style="width:100%;height:100%;object-fit:contain;padding:1rem">
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Fellowes</div>
+            <div class="prod-model">Powershred 99Ci</div>
+            <div class="prod-name">Mikro Kesim Evrak İmhacısı</div>
+            <div class="prod-specs">
+              <div class="prod-spec">Mikro kesim — P-5 güvenlik</div>
+              <div class="prod-spec">18 yaprak kapasiteli</div>
+              <div class="prod-spec">CD/DVD imha desteği</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="safescan diger">
+          <div class="prod-img">
+            <svg class="ph-icon" width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="12" y="16" width="40" height="32" rx="3" stroke="currentColor" stroke-width="2"/><path d="M20 28h24M28 34h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".4"/><rect x="12" y="16" width="40" height="8" rx="3" fill="currentColor" opacity=".06"/></svg>
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Safescan</div>
+            <div class="prod-model">2685-S</div>
+            <div class="prod-name">Para Sayma ve Doğrulama Makinesi</div>
+            <div class="prod-specs">
+              <div class="prod-spec">1.000 banknot/dak</div>
+              <div class="prod-spec">UV + MG + IR sahtecilik tespiti</div>
+              <div class="prod-spec">Çoklu para birimi desteği</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-tags="kyocera diger">
+          <div class="prod-img">
+            <svg class="ph-icon" width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="10" y="18" width="20" height="28" rx="2" stroke="currentColor" stroke-width="2"/><rect x="34" y="18" width="20" height="28" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 26h8M16 32h6M40 26h8M40 32h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".4"/></svg>
+          </div>
+          <div class="prod-body">
+            <div class="prod-brand">Kyocera</div>
+            <div class="prod-model">TK Serisi Toner</div>
+            <div class="prod-name">Orijinal Toner & Sarf Malzemeleri</div>
+            <div class="prod-specs">
+              <div class="prod-spec">Tüm Kyocera modellere uyumlu</div>
+              <div class="prod-spec">Orijinal ve muadil seçenekler</div>
+              <div class="prod-spec">Stoktan aynı gün teslimat</div>
+            </div>
+            <div class="prod-foot">
+              <div class="prod-price call">Fiyat için arayın</div>
+              <button class="btn-teklif" onclick="handleTeklif(this)">Teklif Al</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</div><!-- /products-layout -->
+
+<!-- CTA BANNER -->
+<div class="cta-banner-wrap">
+  <div class="cta-banner reveal">
+    <div>
+      <h2>Satın Almak Yerine Kiralayın — Kâr Edin!</h2>
+      <p>Toner, teknik servis ve yedek parça dahil esnek kiralama paketleriyle işletmenizin baskı maliyetini %60'a kadar düşürün.</p>
+    </div>
+    <div class="cta-banner-btns">
+      <a href="bilgiteknik.html#iletisim" class="btn-cta-p">Hemen Teklif Al</a>
+      <a href="https://wa.me/905326944862" class="btn-cta-g">WhatsApp ile Sor</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-name">Bilgi<span>teknik</span></div>
+        <p class="footer-desc">2000 yılından bu yana büro makinaları alanında faaliyet gösteren, müşteri odaklı yaklaşımıyla fark yaratan güvenilir iş ortağınız.</p>
+        <div class="footer-social"><a href="#" class="f-soc">in</a><a href="#" class="f-soc">tw</a><a href="#" class="f-soc">ig</a><a href="#" class="f-soc">yt</a></div>
+      </div>
+      <div><h4>Ürünler</h4><ul class="f-links"><li><a href="#a4-sb-fotokopi">A4 SB Fotokopi</a></li><li><a href="#a4-renkli-fotokopi">A4 Renkli Fotokopi</a></li><li><a href="#a3-sb-fotokopi">A3 SB Fotokopi</a></li><li><a href="#a3-renkli-fotokopi">A3 Renkli Fotokopi</a></li><li><a href="#diger">Diğer Ürünler</a></li></ul></div>
+      <div><h4>Hizmetler</h4><ul class="f-links"><li><a href="fotokopi-kiralama.html">Fotokopi Kiralama</a></li><li><a href="yazici-kiralama.html">Yazıcı Kiralama</a></li><li><a href="#">Teknik Servis</a></li><li><a href="#">Periyodik Bakım</a></li></ul></div>
+      <div><h4>İletişim</h4><ul class="f-links"><li><a href="#">📍 Sancaktepe, İstanbul</a></li><li><a href="tel:+905326944862">📞 0532 694 48 62</a></li><li><a href="https://wa.me/905326944862">💬 WhatsApp</a></li><li><a href="mailto:info@bilgiteknik.com.tr">✉ info@bilgiteknik.com.tr</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span class="f-copy">© 2025 Bilgiteknik Büro Makinaları — 2000'den Bu Yana Hizmetinizdeyiz</span>
+      <span class="f-copy">Gizlilik Politikası · Kullanım Koşulları</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOAT WA -->
+<div class="float-wa">
+  <span class="wa-label">WhatsApp ile Yazın</span>
+  <a href="https://wa.me/905326944862" target="_blank" class="wa-btn">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.11 1.523 5.833L.044 23.956l6.29-1.483A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.48-5.16-1.33l-.37-.21-3.73.88.9-3.64-.23-.38A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+  </a>
+</div>
+
+<script>
+/* ── SEARCH ── */
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input', doSearch);
+searchInput.addEventListener('keydown', e => { if(e.key==='Enter') doSearch(); });
+
+function doSearch() {
+  const q = searchInput.value.toLowerCase().trim();
+  applyFilters(q);
+}
+
+/* ── FILTER TAGS ── */
+document.querySelectorAll('.ftag').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.ftag').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    applyFilters(searchInput.value.toLowerCase().trim());
+  });
+});
+
+function applyFilters(query) {
+  const activeFilter = document.querySelector('.ftag.active')?.dataset.filter || 'all';
+  const cards = document.querySelectorAll('.prod-card');
+  let visible = 0;
+
+  cards.forEach(card => {
+    const tags = card.dataset.tags || '';
+    const text = card.innerText.toLowerCase();
+    const matchFilter = activeFilter === 'all' || tags.includes(activeFilter);
+    const matchQuery = !query || text.includes(query);
+    const show = matchFilter && matchQuery;
+    card.dataset.hidden = show ? 'false' : 'true';
+    if(show) visible++;
+  });
+
+  // Hide/show category sections
+  document.querySelectorAll('.cat-section').forEach(sec => {
+    const anyVisible = [...sec.querySelectorAll('.prod-card')].some(c => c.dataset.hidden !== 'true');
+    sec.style.display = anyVisible ? '' : 'none';
+  });
+
+  document.getElementById('visibleCount').textContent = visible;
+  document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+}
+
+/* ── SORT ── */
+function sortProducts() {
+  const val = document.getElementById('sortSelect').value;
+  document.querySelectorAll('.prod-grid').forEach(grid => {
+    const cards = [...grid.querySelectorAll('.prod-card')];
+    cards.sort((a, b) => {
+      const pa = parseInt(a.dataset.price) || 0;
+      const pb = parseInt(b.dataset.price) || 0;
+      if(val === 'price-asc') return pa - pb;
+      if(val === 'price-desc') return pb - pa;
+      return 0;
+    });
+    cards.forEach(c => grid.appendChild(c));
+  });
+}
+
+/* ── TEKLIF BUTTON ── */
+function handleTeklif(btn) {
+  btn.textContent = 'İstek Alındı ✓';
+  btn.classList.add('sent');
+  setTimeout(() => { btn.textContent = 'Teklif Al'; btn.classList.remove('sent'); }, 2500);
+}
+
+/* ── SCROLL REVEAL ── */
+const ro = new IntersectionObserver(es => es.forEach(e => {
+  if(e.isIntersecting) e.target.classList.add('visible');
+}), { threshold: .06 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+</script>
+</body>
+</html>

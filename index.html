@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bilgiteknik — Fotokopi, Yazıcı ve Büro Makinaları</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1565C0;--blue2:#1976D2;--blue3:#E3F0FF;--blue4:#0D47A1;
+  --orange:#F57C00;--orange2:#FF9800;--orange-pale:#FFF3E0;
+  --white:#FFFFFF;--gray1:#F8F9FC;--gray2:#F0F2F7;--gray3:#E4E8F0;
+  --gray4:#B0BBC8;--ink:#1A2332;--mid:#5A6A80;--light:#8C9BAD;
+  --border:#DCE3EE;--shadow:0 2px 16px rgba(21,101,192,.07);
+  --shadow2:0 8px 40px rgba(21,101,192,.13);--rad:12px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:'Inter',sans-serif;font-weight:400;overflow-x:hidden}
+
+/* ── TOP BAR ── */
+.topbar{background:var(--blue4);color:rgba(255,255,255,.85);font-size:.75rem;padding:.45rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.topbar a{color:rgba(255,255,255,.85);text-decoration:none}.topbar a:hover{color:#fff}
+.topbar-left{display:flex;gap:2rem;align-items:center}
+.topbar-right{display:flex;gap:1.5rem;align-items:center}
+.topbar-badge{background:var(--orange);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.08em;padding:.2rem .6rem;border-radius:3px;text-transform:uppercase}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:800;background:#fff;border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 3rem;height:70px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nav-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex-shrink:0}
+.logo-icon{width:40px;height:40px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;position:relative}
+.logo-icon::after{content:'';position:absolute;width:12px;height:12px;background:var(--orange);border-radius:50%;top:-4px;right:-4px}
+.logo-icon svg{color:#fff}
+.logo-name{font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:700;color:var(--ink)}
+.logo-name span{color:var(--blue)}
+.nav-menu{display:flex;gap:0;list-style:none}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:.35rem;padding:.5rem 1.1rem;font-size:.84rem;font-weight:500;color:var(--mid);text-decoration:none;white-space:nowrap;transition:color .2s;cursor:pointer;height:70px}
+.nav-link:hover,.nav-link.active{color:var(--blue)}
+.nav-link svg{width:12px;height:12px;transition:transform .2s}
+.nav-item:hover .nav-link svg{transform:rotate(180deg)}
+.dropdown{position:absolute;top:100%;left:0;min-width:220px;background:#fff;border:1px solid var(--border);border-radius:0 0 var(--rad) var(--rad);box-shadow:var(--shadow2);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .2s;z-index:100}
+.nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown a{display:block;padding:.7rem 1.2rem;font-size:.82rem;color:var(--mid);text-decoration:none;transition:background .15s,color .15s;border-bottom:1px solid var(--gray3)}
+.dropdown a:last-child{border-bottom:none;border-radius:0 0 var(--rad) var(--rad)}
+.dropdown a:hover{background:var(--blue3);color:var(--blue)}
+.dropdown a.dd-header{font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--light);pointer-events:none;background:var(--gray1);padding:.45rem 1.2rem;cursor:default}
+.nav-right{display:flex;align-items:center;gap:.8rem;flex-shrink:0}
+.nav-phone{font-size:.82rem;font-weight:600;color:var(--ink);text-decoration:none}
+.nav-phone:hover{color:var(--blue)}
+.btn-whatsapp{display:flex;align-items:center;gap:.4rem;padding:.55rem 1.1rem;background:#25D366;color:#fff;border-radius:6px;font-size:.78rem;font-weight:600;text-decoration:none;transition:background .2s}
+.btn-whatsapp:hover{background:#1ebe5d}
+.btn-teklif-nav{padding:.55rem 1.4rem;background:var(--orange);color:#fff;border-radius:6px;font-size:.82rem;font-weight:700;text-decoration:none;transition:background .2s;white-space:nowrap}
+.btn-teklif-nav:hover{background:var(--orange2)}
+
+/* ── HERO SLIDER ── */
+.hero-slider{position:relative;width:100%;height:580px;overflow:hidden;background:var(--blue4)}
+.slide{position:absolute;inset:0;display:grid;grid-template-columns:55% 45%;opacity:0;transition:opacity .7s ease;pointer-events:none}
+.slide.active{opacity:1;pointer-events:auto}
+
+.slide-left{display:flex;flex-direction:column;justify-content:center;padding:4rem 3.5rem 4rem 3rem;max-width:100%}
+.slide-eyebrow{display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:.35rem 1rem;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:1.5rem;width:fit-content}
+.slide-eyebrow span{width:6px;height:6px;border-radius:50%;background:var(--orange2);animation:pulse 2s infinite}
+.slide-title{font-family:'Poppins',sans-serif;font-size:clamp(2rem,3.5vw,3.2rem);font-weight:800;line-height:1.12;color:#fff;margin-bottom:1.2rem}
+.slide-title em{font-style:normal;color:var(--orange2)}
+.slide-sub{font-size:.92rem;color:rgba(255,255,255,.7);line-height:1.75;max-width:420px;margin-bottom:2.2rem}
+.slide-btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn-slide-primary{padding:.85rem 2rem;background:var(--orange);color:#fff;border-radius:8px;font-size:.9rem;font-weight:700;text-decoration:none;transition:background .2s,transform .18s}
+.btn-slide-primary:hover{background:var(--orange2);transform:translateY(-2px)}
+.btn-slide-ghost{padding:.85rem 2rem;background:rgba(255,255,255,.1);color:#fff;border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.3);transition:background .2s}
+.btn-slide-ghost:hover{background:rgba(255,255,255,.2)}
+.slide-badges{display:flex;gap:.8rem;margin-top:1.8rem;flex-wrap:wrap}
+.s-badge{display:flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:600;color:rgba(255,255,255,.7)}
+.s-badge::before{content:'✓';color:var(--orange2);font-weight:800}
+
+.slide-right{display:flex;align-items:center;justify-content:center;padding:2rem;position:relative;overflow:hidden}
+.slide-right::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.04) 0%,transparent 60%)}
+.slide-img-box{position:relative;z-index:2;width:320px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;backdrop-filter:blur(8px)}
+.slide-img-area{width:100%;height:220px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.05)}
+.slide-img-area img{max-width:100%;max-height:100%;object-fit:contain;padding:1.5rem}
+.slide-img-area svg{color:rgba(255,255,255,.6);animation:floatSlow 5s ease-in-out infinite}
+.slide-img-info{padding:1.2rem 1.5rem}
+.s-model{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--orange2);margin-bottom:.3rem}
+.s-name{font-weight:700;color:#fff;font-size:1rem;margin-bottom:.2rem}
+.s-spec{font-size:.75rem;color:rgba(255,255,255,.55)}
+.s-price-row{display:flex;justify-content:space-between;align-items:center;margin-top:.8rem;padding-top:.8rem;border-top:1px solid rgba(255,255,255,.1)}
+.s-price{font-family:'Poppins',sans-serif;font-size:1.3rem;font-weight:700;color:#fff}
+.s-stok{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#4ADE80;background:rgba(74,222,128,.15);border:1px solid rgba(74,222,128,.3);padding:.25rem .6rem;border-radius:4px}
+
+/* Slider controls */
+.slider-ctrl{position:absolute;bottom:1.8rem;left:3rem;display:flex;align-items:center;gap:1.2rem;z-index:20}
+.dots{display:flex;gap:.5rem}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);border:none;cursor:pointer;transition:all .3s;padding:0}
+.dot.active{background:var(--orange2);width:26px;border-radius:4px}
+.arrows{display:flex;gap:.5rem}
+.arr{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.arr:hover{background:var(--orange)}
+.progress-bar{position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(255,255,255,.1);z-index:20}
+.progress-fill{height:100%;background:var(--orange2);width:0}
+.progress-fill.go{transition:width 5s linear;width:100%}
+
+/* ── BRANDS STRIP ── */
+.brands-strip{background:var(--gray1);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.5rem 3rem;overflow:hidden}
+.brands-inner{display:flex;align-items:center;gap:3rem;animation:marqueeBrands 22s linear infinite}
+.brand-item{display:flex;align-items:center;gap:.5rem;white-space:nowrap;opacity:.5;transition:opacity .2s;cursor:default}
+.brand-item:hover{opacity:1}
+.brand-item-name{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.brand-sep{color:var(--gray3);font-size:1.5rem}
+
+/* ── QUICK STATS ── */
+.quick-stats{background:var(--blue);padding:2.5rem 3rem;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.qs-item{padding:1.5rem 2rem;border-right:1px solid rgba(255,255,255,.12);text-align:center}
+.qs-item:last-child{border-right:none}
+.qs-num{font-family:'Poppins',sans-serif;font-size:2.2rem;font-weight:800;color:#fff;line-height:1}
+.qs-num sup{font-size:1rem;color:var(--orange2)}
+.qs-label{font-size:.78rem;color:rgba(255,255,255,.6);margin-top:.3rem}
+
+/* ── SERVICES TABS ── */
+.services-section{padding:6rem 3rem;background:var(--white)}
+.services-section .container{max-width:1280px;margin:0 auto}
+.sec-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem}
+.sec-eyebrow{display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem}
+.sec-line{width:24px;height:2.5px;background:var(--blue);border-radius:2px}
+.sec-tag{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
+.sec-title{font-family:'Poppins',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--ink);line-height:1.2}
+.sec-sub{font-size:.9rem;color:var(--mid);line-height:1.7;max-width:480px;margin-top:.6rem}
+
+.service-tabs{display:flex;gap:.6rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.s-tab{padding:.6rem 1.4rem;border-radius:6px;background:var(--gray2);border:1.5px solid var(--border);font-size:.82rem;font-weight:600;color:var(--mid);cursor:pointer;transition:all .2s}
+.s-tab:hover,.s-tab.active{background:var(--blue);border-color:var(--blue);color:#fff}
+
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.svc-card{background:var(--gray1);border:1px solid var(--border);border-radius:var(--rad);padding:2rem;transition:all .25s;cursor:pointer;position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.svc-card:hover{background:#fff;border-color:var(--blue);box-shadow:var(--shadow2);transform:translateY(-3px)}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-icon{width:52px;height:52px;background:var(--blue3);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--blue);margin-bottom:1.2rem}
+.svc-title{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
+.svc-desc{font-size:.82rem;color:var(--mid);line-height:1.65;margin-bottom:1.2rem}
+.svc-link{font-size:.78rem;font-weight:700;color:var(--blue);text-decoration:none;display:inline-flex;align-items:center;gap:.3rem}
+.svc-link::after{content:'→';transition:transform .2s}
+.svc-card:hover .svc-link::after{transform:translateX(4px)}
+.svc-badge{position:absolute;top:1.2rem;right:1.2rem;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .7rem;border-radius:20px}
+.badge-kiralama{background:var(--blue3);color:var(--blue)}
+.badge-satis{background:var(--orange-pale);color:var(--orange)}
+.badge-servis{background:#F0FDF4;color:#16A34A}
+
+/* ── KYOCERA SECTION ── */
+.kyocera-section{background:var(--gray1);padding:6rem 3rem;border-top:1px solid var(--border)}
+.kyocera-section .container{max-width:1280px;margin:0 auto}
+.kyocera-header-row{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem;flex-wrap:wrap;gap:1.5rem}
+.kyocera-brand-pill{display:inline-flex;align-items:center;gap:.8rem;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:.7rem 1.4rem;margin-bottom:1rem}
+.kyo-brand-name{font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:800;color:#E8001D;letter-spacing:.05em}
+.kyo-brand-sub{font-size:.7rem;color:var(--light);padding-left:.8rem;border-left:1px solid var(--border)}
+.kyo-filter{display:flex;gap:.5rem;flex-wrap:wrap}
+.kyo-ftag{padding:.45rem 1rem;background:#fff;border:1.5px solid var(--border);border-radius:6px;font-size:.75rem;font-weight:600;color:var(--mid);cursor:pointer;transition:all .2s}
+.kyo-ftag:hover,.kyo-ftag.active{background:#E8001D;border-color:#E8001D;color:#fff}
+
+/* Kyocera Grid */
+.kyo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.kyo-card{background:#fff;border:1px solid var(--border);border-radius:var(--rad);overflow:hidden;transition:all .25s;cursor:pointer;display:flex;flex-direction:column}
+.kyo-card:hover{box-shadow:var(--shadow2);transform:translateY(-4px);border-color:#E8001D}
+.kyo-card.featured{grid-column:span 2;flex-direction:row}
+.kyo-card.featured .kyo-img-zone{width:50%;border-right:1px solid var(--border);border-bottom:none;aspect-ratio:unset}
+
+/* IMAGE ZONE — user adds photo here */
+.kyo-img-zone{
+  width:100%;aspect-ratio:4/3;background:var(--gray2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;border-bottom:1px solid var(--border);
+  transition:background .25s;
+}
+.kyo-card:hover .kyo-img-zone{background:var(--gray3)}
+/* To add real photo: place <img src="dosya.jpg" alt="Model"> inside .kyo-img-zone */
+.kyo-img-zone img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:1.2rem}
+
+.kyo-ph-icon{color:var(--gray4);margin-bottom:.6rem}
+.kyo-ph-text{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gray4);text-align:center;line-height:1.5}
+.kyo-img-zone img ~ .kyo-ph-icon,.kyo-img-zone img ~ .kyo-ph-text{display:none!important}
+
+.kyo-ribbon{position:absolute;top:.8rem;left:0;background:#E8001D;color:#fff;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .75rem;border-radius:0 4px 4px 0}
+.kyo-ribbon.navy{background:var(--blue4)}
+.kyo-ribbon.gold{background:var(--orange)}
+
+.kyo-hover-overlay{position:absolute;inset:0;background:rgba(27,42,74,0);display:flex;align-items:center;justify-content:center;opacity:0;transition:all .25s}
+.kyo-card:hover .kyo-hover-overlay{opacity:1;background:rgba(27,42,74,.04)}
+.zoom-btn{width:44px;height:44px;border-radius:50%;background:#fff;box-shadow:var(--shadow2);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:1rem;transform:scale(.8);transition:transform .2s}
+.kyo-card:hover .zoom-btn{transform:scale(1)}
+
+.kyo-body{padding:1.4rem;flex:1;display:flex;flex-direction:column}
+.kyo-card.featured .kyo-body{padding:2rem}
+.kyo-model{font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#E8001D;margin-bottom:.4rem}
+.kyo-name{font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.7rem;line-height:1.3}
+.kyo-card.featured .kyo-name{font-size:1.25rem}
+.kyo-specs{display:flex;flex-direction:column;gap:.3rem;margin-bottom:1rem}
+.kyo-spec{font-size:.75rem;color:var(--mid);display:flex;align-items:center;gap:.5rem}
+.kyo-spec::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--blue);flex-shrink:0}
+.kyo-foot{margin-top:auto;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:.5rem}
+.kyo-price{font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink)}
+.kyo-price small{font-family:'Inter',sans-serif;font-size:.65rem;font-weight:400;color:var(--light);display:block}
+.kyo-price.call{font-size:.82rem;font-weight:600;color:var(--mid);font-family:'Inter',sans-serif}
+.btn-kyo-teklif{padding:.5rem 1rem;background:var(--blue);color:#fff;border:none;border-radius:6px;font-size:.75rem;font-weight:700;cursor:pointer;transition:background .2s;white-space:nowrap}
+.btn-kyo-teklif:hover{background:#E8001D}
+
+/* ── WHY US ── */
+.why-section{background:var(--white);padding:6rem 3rem;border-top:1px solid var(--border)}
+.why-section .container{max-width:1280px;margin:0 auto}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.why-card{background:var(--gray1);border:1px solid var(--border);border-radius:var(--rad);padding:2rem;transition:all .2s}
+.why-card:hover{background:#fff;box-shadow:var(--shadow2);border-color:var(--blue)}
+.why-num{font-family:'Poppins',sans-serif;font-size:2.8rem;font-weight:800;color:var(--gray3);line-height:1;margin-bottom:.8rem}
+.why-icon{width:46px;height:46px;background:var(--blue3);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--blue);margin-bottom:1rem}
+.why-title{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
+.why-desc{font-size:.82rem;color:var(--mid);line-height:1.65}
+
+/* ── RENTAL CTA BANNER ── */
+.rental-banner{background:linear-gradient(135deg,var(--blue4) 0%,var(--blue) 100%);padding:5rem 3rem;position:relative;overflow:hidden}
+.rental-banner::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.04)}
+.rental-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem}
+.rental-title{font-family:'Poppins',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:#fff;line-height:1.2;margin-bottom:.8rem}
+.rental-sub{font-size:.92rem;color:rgba(255,255,255,.7)}
+.rental-btns{display:flex;gap:1rem;flex-shrink:0;flex-wrap:wrap}
+.btn-orange-lg{padding:1rem 2.2rem;background:var(--orange);color:#fff;border-radius:8px;font-size:.92rem;font-weight:700;text-decoration:none;transition:background .2s;white-space:nowrap}
+.btn-orange-lg:hover{background:var(--orange2)}
+.btn-white-lg{padding:1rem 2.2rem;background:rgba(255,255,255,.12);color:#fff;border-radius:8px;font-size:.92rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.3);transition:background .2s;white-space:nowrap}
+.btn-white-lg:hover{background:rgba(255,255,255,.2)}
+
+/* ── ABOUT ── */
+.about-section{display:grid;grid-template-columns:1fr 1fr;min-height:520px}
+.about-left{background:var(--blue4);padding:6rem 4rem;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.about-bg-year{position:absolute;bottom:-2rem;right:-1rem;font-family:'Poppins',sans-serif;font-size:14rem;font-weight:800;color:rgba(255,255,255,.05);line-height:1;pointer-events:none}
+.about-since{display:inline-flex;align-items:center;gap:.5rem;background:var(--orange);color:#fff;padding:.5rem 1.1rem;border-radius:6px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.5rem;width:fit-content}
+.about-left .sec-title{color:#fff;margin-top:.5rem;margin-bottom:1.2rem}
+.about-desc{font-size:.92rem;color:rgba(255,255,255,.65);line-height:1.8;max-width:400px;margin-bottom:2rem}
+.about-right{background:#fff;padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--border)}
+.about-row{display:flex;gap:1.2rem;padding:1.5rem 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.about-row:first-child{padding-top:0}
+.about-row:last-child{border-bottom:none;padding-bottom:0}
+.about-icon{width:40px;height:40px;background:var(--blue3);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--blue);flex-shrink:0}
+.about-row h4{font-weight:700;font-size:.9rem;color:var(--ink);margin-bottom:.25rem}
+.about-row p{font-size:.8rem;color:var(--mid);line-height:1.6}
+
+/* ── TESTIMONIALS ── */
+.testimonials{background:var(--gray1);padding:6rem 3rem;border-top:1px solid var(--border)}
+.testimonials .container{max-width:1280px;margin:0 auto}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.test-card{background:#fff;border:1px solid var(--border);border-radius:var(--rad);padding:2rem;transition:box-shadow .2s}
+.test-card:hover{box-shadow:var(--shadow2)}
+.stars{color:#F59E0B;font-size:.9rem;margin-bottom:1rem;letter-spacing:.1rem}
+.test-text{font-size:.85rem;color:var(--mid);line-height:1.75;margin-bottom:1.5rem;font-style:italic}
+.test-author{display:flex;align-items:center;gap:.8rem;padding-top:1rem;border-top:1px solid var(--border)}
+.test-av{width:38px;height:38px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:.82rem;flex-shrink:0}
+.test-info strong{display:block;font-size:.82rem;font-weight:700;color:var(--ink)}
+.test-info span{font-size:.72rem;color:var(--light)}
+
+/* ── NEWSLETTER ── */
+.newsletter{background:var(--white);padding:4rem 3rem;border-top:1px solid var(--border)}
+.nl-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:3rem;flex-wrap:wrap}
+.nl-text h3{font-family:'Poppins',sans-serif;font-size:1.4rem;font-weight:700;color:var(--ink);margin-bottom:.3rem}
+.nl-text p{font-size:.85rem;color:var(--mid)}
+.nl-form{display:flex;gap:0;min-width:380px}
+.nl-input{flex:1;padding:.85rem 1.2rem;background:var(--gray1);border:1.5px solid var(--border);border-right:none;font-size:.9rem;color:var(--ink);outline:none;border-radius:8px 0 0 8px;font-family:'Inter',sans-serif}
+.nl-input:focus{border-color:var(--blue)}
+.nl-btn{padding:.85rem 1.6rem;background:var(--blue);color:#fff;border:none;font-family:'Poppins',sans-serif;font-size:.85rem;font-weight:700;cursor:pointer;border-radius:0 8px 8px 0;transition:background .2s;white-space:nowrap}
+.nl-btn:hover{background:var(--blue4)}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3.5rem;padding-bottom:3.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-logo-name{font-family:'Poppins',sans-serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.footer-logo-name span{color:var(--orange2)}
+.footer-desc{font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.7;margin-bottom:1.5rem}
+.footer-social{display:flex;gap:.6rem}
+.f-soc{width:34px;height:34px;border-radius:8px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.76rem;font-weight:700;text-decoration:none;transition:all .2s}
+.f-soc:hover{border-color:var(--orange2);color:var(--orange2)}
+.f-col h4{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:1.2rem}
+.f-links{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.f-links a{font-size:.83rem;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+.f-links a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;flex-wrap:wrap;gap:1rem}
+.f-copy{font-size:.72rem;color:rgba(255,255,255,.25)}
+
+/* ── FLOATING WHATSAPP ── */
+.float-wa{position:fixed;bottom:2rem;right:2rem;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:.6rem}
+.wa-btn{width:58px;height:58px;border-radius:50%;background:#25D366;box-shadow:0 4px 20px rgba(37,211,102,.4);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform .2s,box-shadow .2s;animation:waPulse 3s ease-in-out infinite}
+.wa-btn:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,211,102,.5)}
+.wa-btn svg{width:30px;height:30px}
+.wa-label{background:var(--ink);color:#fff;font-size:.72rem;font-weight:600;padding:.35rem .85rem;border-radius:20px;white-space:nowrap;opacity:0;transform:translateX(10px);transition:all .2s}
+.float-wa:hover .wa-label{opacity:1;transform:translateX(0)}
+
+/* ── LIGHTBOX ── */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;display:none;align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lb-close{position:absolute;top:1.5rem;right:2rem;color:#fff;font-size:2rem;cursor:pointer;background:none;border:none;opacity:.6;transition:opacity .2s}
+.lb-close:hover{opacity:1}
+.lb-content{max-width:80vw;max-height:80vh;display:flex;flex-direction:column;align-items:center;gap:1rem}
+.lb-content img{max-width:100%;max-height:70vh;object-fit:contain;border-radius:8px}
+.lb-placeholder{width:480px;height:360px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:rgba(255,255,255,.3);text-align:center;padding:2rem}
+.lb-placeholder p{font-size:.85rem;line-height:1.6}
+.lb-placeholder code{background:rgba(255,255,255,.08);padding:.2rem .5rem;border-radius:4px;font-size:.78rem}
+
+/* ── ANIMATIONS ── */
+@keyframes floatSlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 28px rgba(37,211,102,.7)}}
+@keyframes marqueeBrands{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span>📍 Sancaktepe, İstanbul</span>
+    <a href="tel:+905326944862">📞 0532 694 48 62</a>
+    <a href="mailto:info@bilgiteknik.com.tr">✉ info@bilgiteknik.com.tr</a>
+  </div>
+  <div class="topbar-right">
+    <span>Pzt–Cum 09:00–18:00 · Cumartesi 10:00–15:00</span>
+    <span class="topbar-badge">2000'den Bu Yana</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <rect x="3" y="8" width="16" height="11" rx="1.5" stroke="white" stroke-width="1.5"/>
+          <rect x="6" y="3" width="10" height="6" rx="1" stroke="white" stroke-width="1.5"/>
+          <rect x="6" y="14" width="10" height="3" rx=".5" fill="white" opacity=".4"/>
+        </svg>
+      </div>
+      <span class="logo-name">Bilgi<span>teknik</span></span>
+    </a>
+
+        <ul class="nav-menu">
+      <li class="nav-item"><a href="fotokopi-kiralama.html" class="nav-link">Fotokopi Kiralama</a></li>
+      <li class="nav-item"><a href="yazici-kiralama.html" class="nav-link">Yazıcı Kiralama</a></li>
+      <li class="nav-item">
+        <a href="urunler.html" class="nav-link">Ürünler
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
+
+        <div class="dropdown">
+          <a href="urunler.html#a4-sb-fotokopi" class="dd-header">Fotokopiler</a>
+          <a href="urunler.html#a4-sb-fotokopi">A4 Siyah Beyaz Fotokopi</a>
+          <a href="urunler.html#a4-renkli-fotokopi">A4 Renkli Fotokopi</a>
+          <a href="urunler.html#a3-sb-fotokopi">A3 Siyah Beyaz Fotokopi</a>
+          <a href="urunler.html#a3-renkli-fotokopi">A3 Renkli Fotokopi</a>
+          <a href="urunler.html#a4-sb-yazici" class="dd-header">Yazıcılar</a>
+          <a href="urunler.html#a4-sb-yazici">A4 Siyah Beyaz Yazıcı</a>
+          <a href="urunler.html#a4-renkli-yazici">A4 Renkli Yazıcı</a>
+          <a href="urunler.html#a3-yazici">A3 Yazıcılar</a>
+          <a href="urunler.html#diger" class="dd-header">Diğer Ürünler</a>
+          <a href="urunler.html#diger">Evrak İmhacıları</a>
+          <a href="urunler.html#diger">Para Sayma Makineleri</a>
+          <a href="urunler.html#diger">Toner &amp; Sarf Malzemeleri</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="tel:+905326944862" class="nav-phone">0532 694 48 62</a>
+      <a href="https://wa.me/905326944862" class="btn-whatsapp" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.11 1.523 5.833L.044 23.956l6.29-1.483A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.48-5.16-1.33l-.37-.21-3.73.88.9-3.64-.23-.38A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp
+      </a>
+      <a href="#iletisim" class="btn-teklif-nav">Teklif Al!</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════ HERO SLIDER ═══════ -->
+<div class="hero-slider" id="slider">
+
+  <!-- SLIDE 1 -->
+  <div class="slide active">
+    <div class="slide-left">
+      <div class="slide-eyebrow"><span></span>Kyocera Yetkili Satıcı &amp; Servis</div>
+      <h1 class="slide-title">Kopyalama &amp; Çıktıda<br><em>Profesyonel Çözümler</em></h1>
+      <p class="slide-sub">Japon teknolojisi, son model üretim, büyük ekran ve kolay kullanım. Satış, kiralama ve teknik servis tek çatı altında.</p>
+      <div class="slide-btns">
+        <a href="#kyocera" class="btn-slide-primary">Ürünleri İncele</a>
+        <a href="#iletisim" class="btn-slide-ghost">Teklif Al</a>
+      </div>
+      <div class="slide-badges">
+        <span class="s-badge">Ücretsiz Kurulum</span>
+        <span class="s-badge">7/24 Destek</span>
+        <span class="s-badge">2 Yıl Garanti</span>
+        <span class="s-badge">Aynı Gün Teslimat</span>
+      </div>
+    </div>
+    <div class="slide-right">
+      <div class="slide-img-box">
+        <div class="slide-img-area">
+          <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/ECOSYSMA4500X/square-540x540.ECOSYS-MA4500x.png" alt="Kyocera ECOSYS MA4500x" style="max-width:100%;max-height:100%;object-fit:contain;padding:1.5rem">
+        </div>
+        <div class="slide-img-info">
+          <div class="s-model">Kyocera ECOSYS</div>
+          <div class="s-name">MA4500x — A4 Mono MFP</div>
+          <div class="s-spec">45 spm · 1200 dpi · WiFi</div>
+          <div class="s-price-row"><span class="s-stok">Stokta</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2 -->
+  <div class="slide">
+    <div class="slide-left">
+      <div class="slide-eyebrow"><span></span>Kiralama Hizmeti</div>
+      <h1 class="slide-title">Fotokopi &amp; Yazıcı<br><em>Kiralama Fırsatı</em></h1>
+      <p class="slide-sub">Aylık sabit ücretle cihazı kiralayın, servis &amp; bakım bizden. Sürpriz maliyet yok — düşük sabit gider, yüksek verimlilik.</p>
+      <div class="slide-btns">
+        <a href="#kiralama" class="btn-slide-primary">Kiralama Planları</a>
+        <a href="#iletisim" class="btn-slide-ghost">Bilgi Al</a>
+      </div>
+      <div class="slide-badges">
+        <span class="s-badge">Sözleşmeli Fiyat</span>
+        <span class="s-badge">Periyodik Bakım</span>
+        <span class="s-badge">Orijinal Toner</span>
+      </div>
+    </div>
+    <div class="slide-right">
+      <div class="slide-img-box">
+        <div class="slide-img-area">
+          <img src="https://www.limeksteknoloji.com/wp-content/uploads/2019/09/im-c2000_1567582154cf92.jpg" alt="Ricoh IM C3000" style="max-width:100%;max-height:100%;object-fit:contain;padding:1rem">
+        </div>
+        <div class="slide-img-info">
+          <div class="s-model">Ricoh IM C3000</div>
+          <div class="s-name">A3/A4 Renkli MFP</div>
+          <div class="s-spec">30 spm · Dokunmatik · Faks</div>
+          <div class="s-price-row"><span class="s-price">Kiralık</span><span class="s-stok">Hemen Başla</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3 -->
+  <div class="slide">
+    <div class="slide-left">
+      <div class="slide-eyebrow"><span></span>Fellowes Yetkili Bayi</div>
+      <h1 class="slide-title">Belge Güvenliği<br><em>Evrak İmhacıları</em></h1>
+      <p class="slide-sub">DIN 66399 standartlarında çapraz kesim. Ofisinizdeki gizli belgeler güvende — Fellowes güvencesiyle.</p>
+      <div class="slide-btns">
+        <a href="#urunler" class="btn-slide-primary">İmhacıları Gör</a>
+        <a href="tel:+905326944862" class="btn-slide-ghost">Ara</a>
+      </div>
+      <div class="slide-badges">
+        <span class="s-badge">Sessiz Motor</span>
+        <span class="s-badge">18 Sayfa Kapasiteli</span>
+        <span class="s-badge">DIN P4</span>
+      </div>
+    </div>
+    <div class="slide-right">
+      <div class="slide-img-box">
+        <div class="slide-img-area">
+          <img src="https://i0.wp.com/fellowes-tr.com/wp-content/uploads/2019/02/99CI_Straight.jpg?fit=500%2C500&ssl=1" alt="Fellowes Powershred 99Ci" style="max-width:100%;max-height:100%;object-fit:contain;padding:1rem">
+        </div>
+        <div class="slide-img-info">
+          <div class="s-model">Fellowes</div>
+          <div class="s-name">Powershred 99Ci</div>
+          <div class="s-spec">18 sy · Çapraz Kesim · Sessiz</div>
+          <div class="s-price-row"><span class="s-stok">Kampanya</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slider-ctrl">
+    <div class="dots">
+      <button class="dot active" onclick="goTo(0)"></button>
+      <button class="dot" onclick="goTo(1)"></button>
+      <button class="dot" onclick="goTo(2)"></button>
+    </div>
+    <div class="arrows">
+      <button class="arr" onclick="prev()">&#8592;</button>
+      <button class="arr" onclick="next()">&#8594;</button>
+    </div>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="pf"></div></div>
+</div>
+
+<!-- BRANDS STRIP -->
+<div class="brands-strip">
+  <div class="brands-inner">
+    <span class="brand-item"><span class="brand-item-name">Kyocera</span></span><span class="brand-sep">·</span>
+    <span class="brand-item"><span class="brand-item-name">Ricoh</span></span><span class="brand-sep">·</span>
+    <span class="brand-item"><span class="brand-item-name">Canon</span></span><span class="brand-sep">·</span>
+    <span class="brand-item"><span class="brand-item-name">Fellowes</span></span><span class="brand-sep">·</span>
+    <span class="brand-item"><span class="brand-item-name">Safescan</span></span><span class="brand-sep">·</span>
+    <span class="brand-item"><span class="brand-item-name">Reiner</span></span><span class="brand-sep">·</span>
+    <span class="brand-item"><span class="brand-item-name">HP</span></span><span class="brand-sep">·</span>
+    <span class="brand-item"><span class="brand-item-name">Brother</span></span><span class="brand-sep">·</span>
+    <!-- duplicate -->
+    <span class="brand-item"><span class="brand-item-name">Kyocera</span></span><span class="brand-sep">·</span>
+    <span class="brand-item"><span class="brand-item-name">Ricoh</span></span><span class="brand-sep">·</span>
+    <span class="brand-item"><span class="brand-item-name">Canon</span></span><span class="brand-sep">·</span>
+    <span class="brand-item"><span class="brand-item-name">Fellowes</span></span><span class="brand-sep">·</span>
+    <span class="brand-item"><span class="brand-item-name">Safescan</span></span><span class="brand-sep">·</span>
+    <span class="brand-item"><span class="brand-item-name">Reiner</span></span><span class="brand-sep">·</span>
+    <span class="brand-item"><span class="brand-item-name">HP</span></span><span class="brand-sep">·</span>
+    <span class="brand-item"><span class="brand-item-name">Brother</span></span><span class="brand-sep">·</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="quick-stats">
+  <div class="qs-item"><div class="qs-num">25<sup>yıl</sup></div><div class="qs-label">Sektör Deneyimi (2000'den beri)</div></div>
+  <div class="qs-item"><div class="qs-num">20K<sup>+</sup></div><div class="qs-label">Mutlu Müşteri</div></div>
+  <div class="qs-item"><div class="qs-num">7K<sup>+</sup></div><div class="qs-label">Kurumsal Firma</div></div>
+  <div class="qs-item"><div class="qs-num">500<sup>+</sup></div><div class="qs-label">Ürün Çeşidi</div></div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section" id="kiralama">
+  <div class="container">
+    <div class="sec-header">
+      <div>
+        <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">Hizmetlerimiz</span></div>
+        <h2 class="sec-title">Büro Makinası Çözümleri</h2>
+        <p class="sec-sub">Satın alma, kiralama veya teknik servis — her ihtiyacınıza uygun çözüm sunuyoruz.</p>
+      </div>
+    </div>
+    <div class="service-tabs">
+      <button class="s-tab active">Tümü</button>
+      <button class="s-tab">Kiralama</button>
+      <button class="s-tab">Satış</button>
+      <button class="s-tab">Teknik Servis</button>
+    </div>
+    <div class="services-grid reveal">
+      <div class="svc-card">
+        <span class="svc-badge badge-kiralama">Kiralama</span>
+        <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="8" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><rect x="7" y="3" width="12" height="6" rx="1" stroke="currentColor" stroke-width="2"/><rect x="8" y="14" width="10" height="4" rx=".5" fill="currentColor" opacity=".3"/></svg></div>
+        <div class="svc-title">Fotokopi Makinesi Kiralama</div>
+        <div class="svc-desc">Aylık sabit ücretle siyah-beyaz veya renkli fotokopi makinesi kiralayın. Bakım, toner ve teknik destek dahil.</div>
+        <a href="#" class="svc-link">Fiyatları Gör</a>
+      </div>
+      <div class="svc-card">
+        <span class="svc-badge badge-kiralama">Kiralama</span>
+        <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="2" y="6" width="22" height="16" rx="2" stroke="currentColor" stroke-width="2"/><line x1="2" y1="12" x2="24" y2="12" stroke="currentColor" stroke-width="1.5" opacity=".3"/><rect x="6" y="15" width="6" height="4" rx=".5" fill="currentColor" opacity=".2"/></svg></div>
+        <div class="svc-title">Yazıcı Kiralama</div>
+        <div class="svc-desc">Lazer ve inkjet yazıcıları uygun aylık ödemelerle kiralayın. Kurulum ve kullanıcı eğitimi ücretsiz.</div>
+        <a href="#" class="svc-link">Planları İncele</a>
+      </div>
+      <div class="svc-card">
+        <span class="svc-badge badge-satis">Satış</span>
+        <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 6h18l-2 12H6L4 6z" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="22" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="22" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></div>
+        <div class="svc-title">Kurumsal Fotokopi Satışı</div>
+        <div class="svc-desc">Kyocera, Ricoh ve Canon gibi lider markalardan fotokopi makineleri. Peşin ve taksit seçenekleri mevcut.</div>
+        <a href="#kyocera" class="svc-link">Ürünlere Git</a>
+      </div>
+      <div class="svc-card">
+        <span class="svc-badge badge-satis">Satış</span>
+        <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="4" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><rect x="8" y="8" width="6" height="4" rx=".5" fill="currentColor" opacity=".2"/><rect x="16" y="8" width="4" height="4" rx=".5" fill="currentColor" opacity=".2"/><rect x="8" y="14" width="12" height="3" rx=".5" fill="currentColor" opacity=".15"/></svg></div>
+        <div class="svc-title">Toner &amp; Sarf Malzemeleri</div>
+        <div class="svc-desc">Orijinal ve muadil toner, kartuş ve sarf malzemeleri stoktan aynı gün teslimat ile kapınızda.</div>
+        <a href="#" class="svc-link">Toner Çeşitleri</a>
+      </div>
+      <div class="svc-card">
+        <span class="svc-badge badge-servis">Servis</span>
+        <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="10" stroke="currentColor" stroke-width="2"/><path d="M13 7v6l4 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div class="svc-title">7/24 Teknik Servis</div>
+        <div class="svc-desc">Üretici sertifikalı 12 kişilik ekibimiz İstanbul genelinde hızlı müdahale. Online destek de dahil.</div>
+        <a href="#iletisim" class="svc-link">Servis İste</a>
+      </div>
+      <div class="svc-card">
+        <span class="svc-badge badge-servis">Servis</span>
+        <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3L23 8v10L13 23 3 18V8L13 3z" stroke="currentColor" stroke-width="2"/><circle cx="13" cy="13" r="3" stroke="currentColor" stroke-width="1.5"/></svg></div>
+        <div class="svc-title">Periyodik Bakım Kontratı</div>
+        <div class="svc-desc">Yıllık bakım sözleşmesi ile cihazınızı en iyi performansta tutun. Parça ve işçilik garantisi dahil.</div>
+        <a href="#iletisim" class="svc-link">Teklif Al</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KYOCERA SECTION -->
+<section class="kyocera-section" id="kyocera">
+  <div class="container">
+    <div class="kyocera-header-row">
+      <div>
+        <div class="kyocera-brand-pill">
+          <span class="kyo-brand-name">KYOCERA</span>
+          <span class="kyo-brand-sub">Yetkili Satıcı &amp; Teknik Servis</span>
+        </div>
+        <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">Kyocera Fotokopi &amp; Yazıcı Modelleri</span></div>
+        <h2 class="sec-title">Kyocera Ürün Ailesi</h2>
+        <p class="sec-sub">Resimleri sonradan ekleyebilirsiniz — her kutucuğun içine <code>&lt;img&gt;</code> etiketi ile fotoğrafı yerleştirin.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.8rem;align-items:flex-end">
+        <div class="kyo-filter">
+          <button class="kyo-ftag active">Tümü</button>
+          <button class="kyo-ftag">Mono</button>
+          <button class="kyo-ftag">Renkli</button>
+          <button class="kyo-ftag">A3</button>
+          <button class="kyo-ftag">Kiralık</button>
+        </div>
+        <a href="#iletisim" style="padding:.7rem 1.6rem;background:#E8001D;color:#fff;border-radius:8px;font-size:.85rem;font-weight:700;text-decoration:none">Toplu Teklif Al</a>
+      </div>
+    </div>
+
+    <div class="kyo-grid reveal">
+
+      <!-- FEATURED — geniş kart -->
+      <div class="kyo-card featured" onclick="openLB('k1')">
+        <div class="kyo-img-zone" id="k1z">
+          <div class="kyo-ribbon">Öne Çıkan</div>
+          <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/ECOSYSMA4500X/square-540x540.ECOSYS-MA4500x.png" alt="Kyocera ECOSYS MA4500x">
+          <div class="kyo-ph-icon" style="display:none"><svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 24 L28 34 L40 20 L58 40" stroke="currentColor" stroke-width="1.5" opacity=".5"/><circle cx="20" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity=".5"/></svg></div>
+          <div class="kyo-ph-text" style="display:none">Fotoğraf<br>eklenecek</div>
+          <div class="kyo-hover-overlay"><div class="zoom-btn">🔍</div></div>
+        </div>
+        <div class="kyo-body">
+          <div class="kyo-model">ECOSYS MA4500x</div>
+          <div class="kyo-name">A4 Mono Çok Fonksiyonlu Yazıcı</div>
+          <div class="kyo-specs">
+            <div class="kyo-spec">45 sayfa/dak baskı hızı</div>
+            <div class="kyo-spec">1200 dpi çözünürlük</div>
+            <div class="kyo-spec">WiFi + USB + Ethernet</div>
+            <div class="kyo-spec">500 yaprak kağıt kapasitesi</div>
+            <div class="kyo-spec">Çift taraflı baskı (dupleks)</div>
+          </div>
+          <div class="kyo-foot">
+            <div class="kyo-price call">Fiyat için arayın</div>
+            <button class="btn-kyo-teklif" onclick="event.stopPropagation()">Teklif Al</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODEL 2 -->
+      <div class="kyo-card" onclick="openLB('k2')">
+        <div class="kyo-img-zone" id="k2z">
+          <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/ECOSYSMA6000IFX/MFP_MA6000ifx_left_comb01_01_updated.png" alt="Kyocera ECOSYS MA6000ifx">
+          <div class="kyo-ph-icon" style="display:none"><svg width="52" height="52" viewBox="0 0 64 64" fill="none"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 24 L28 34 L40 20 L58 40" stroke="currentColor" stroke-width="1.5" opacity=".5"/><circle cx="20" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity=".5"/></svg></div>
+          <div class="kyo-ph-text" style="display:none">Fotoğraf eklenecek</div>
+          <div class="kyo-hover-overlay"><div class="zoom-btn">🔍</div></div>
+        </div>
+        <div class="kyo-body">
+          <div class="kyo-model">ECOSYS MA6000ifx</div>
+          <div class="kyo-name">A4 Mono MFP — 60 spm</div>
+          <div class="kyo-specs">
+            <div class="kyo-spec">60 sayfa/dak</div>
+            <div class="kyo-spec">Faks + Tarayıcı dahil</div>
+            <div class="kyo-spec">Çift taraflı dupleks</div>
+          </div>
+          <div class="kyo-foot">
+            <div class="kyo-price call">Fiyat için arayın</div>
+            <button class="btn-kyo-teklif" onclick="event.stopPropagation()">Teklif Al</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODEL 3 -->
+      <div class="kyo-card" onclick="openLB('k3')">
+        <div class="kyo-img-zone" id="k3z">
+          <div class="kyo-ribbon gold">Renkli</div>
+          <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA2554CI/square-540x540-taskalfa-2554ci-main-image.png" alt="Kyocera TASKalfa 2554ci">
+          <div class="kyo-ph-icon" style="display:none"><svg width="52" height="52" viewBox="0 0 64 64" fill="none"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 24 L28 34 L40 20 L58 40" stroke="currentColor" stroke-width="1.5" opacity=".5"/><circle cx="20" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity=".5"/></svg></div>
+          <div class="kyo-ph-text" style="display:none">Fotoğraf eklenecek</div>
+          <div class="kyo-hover-overlay"><div class="zoom-btn">🔍</div></div>
+        </div>
+        <div class="kyo-body">
+          <div class="kyo-model">TASKalfa 2554ci</div>
+          <div class="kyo-name">A3 Renkli Çok Fonksiyonlu</div>
+          <div class="kyo-specs">
+            <div class="kyo-spec">25 renkli sayfa/dak</div>
+            <div class="kyo-spec">A3 / A4 format desteği</div>
+            <div class="kyo-spec">HyPAS uygulama desteği</div>
+          </div>
+          <div class="kyo-foot">
+            <div class="kyo-price call">Fiyat için arayın</div>
+            <button class="btn-kyo-teklif" onclick="event.stopPropagation()">Teklif Al</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODEL 4 -->
+      <div class="kyo-card" onclick="openLB('k4')">
+        <div class="kyo-img-zone" id="k4z">
+          <div class="kyo-ribbon navy">Kurumsal</div>
+          <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA5004I/square-540x540-TASKalfa-5004i.png" alt="Kyocera TASKalfa 5004i">
+          <div class="kyo-ph-icon" style="display:none"><svg width="52" height="52" viewBox="0 0 64 64" fill="none"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 24 L28 34 L40 20 L58 40" stroke="currentColor" stroke-width="1.5" opacity=".5"/><circle cx="20" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity=".5"/></svg></div>
+          <div class="kyo-ph-text" style="display:none">Fotoğraf eklenecek</div>
+          <div class="kyo-hover-overlay"><div class="zoom-btn">🔍</div></div>
+        </div>
+        <div class="kyo-body">
+          <div class="kyo-model">TASKalfa 5004i</div>
+          <div class="kyo-name">A3 Mono Kurumsal MFP</div>
+          <div class="kyo-specs">
+            <div class="kyo-spec">50 sayfa/dak mono</div>
+            <div class="kyo-spec">A3 tarama kapasitesi</div>
+            <div class="kyo-spec">Gelişmiş ağ güvenliği</div>
+          </div>
+          <div class="kyo-foot">
+            <div class="kyo-price call">Fiyat için arayın</div>
+            <button class="btn-kyo-teklif" onclick="event.stopPropagation()">Teklif Al</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODEL 5 -->
+      <div class="kyo-card" onclick="openLB('k5')">
+        <div class="kyo-img-zone" id="k5z">
+          <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/printers/ECOSYSPA2100CX/mfp-ecosys-pa2100cx_540x540.png" alt="Kyocera ECOSYS PA2100cx">
+          <div class="kyo-ph-icon" style="display:none"><svg width="52" height="52" viewBox="0 0 64 64" fill="none"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 24 L28 34 L40 20 L58 40" stroke="currentColor" stroke-width="1.5" opacity=".5"/><circle cx="20" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity=".5"/></svg></div>
+          <div class="kyo-ph-text" style="display:none">Fotoğraf eklenecek</div>
+          <div class="kyo-hover-overlay"><div class="zoom-btn">🔍</div></div>
+        </div>
+        <div class="kyo-body">
+          <div class="kyo-model">ECOSYS PA2100cx</div>
+          <div class="kyo-name">A4 Renkli Lazer Yazıcı</div>
+          <div class="kyo-specs">
+            <div class="kyo-spec">21 renkli sayfa/dak</div>
+            <div class="kyo-spec">WiFi + mobil baskı</div>
+            <div class="kyo-spec">Ekonomik toner tüketimi</div>
+          </div>
+          <div class="kyo-foot">
+            <div class="kyo-price call">Fiyat için arayın</div>
+            <button class="btn-kyo-teklif" onclick="event.stopPropagation()">Teklif Al</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODEL 6 -->
+      <div class="kyo-card" onclick="openLB('k6')">
+        <div class="kyo-img-zone" id="k6z">
+          <div class="kyo-ribbon">Üretim</div>
+          <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA7054CI/square-540x540-TASKalfa_7054ci.png" alt="Kyocera TASKalfa 7054ci">
+          <div class="kyo-ph-icon" style="display:none"><svg width="52" height="52" viewBox="0 0 64 64" fill="none"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 24 L28 34 L40 20 L58 40" stroke="currentColor" stroke-width="1.5" opacity=".5"/><circle cx="20" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity=".5"/></svg></div>
+          <div class="kyo-ph-text" style="display:none">Fotoğraf eklenecek</div>
+          <div class="kyo-hover-overlay"><div class="zoom-btn">🔍</div></div>
+        </div>
+        <div class="kyo-body">
+          <div class="kyo-model">TASKalfa 7054ci</div>
+          <div class="kyo-name">A3 Renkli Üretim Sistemi</div>
+          <div class="kyo-specs">
+            <div class="kyo-spec">70 renkli sayfa/dak</div>
+            <div class="kyo-spec">Tam üretim kapasiteli</div>
+            <div class="kyo-spec">Gelişmiş sonlandırıcı</div>
+          </div>
+          <div class="kyo-foot">
+            <div class="kyo-price call">Fiyat için arayın</div>
+            <button class="btn-kyo-teklif" onclick="event.stopPropagation()">Teklif Al</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODEL 7 -->
+      <div class="kyo-card" onclick="openLB('k7')">
+        <div class="kyo-img-zone" id="k7z">
+          <img src="https://www.officeequipments.ae/wp-content/uploads/2024/01/Untitled-design-53.jpg" alt="Kyocera ECOSYS M2040dn">
+          <div class="kyo-ph-icon" style="display:none"><svg width="52" height="52" viewBox="0 0 64 64" fill="none"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 24 L28 34 L40 20 L58 40" stroke="currentColor" stroke-width="1.5" opacity=".5"/><circle cx="20" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity=".5"/></svg></div>
+          <div class="kyo-ph-text" style="display:none">Fotoğraf eklenecek</div>
+          <div class="kyo-hover-overlay"><div class="zoom-btn">🔍</div></div>
+        </div>
+        <div class="kyo-body">
+          <div class="kyo-model">ECOSYS M2040dn</div>
+          <div class="kyo-name">A4 Mono MFP — Giriş Seviye</div>
+          <div class="kyo-specs">
+            <div class="kyo-spec">40 sayfa/dak</div>
+            <div class="kyo-spec">Ağ bağlantısı</div>
+            <div class="kyo-spec">Düşük toplam sahip olma maliyeti</div>
+          </div>
+          <div class="kyo-foot">
+            <div class="kyo-price call">Fiyat için arayın</div>
+            <button class="btn-kyo-teklif" onclick="event.stopPropagation()">Teklif Al</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODEL 8 -->
+      <div class="kyo-card" onclick="openLB('k8')">
+        <div class="kyo-img-zone" id="k8z">
+          <div class="kyo-ribbon gold">Renkli</div>
+          <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA4054CI/square-540x540-TASKalfa_4054ci.png" alt="Kyocera TASKalfa 4054ci">
+          <div class="kyo-ph-icon" style="display:none"><svg width="52" height="52" viewBox="0 0 64 64" fill="none"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 24 L28 34 L40 20 L58 40" stroke="currentColor" stroke-width="1.5" opacity=".5"/><circle cx="20" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity=".5"/></svg></div>
+          <div class="kyo-ph-text" style="display:none">Fotoğraf eklenecek</div>
+          <div class="kyo-hover-overlay"><div class="zoom-btn">🔍</div></div>
+        </div>
+        <div class="kyo-body">
+          <div class="kyo-model">TASKalfa 4054ci</div>
+          <div class="kyo-name">A3 Renkli MFP — Orta Segment</div>
+          <div class="kyo-specs">
+            <div class="kyo-spec">40 renkli sayfa/dak</div>
+            <div class="kyo-spec">Gelişmiş güvenlik özellikleri</div>
+            <div class="kyo-spec">Bulut entegrasyon desteği</div>
+          </div>
+          <div class="kyo-foot">
+            <div class="kyo-price call">Fiyat için arayın</div>
+            <button class="btn-kyo-teklif" onclick="event.stopPropagation()">Teklif Al</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /kyo-grid -->
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section" id="neden">
+  <div class="container">
+    <div class="sec-header">
+      <div>
+        <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">Neden Bilgiteknik?</span></div>
+        <h2 class="sec-title">25 Yıldır Yanınızdayız</h2>
+        <p class="sec-sub">2000 yılında kurulan Bilgiteknik, güven ve kaliteyi ön planda tutarak büyümeye devam ediyor.</p>
+      </div>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card"><div class="why-num">01</div><div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2l7 4v7l-7 9-7-9V6l7-4z" stroke="currentColor" stroke-width="1.5"/></svg></div><div class="why-title">Yetkili Satıcı &amp; Servis</div><div class="why-desc">Kyocera, Ricoh, Canon, Fellowes ve Safescan yetkili bayi ve teknik servis sertifikalarına sahibiz.</div></div>
+      <div class="why-card"><div class="why-num">02</div><div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M12 6v6l4 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><div class="why-title">7/24 Teknik Destek</div><div class="why-desc">Haftanın 7 günü, günün 24 saati online ve saha teknik destek. Ortalama müdahale süresi 2 saat.</div></div>
+      <div class="why-card"><div class="why-num">03</div><div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 12l4 4L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="why-title">2 Yıl Tam Garanti</div><div class="why-desc">Tüm ürünlerde parça ve işçilik dahil 2 yıl garanti. Sürpriz maliyet yok, şeffaf sözleşme.</div></div>
+      <div class="why-card"><div class="why-num">04</div><div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 8h14l-1.5 9H6.5L5 8z" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="20" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="20" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></div><div class="why-title">Hızlı Teslimat</div><div class="why-desc">İstanbul içi aynı gün teslimat ve kurulum, Türkiye genelinde 1-3 iş günü içinde kapınızda.</div></div>
+      <div class="why-card"><div class="why-num">05</div><div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M16 7V5a4 4 0 00-8 0v2" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="14" r="2" fill="currentColor" opacity=".4"/></svg></div><div class="why-title">Ücretsiz Kurulum</div><div class="why-desc">Satın aldığınız veya kiraladığınız her cihaz için yerinde ücretsiz kurulum ve kullanıcı eğitimi.</div></div>
+      <div class="why-card"><div class="why-num">06</div><div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="7" rx="9" ry="4" stroke="currentColor" stroke-width="1.5"/><path d="M3 7v10c0 2.2 4 4 9 4s9-1.8 9-4V7" stroke="currentColor" stroke-width="1.5"/></svg></div><div class="why-title">Orijinal Sarf Malzeme</div><div class="why-desc">Toner, kartuş ve tüm sarf malzemeleri orijinal ve stokta. Uyumlu ürünler de mevcuttur.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RENTAL CTA BANNER -->
+<div class="rental-banner reveal" id="kiralama2">
+  <div class="rental-inner">
+    <div>
+      <h2 class="rental-title">Satın Almak Yerine<br>Kiralayın — Kâr Edin!</h2>
+      <p class="rental-sub">İlk siparişinizde tanışma indirimi. Aylık sabit ödemelerle premium cihazlar — bakım, toner ve servis dahil.</p>
+    </div>
+    <div class="rental-btns">
+      <a href="#iletisim" class="btn-orange-lg">Hemen Teklif Al!</a>
+      <a href="https://wa.me/905326944862" class="btn-white-lg" target="_blank">WhatsApp ile Sor</a>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section" id="hakkimizda">
+  <div class="about-left">
+    <div class="about-bg-year">25</div>
+    <div class="about-since">★ 2000'den Beri</div>
+    <div class="sec-eyebrow"><div class="sec-line" style="background:rgba(255,255,255,.3)"></div><span class="sec-tag" style="color:rgba(255,255,255,.5)">Hakkımızda</span></div>
+    <h2 class="sec-title">Bilgiteknik<br>Büro Makinaları</h2>
+    <p class="about-desc">2000 yılında kurulan Bilgiteknik, büro makinaları alanında çeyrek asrı aşkın deneyimiyle İstanbul başta olmak üzere Türkiye genelinde kurumsal ve bireysel müşterilere güvenilir çözümler sunmaktadır.</p>
+    <a href="#iletisim" class="btn-orange-lg" style="width:fit-content">Teklif Alın</a>
+  </div>
+  <div class="about-right">
+    <div class="about-row"><div class="about-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L17 6v8L10 18 3 14V6L10 2z" stroke="currentColor" stroke-width="1.5"/></svg></div><div><h4>Yetkili Servis Ağı</h4><p>Kyocera, Ricoh, Canon, Fellowes ve Safescan yetkili satıcı ve teknik servis sertifikalarına sahibiz.</p></div></div>
+    <div class="about-row"><div class="about-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M10 5v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><div><h4>Eğitimli Teknik Ekip</h4><p>Üretici sertifikalı 12 kişilik teknik servis ekibimiz İstanbul genelinde aktif olarak hizmet vermektedir.</p></div></div>
+    <div class="about-row"><div class="about-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="6" width="16" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M6 6V4a4 4 0 018 0v2" stroke="currentColor" stroke-width="1.5"/></svg></div><div><h4>Kurumsal Kiralama</h4><p>Büyük kurumlar için operasyonel kiralama ve yıllık bakım kontratlı çözümler sunuyoruz.</p></div></div>
+    <div class="about-row"><div class="about-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 6h14l-1 10H4L3 6z" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="18" r="1" stroke="currentColor" stroke-width="1.5"/><circle cx="14" cy="18" r="1" stroke="currentColor" stroke-width="1.5"/></svg></div><div><h4>Hızlı Teslimat</h4><p>İstanbul içi aynı gün, Türkiye genelinde 1–3 iş günü teslimat ve kurulum garantisi.</p></div></div>
+    <div class="about-row"><div class="about-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><ellipse cx="10" cy="6" rx="7" ry="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 6v8c0 1.66 3.13 3 7 3s7-1.34 7-3V6" stroke="currentColor" stroke-width="1.5"/></svg></div><div><h4>Orijinal Sarf Malzemeleri</h4><p>Toner, kartuş ve sarf malzemeleri orijinal ve stokta hazır olarak temin edilebilir.</p></div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">Müşteri Görüşleri</span></div>
+    <h2 class="sec-title" style="margin-top:.5rem">Memnun Müşterilerimiz</h2>
+    <div class="test-grid reveal">
+      <div class="test-card"><div class="stars">★★★★★</div><p class="test-text">Kyocera yazıcılarımızı Bilgiteknik'ten aldık. Fiyat, kurulum ve sonrasındaki destek hizmetleri mükemmeldi. Şiddetle tavsiye ediyorum.</p><div class="test-author"><div class="test-av">AY</div><div class="test-info"><strong>Ahmet Yılmaz</strong><span>Genel Müdür · LogiTrans A.Ş.</span></div></div></div>
+      <div class="test-card"><div class="stars">★★★★★</div><p class="test-text">Para sayma makinamız arızalandığında aynı gün müdahale ettiler. Bu hız ve ilgi beklentimizin çok üzerindeydi. Teşekkürler Bilgiteknik.</p><div class="test-author"><div class="test-av">SÇ</div><div class="test-info"><strong>Selin Çelik</strong><span>Muhasebe Müdürü · Çelik Market</span></div></div></div>
+      <div class="test-card"><div class="stars">★★★★★</div><p class="test-text">Tüm büro makinalarımızı buradan aldık. Tek noktadan çözüm arayan herkes için ideal. 25 yıllık tecrübe gerçekten hissediliyor.</p><div class="test-author"><div class="test-av">MK</div><div class="test-info"><strong>Murat Kaya</strong><span>Kurucu · Nova Hukuk Bürosu</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER / CONTACT -->
+<div class="newsletter" id="iletisim">
+  <div class="nl-inner">
+    <div class="nl-text"><h3>Kampanyalardan Haberdar Olun</h3><p>Yeni ürünler ve özel indirimler için bültenimize abone olun.</p></div>
+    <div class="nl-form"><input type="email" class="nl-input" placeholder="e-posta adresiniz"><button class="nl-btn">Abone Ol</button></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-name">Bilgi<span>teknik</span></div>
+        <p class="footer-desc">2000 yılından bu yana büro makinaları alanında faaliyet gösteren, müşteri odaklı yaklaşımıyla fark yaratan güvenilir iş ortağınız.</p>
+        <div class="footer-social"><a href="#" class="f-soc">in</a><a href="#" class="f-soc">tw</a><a href="#" class="f-soc">ig</a><a href="#" class="f-soc">yt</a></div>
+      </div>
+      <div><h4>Ürünler</h4><ul class="f-links"><li><a href="#">Kyocera Yazıcılar</a></li><li><a href="#">Fotokopi Kiralama</a></li><li><a href="#">Tarayıcılar</a></li><li><a href="#">Evrak İmhacıları</a></li><li><a href="#">Para Sayma</a></li><li><a href="#">Toner &amp; Sarf</a></li></ul></div>
+      <div><h4>Hizmetler</h4><ul class="f-links"><li><a href="#">Teknik Servis</a></li><li><a href="#">Periyodik Bakım</a></li><li><a href="#">Kurumsal Kiralama</a></li><li><a href="#">Proje Danışmanlığı</a></li><li><a href="#">Eğitim &amp; Kurulum</a></li></ul></div>
+      <div><h4>İletişim</h4><ul class="f-links"><li><a href="#">Sancaktepe, İstanbul</a></li><li><a href="tel:+905326944862">0532 694 48 62</a></li><li><a href="https://wa.me/905326944862">WhatsApp Hattı</a></li><li><a href="mailto:info@bilgiteknik.com.tr">info@bilgiteknik.com.tr</a></li><li><a href="#">Pzt–Cum 09–18, Cmt 10–15</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span class="f-copy">© 2025 Bilgiteknik Büro Makinaları — 2000'den Bu Yana Hizmetinizdeyiz</span>
+      <span class="f-copy">Gizlilik Politikası · Kullanım Koşulları</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<div class="float-wa">
+  <span class="wa-label">WhatsApp ile Yazın</span>
+  <a href="https://wa.me/905326944862?text=Merhaba, büro makinaları için bilgi almak istiyorum." target="_blank" class="wa-btn">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.11 1.523 5.833L.044 23.956l6.29-1.483A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.48-5.16-1.33l-.37-.21-3.73.88.9-3.64-.23-.38A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+  </a>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lb" onclick="closeLB(event)">
+  <button class="lb-close" onclick="closeLB()">✕</button>
+  <div class="lb-content" id="lbC">
+    <div class="lb-placeholder">
+      <svg width="72" height="72" viewBox="0 0 72 72" fill="none" style="color:rgba(255,255,255,.2)"><rect x="4" y="12" width="64" height="48" rx="4" stroke="currentColor" stroke-width="2"/><path d="M4 40 L20 26 L32 38 L46 22 L68 44" stroke="currentColor" stroke-width="2"/><circle cx="22" cy="24" r="6" stroke="currentColor" stroke-width="2"/></svg>
+      <p>Bu modele ait fotoğraf henüz eklenmemiş.<br>HTML içindeki <code>.kyo-img-zone</code> kutusuna<br><code>&lt;img src="dosya.jpg"&gt;</code> ekleyin.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── SLIDER ── */
+let cur=0,tot=3,tmr,ptmr;
+const slides=document.querySelectorAll('.slide'),dots=document.querySelectorAll('.dot'),pf=document.getElementById('pf');
+function goTo(n){slides[cur].classList.remove('active');dots[cur].classList.remove('active');cur=(n+tot)%tot;slides[cur].classList.add('active');dots[cur].classList.add('active');resetProg()}
+function next(){goTo(cur+1)}function prev(){goTo(cur-1)}
+function resetProg(){pf.classList.remove('go');pf.style.width='0';clearTimeout(tmr);clearTimeout(ptmr);ptmr=setTimeout(()=>{pf.classList.add('go')},50);tmr=setTimeout(next,5000)}
+resetProg();
+
+/* ── SCROLL REVEAL ── */
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+/* ── SERVICE TABS ── */
+document.querySelectorAll('.s-tab').forEach(b=>b.addEventListener('click',function(){document.querySelectorAll('.s-tab').forEach(x=>x.classList.remove('active'));this.classList.add('active')}));
+
+/* ── KYOCERA FILTER ── */
+document.querySelectorAll('.kyo-ftag').forEach(b=>b.addEventListener('click',function(){document.querySelectorAll('.kyo-ftag').forEach(x=>x.classList.remove('active'));this.classList.add('active')}));
+
+/* ── TEKLIF BTNS ── */
+document.querySelectorAll('.btn-kyo-teklif').forEach(b=>b.addEventListener('click',function(){this.textContent='İstek Alındı ✓';this.style.background='#16a34a';setTimeout(()=>{this.textContent='Teklif Al';this.style.background=''},2500)}));
+
+/* ── LIGHTBOX ── */
+function openLB(id){
+  const z=document.getElementById(id+'z'),img=z&&z.querySelector('img');
+  const c=document.getElementById('lbC');
+  if(img){c.innerHTML=`<img src="${img.src}" alt="${img.alt}">`}
+  else{c.innerHTML=`<div class="lb-placeholder"><svg width="72" height="72" viewBox="0 0 72 72" fill="none" style="color:rgba(255,255,255,.2)"><rect x="4" y="12" width="64" height="48" rx="4" stroke="currentColor" stroke-width="2"/><path d="M4 40 L20 26 L32 38 L46 22 L68 44" stroke="currentColor" stroke-width="2"/><circle cx="22" cy="24" r="6" stroke="currentColor" stroke-width="2"/></svg><p>Fotoğraf henüz eklenmemiş.<br><code>.kyo-img-zone</code> içine <code>&lt;img&gt;</code> ekleyin.</p></div>`}
+  document.getElementById('lb').classList.add('open');
+}
+function closeLB(e){if(!e||e.target===document.getElementById('lb')||e.target.classList.contains('lb-close'))document.getElementById('lb').classList.remove('open')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('lb').classList.remove('open')});
+
+/* ── NEWSLETTER ── */
+document.querySelector('.nl-btn').addEventListener('click',function(){const i=document.querySelector('.nl-input');if(i.value){this.textContent='Kaydedildi ✓';this.style.background='#16a34a';i.value='';setTimeout(()=>{this.textContent='Abone Ol';this.style.background=''},3000)}});
+</script>
+</body>
+</html>

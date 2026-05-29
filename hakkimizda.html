@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hakkımızda | Bilgiteknik Büro Makinaları</title>
+<meta name="description" content="2000 yılından bu yana büro makinaları alanında İstanbul'un güvenilir iş ortağı. Fotokopi kiralama, yazıcı kiralama ve teknik servis hizmetleri.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1565C0;--blue2:#1976D2;--blue3:#E3F0FF;--blue4:#0D47A1;
+  --orange:#F57C00;--orange2:#FF9800;--orange-pale:#FFF3E0;
+  --white:#FFFFFF;--gray1:#F8F9FC;--gray2:#F0F2F7;--gray3:#E4E8F0;
+  --gray4:#B0BBC8;--ink:#1A2332;--mid:#5A6A80;--light:#8C9BAD;
+  --border:#DCE3EE;--shadow:0 2px 16px rgba(21,101,192,.07);
+  --shadow2:0 8px 40px rgba(21,101,192,.13);--rad:12px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:'Inter',sans-serif;font-weight:400;overflow-x:hidden}
+
+/* ── TOP BAR ── */
+.topbar{background:var(--blue4);color:rgba(255,255,255,.85);font-size:.75rem;padding:.45rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.topbar a{color:rgba(255,255,255,.85);text-decoration:none}.topbar a:hover{color:#fff}
+.topbar-left{display:flex;gap:2rem;align-items:center}
+.topbar-right{display:flex;gap:1.5rem;align-items:center}
+.topbar-badge{background:var(--orange);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.08em;padding:.2rem .6rem;border-radius:3px;text-transform:uppercase}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:800;background:#fff;border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 3rem;height:70px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nav-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex-shrink:0}
+.logo-icon{width:40px;height:40px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;position:relative}
+.logo-icon::after{content:'';position:absolute;width:12px;height:12px;background:var(--orange);border-radius:50%;top:-4px;right:-4px}
+.logo-icon svg{color:#fff}
+.logo-name{font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:700;color:var(--ink)}
+.logo-name span{color:var(--blue)}
+.nav-menu{display:flex;gap:0;list-style:none}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:.35rem;padding:.5rem 1.1rem;font-size:.84rem;font-weight:500;color:var(--mid);text-decoration:none;white-space:nowrap;transition:color .2s;cursor:pointer;height:70px}
+.nav-link:hover,.nav-link.active{color:var(--blue)}
+.nav-link svg{width:12px;height:12px;transition:transform .2s}
+.nav-item:hover .nav-link svg{transform:rotate(180deg)}
+.dropdown{position:absolute;top:100%;left:0;min-width:220px;background:#fff;border:1px solid var(--border);border-radius:0 0 var(--rad) var(--rad);box-shadow:var(--shadow2);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .2s;z-index:100}
+.nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown a{display:block;padding:.7rem 1.2rem;font-size:.82rem;color:var(--mid);text-decoration:none;transition:background .15s,color .15s;border-bottom:1px solid var(--gray3)}
+.dropdown a:last-child{border-bottom:none;border-radius:0 0 var(--rad) var(--rad)}
+.dropdown a:hover{background:var(--blue3);color:var(--blue)}
+.dropdown a.dd-header{font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--light);pointer-events:none;background:var(--gray1);padding:.45rem 1.2rem;cursor:default}
+.nav-right{display:flex;align-items:center;gap:.8rem;flex-shrink:0}
+.nav-phone{font-size:.82rem;font-weight:600;color:var(--ink);text-decoration:none}
+.nav-phone:hover{color:var(--blue)}
+.btn-whatsapp{display:flex;align-items:center;gap:.4rem;padding:.55rem 1.1rem;background:#25D366;color:#fff;border-radius:6px;font-size:.78rem;font-weight:600;text-decoration:none;transition:background .2s}
+.btn-whatsapp:hover{background:#1ebe5d}
+.btn-teklif-nav{padding:.55rem 1.4rem;background:var(--orange);color:#fff;border-radius:6px;font-size:.82rem;font-weight:700;text-decoration:none;transition:background .2s;white-space:nowrap}
+.btn-teklif-nav:hover{background:var(--orange2)}
+
+/* ── BREADCRUMB ── */
+.breadcrumb{background:var(--gray1);border-bottom:1px solid var(--border);padding:.8rem 3rem}
+.breadcrumb-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:var(--light)}
+.breadcrumb a{color:var(--mid);text-decoration:none}.breadcrumb a:hover{color:var(--blue)}
+.breadcrumb span{color:var(--light)}
+
+/* ── HERO ── */
+.about-hero{background:linear-gradient(135deg,var(--blue4) 0%,var(--blue2) 60%,#1a3a7a 100%);padding:5rem 3rem 4rem;position:relative;overflow:hidden}
+.about-hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.about-hero::after{content:'';position:absolute;right:-120px;top:-80px;width:500px;height:500px;background:rgba(255,255,255,.03);border-radius:50%;pointer-events:none}
+.hero-inner{max-width:1280px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:.35rem 1rem;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:1.5rem}
+.hero-eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--orange2);animation:pulse 2s infinite}
+.about-hero h1{font-family:'Poppins',sans-serif;font-size:clamp(2.2rem,4vw,3.4rem);font-weight:800;color:#fff;line-height:1.1;margin-bottom:1.2rem}
+.about-hero h1 em{font-style:normal;color:var(--orange2)}
+.about-hero-sub{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.75;max-width:560px;margin-bottom:2rem}
+.hero-cta-row{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn-hero-primary{padding:.85rem 2rem;background:var(--orange);color:#fff;border-radius:8px;font-size:.9rem;font-weight:700;text-decoration:none;transition:all .2s}
+.btn-hero-primary:hover{background:var(--orange2);transform:translateY(-2px)}
+.btn-hero-ghost{padding:.85rem 2rem;background:rgba(255,255,255,.1);color:#fff;border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.3);transition:background .2s}
+.btn-hero-ghost:hover{background:rgba(255,255,255,.2)}
+.hero-badge-strip{display:flex;gap:1.2rem;margin-top:2rem;flex-wrap:wrap}
+.h-badge{display:flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:600;color:rgba(255,255,255,.7)}
+.h-badge::before{content:'✓';color:var(--orange2);font-weight:800}
+
+.hero-stats-box{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.12);border-radius:16px;overflow:hidden;min-width:280px;flex-shrink:0}
+.h-stat{background:rgba(255,255,255,.06);padding:1.5rem 1.8rem;text-align:center;backdrop-filter:blur(4px)}
+.h-stat-num{font-family:'Poppins',sans-serif;font-size:2rem;font-weight:800;color:#fff;display:block;line-height:1}
+.h-stat-num sup{font-size:1rem;vertical-align:super}
+.h-stat-label{font-size:.72rem;color:rgba(255,255,255,.6);margin-top:.3rem;display:block}
+
+/* ── SECTIONS COMMON ── */
+.section{padding:5rem 3rem}
+.section-inner{max-width:1280px;margin:0 auto}
+.sec-eyebrow{display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem}
+.sec-line{width:2rem;height:2px;background:var(--orange);border-radius:2px}
+.sec-tag{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange)}
+.sec-title{font-family:'Poppins',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--ink);line-height:1.2;margin-bottom:1rem}
+.sec-sub{font-size:.95rem;color:var(--mid);line-height:1.75;max-width:620px}
+
+/* ── BİZ KİMİZ ── */
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:3.5rem}
+.who-text p{font-size:.95rem;color:var(--mid);line-height:1.85;margin-bottom:1.2rem}
+.who-text p:last-child{margin-bottom:0}
+.who-highlight{background:var(--blue3);border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1.8rem 0;font-size:.95rem;color:var(--blue4);font-weight:500;line-height:1.7}
+.who-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem}
+.who-tag{background:var(--gray2);color:var(--mid);font-size:.75rem;font-weight:600;padding:.4rem .9rem;border-radius:20px;border:1px solid var(--border)}
+
+.who-visual{position:relative}
+.who-card-wrap{position:relative;padding-top:1.2rem}.who-card{background:var(--blue4);border-radius:20px;padding:2.5rem;color:#fff;position:relative;overflow:hidden}
+.who-card::before{content:'';position:absolute;right:-40px;bottom:-40px;width:200px;height:200px;background:rgba(255,255,255,.04);border-radius:50%}
+.who-card-title{font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
+.who-card-sub{font-size:.82rem;color:rgba(255,255,255,.65);margin-bottom:1.8rem;line-height:1.6}
+.who-card-rows{display:flex;flex-direction:column;gap:.9rem}
+.who-row{display:flex;align-items:center;gap:.9rem}
+.who-row-icon{width:38px;height:38px;background:rgba(255,255,255,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.who-row-icon svg{color:var(--orange2)}
+.who-row-text strong{display:block;font-size:.82rem;font-weight:600;color:#fff}
+.who-row-text span{font-size:.75rem;color:rgba(255,255,255,.55)}
+.who-float-badge{position:absolute;top:0;right:2rem;background:var(--orange);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.06em;padding:.4rem 1rem;border-radius:20px;box-shadow:0 4px 12px rgba(245,124,0,.4);z-index:10}
+
+/* ── SAYILARLA BİLGİTEKNİK ── */
+.stats-section{background:var(--blue4);padding:4.5rem 3rem}
+.stats-inner{max-width:1280px;margin:0 auto}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,.08);border-radius:16px;overflow:hidden;margin-top:3rem}
+.stat-card{background:rgba(255,255,255,.04);padding:2.5rem 2rem;text-align:center;transition:background .2s}
+.stat-card:hover{background:rgba(255,255,255,.08)}
+.stat-icon{width:50px;height:50px;background:rgba(255,255,255,.08);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem}
+.stat-icon svg{color:var(--orange2)}
+.stat-num{font-family:'Poppins',sans-serif;font-size:2.6rem;font-weight:800;color:#fff;display:block;line-height:1}
+.stat-num sup{font-size:1.2rem;vertical-align:super}
+.stat-num small{font-size:1.4rem}
+.stat-label{font-size:.8rem;color:rgba(255,255,255,.55);margin-top:.4rem;display:block;line-height:1.5}
+.stats-eyebrow .sec-tag{color:rgba(255,255,255,.6)}
+.stats-eyebrow .sec-line{background:rgba(255,255,255,.3)}
+.stats-title{font-family:'Poppins',sans-serif;font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:800;color:#fff}
+
+/* ── MİSYON & VİZYON ── */
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+.mv-card{border-radius:16px;padding:2.5rem;position:relative;overflow:hidden}
+.mv-card.mission{background:var(--blue3);border:1px solid rgba(21,101,192,.15)}
+.mv-card.vision{background:var(--orange-pale);border:1px solid rgba(245,124,0,.15)}
+.mv-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;font-size:1.6rem}
+.mv-card.mission .mv-icon{background:rgba(21,101,192,.12)}
+.mv-card.vision .mv-icon{background:rgba(245,124,0,.12)}
+.mv-card h3{font-family:'Poppins',sans-serif;font-size:1.25rem;font-weight:700;margin-bottom:.8rem}
+.mv-card.mission h3{color:var(--blue4)}
+.mv-card.vision h3{color:#b45309}
+.mv-card p{font-size:.9rem;line-height:1.8;color:var(--mid)}
+.mv-card-deco{position:absolute;right:-20px;bottom:-20px;width:100px;height:100px;border-radius:50%;opacity:.06}
+.mv-card.mission .mv-card-deco{background:var(--blue)}
+.mv-card.vision .mv-card-deco{background:var(--orange)}
+
+/* ── HİZMETLER ── */
+.services-section{background:var(--gray1)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.svc-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:2rem;transition:all .25s;position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--blue2));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.svc-card:hover{box-shadow:var(--shadow2);transform:translateY(-4px);border-color:transparent}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-icon{width:54px;height:54px;background:var(--blue3);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem}
+.svc-icon svg{color:var(--blue)}
+.svc-card h3{font-family:'Poppins',sans-serif;font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:.6rem}
+.svc-card p{font-size:.84rem;color:var(--mid);line-height:1.75}
+.svc-link{display:inline-flex;align-items:center;gap:.35rem;margin-top:1.2rem;font-size:.8rem;font-weight:600;color:var(--blue);text-decoration:none}
+.svc-link svg{width:14px;height:14px;transition:transform .2s}
+.svc-link:hover svg{transform:translateX(3px)}
+
+/* ── NEDEN BİLGİTEKNİK ── */
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
+.why-item{display:flex;gap:1.2rem;align-items:flex-start;padding:1.5rem;background:var(--gray1);border-radius:12px;border:1px solid var(--border);transition:border-color .2s}
+.why-item:hover{border-color:var(--blue3)}
+.why-num{font-family:'Poppins',sans-serif;font-size:1.8rem;font-weight:800;color:var(--blue3);line-height:1;flex-shrink:0;width:2.4rem}
+.why-content h4{font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:.4rem}
+.why-content p{font-size:.82rem;color:var(--mid);line-height:1.7}
+
+/* ── REFERANSLAR ── */
+.refs-section{background:var(--gray1);padding:4rem 3rem}
+.refs-inner{max-width:1280px;margin:0 auto}
+.refs-track-wrap{overflow:hidden;margin-top:2.5rem;-webkit-mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.refs-track{display:flex;gap:2rem;animation:scrollRefs 22s linear infinite}
+.refs-track:hover{animation-play-state:paused}
+.ref-chip{background:#fff;border:1px solid var(--border);border-radius:8px;padding:.7rem 1.6rem;font-size:.8rem;font-weight:600;color:var(--mid);white-space:nowrap;flex-shrink:0}
+
+/* ── ZAMAN ŞERİDİ ── */
+.timeline{position:relative;margin-top:3rem;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--blue3),var(--blue),var(--blue3))}
+.tl-item{position:relative;padding:0 0 2.5rem 2.5rem}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-2rem;top:.2rem;width:16px;height:16px;border-radius:50%;background:var(--blue);border:3px solid #fff;box-shadow:0 0 0 2px var(--blue);transform:translateX(-7px)}
+.tl-year{font-family:'Poppins',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:.3rem}
+.tl-title{font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.3rem}
+.tl-desc{font-size:.83rem;color:var(--mid);line-height:1.7}
+
+/* ── CTA ── */
+.cta-section{background:linear-gradient(135deg,var(--blue4),var(--blue2));padding:5rem 3rem;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.cta-inner{position:relative;z-index:2;max-width:700px;margin:0 auto}
+.cta-section h2{font-family:'Poppins',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:#fff;margin-bottom:1rem}
+.cta-section p{font-size:.95rem;color:rgba(255,255,255,.7);line-height:1.75;margin-bottom:2.5rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-cta-primary{padding:1rem 2.4rem;background:var(--orange);color:#fff;border-radius:8px;font-size:.95rem;font-weight:700;text-decoration:none;transition:all .2s}
+.btn-cta-primary:hover{background:var(--orange2);transform:translateY(-2px)}
+.btn-cta-ghost{padding:1rem 2.4rem;background:rgba(255,255,255,.1);color:#fff;border-radius:8px;font-size:.95rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.3);transition:background .2s}
+.btn-cta-ghost:hover{background:rgba(255,255,255,.18)}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:3.5rem 3rem 1.5rem}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:2.5rem}
+.footer-logo-name{font-family:'Poppins',sans-serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.footer-logo-name span{color:var(--blue2)}
+.footer-desc{font-size:.82rem;line-height:1.8;color:rgba(255,255,255,.5);margin-bottom:1.2rem}
+.footer-social{display:flex;gap:.6rem}
+.f-soc{width:32px;height:32px;background:rgba(255,255,255,.08);border-radius:6px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.72rem;font-weight:700;text-decoration:none;transition:background .2s}
+.f-soc:hover{background:var(--blue);color:#fff}
+footer h4{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:1rem}
+.f-links{list-style:none}
+.f-links li{margin-bottom:.5rem}
+.f-links a{font-size:.82rem;color:rgba(255,255,255,.5);text-decoration:none;transition:color .15s}
+.f-links a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+.f-copy{font-size:.75rem;color:rgba(255,255,255,.35)}
+
+/* ── FLOAT WA ── */
+.float-wa{position:fixed;right:1.5rem;bottom:1.5rem;z-index:999;display:flex;align-items:center;gap:.6rem}
+.wa-label{background:rgba(0,0,0,.75);color:#fff;font-size:.72rem;font-weight:600;padding:.4rem .8rem;border-radius:6px;backdrop-filter:blur(6px);opacity:0;transform:translateX(8px);transition:all .2s;pointer-events:none}
+.float-wa:hover .wa-label{opacity:1;transform:translateX(0)}
+.wa-btn{width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);animation:waPulse 2s infinite}
+.wa-btn svg{width:26px;height:26px}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── ANIMATIONS ── */
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 28px rgba(37,211,102,.7)}}
+@keyframes scrollRefs{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+@media(max-width:900px){
+  .topbar{padding:.45rem 1.2rem}.topbar-left{gap:1rem}
+  nav .nav-inner{padding:0 1.2rem}
+  .about-hero{padding:3rem 1.5rem}
+  .hero-inner{grid-template-columns:1fr;gap:2rem}
+  .hero-stats-box{display:grid;grid-template-columns:repeat(4,1fr);min-width:auto}
+  .section{padding:3rem 1.5rem}
+  .who-grid,.mv-grid{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .breadcrumb{padding:.8rem 1.5rem}
+  .refs-section{padding:3rem 1.5rem}
+  .cta-section{padding:3.5rem 1.5rem}
+  .stats-section{padding:3rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span>📍 Sancaktepe, İstanbul</span>
+    <a href="tel:+905326944862">📞 0532 694 48 62</a>
+    <a href="mailto:info@bilgiteknik.com.tr">✉ info@bilgiteknik.com.tr</a>
+  </div>
+  <div class="topbar-right">
+    <span>Pzt–Cum 09:00–18:00 · Cumartesi 10:00–15:00</span>
+    <span class="topbar-badge">2000'den Bu Yana</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="bilgiteknik.html" class="nav-logo">
+      <div class="logo-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <rect x="3" y="8" width="16" height="11" rx="1.5" stroke="white" stroke-width="1.5"/>
+          <rect x="6" y="3" width="10" height="6" rx="1" stroke="white" stroke-width="1.5"/>
+          <rect x="6" y="14" width="10" height="3" rx=".5" fill="white" opacity=".4"/>
+        </svg>
+      </div>
+      <span class="logo-name">Bilgi<span>teknik</span></span>
+    </a>
+
+        <ul class="nav-menu">
+      <li class="nav-item"><a href="fotokopi-kiralama.html" class="nav-link">Fotokopi Kiralama</a></li>
+      <li class="nav-item"><a href="yazici-kiralama.html" class="nav-link">Yazıcı Kiralama</a></li>
+      <li class="nav-item">
+        <a href="urunler.html" class="nav-link">Ürünler
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
+
+        <div class="dropdown">
+          <a href="urunler.html#a4-sb-fotokopi" class="dd-header">Fotokopiler</a>
+          <a href="urunler.html#a4-sb-fotokopi">A4 Siyah Beyaz Fotokopi</a>
+          <a href="urunler.html#a4-renkli-fotokopi">A4 Renkli Fotokopi</a>
+          <a href="urunler.html#a3-sb-fotokopi">A3 Siyah Beyaz Fotokopi</a>
+          <a href="urunler.html#a3-renkli-fotokopi">A3 Renkli Fotokopi</a>
+          <a href="urunler.html#a4-sb-yazici" class="dd-header">Yazıcılar</a>
+          <a href="urunler.html#a4-sb-yazici">A4 Siyah Beyaz Yazıcı</a>
+          <a href="urunler.html#a4-renkli-yazici">A4 Renkli Yazıcı</a>
+          <a href="urunler.html#a3-yazici">A3 Yazıcılar</a>
+          <a href="urunler.html#diger" class="dd-header">Diğer Ürünler</a>
+          <a href="urunler.html#diger">Evrak İmhacıları</a>
+          <a href="urunler.html#diger">Para Sayma Makineleri</a>
+          <a href="urunler.html#diger">Toner &amp; Sarf Malzemeleri</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="hakkimizda.html" class="nav-link active">Hakkımızda</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="tel:+905326944862" class="nav-phone">0532 694 48 62</a>
+      <a href="https://wa.me/905326944862" class="btn-whatsapp" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.11 1.523 5.833L.044 23.956l6.29-1.483A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.48-5.16-1.33l-.37-.21-3.73.88.9-3.64-.23-.38A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp
+      </a>
+      <a href="bilgiteknik.html#iletisim" class="btn-teklif-nav">Teklif Al!</a>
+    </div>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="bilgiteknik.html">Ana Sayfa</a>
+    <span>›</span>
+    <span>Hakkımızda</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        2000'den Bu Yana İstanbul'dayız
+      </div>
+      <h1>Büro Makinaları Alanında<br><em>Çeyrek Asırlık</em> Deneyim</h1>
+      <p class="about-hero-sub">Bilgiteknik olarak 2000 yılından bu yana fotokopi kiralama, yazıcı kiralama ve teknik servis hizmetleriyle İstanbul başta olmak üzere Türkiye genelinde işletmelerin güvenilir iş ortağıyız.</p>
+      <div class="hero-cta-row">
+        <a href="#hizmetlerimiz" class="btn-hero-primary">Hizmetlerimizi İnceleyin</a>
+        <a href="bilgiteknik.html#iletisim" class="btn-hero-ghost">Teklif Alın</a>
+      </div>
+      <div class="hero-badge-strip">
+        <span class="h-badge">Kyocera Yetkili Servis</span>
+        <span class="h-badge">Aynı Gün Teknik Destek</span>
+        <span class="h-badge">Toner ve Sarf Dahil</span>
+        <span class="h-badge">7.000+ Memnun Müşteri</span>
+      </div>
+    </div>
+    <div class="hero-stats-box">
+      <div class="h-stat">
+        <span class="h-stat-num">25<sup>+</sup></span>
+        <span class="h-stat-label">Yıllık Deneyim</span>
+      </div>
+      <div class="h-stat">
+        <span class="h-stat-num">7K<sup>+</sup></span>
+        <span class="h-stat-label">Kurumsal Müşteri</span>
+      </div>
+      <div class="h-stat">
+        <span class="h-stat-num">%60</span>
+        <span class="h-stat-label">Maliyet Tasarrufu</span>
+      </div>
+      <div class="h-stat">
+        <span class="h-stat-num">4<small>sa</small></span>
+        <span class="h-stat-label">Maks. Müdahale</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BİZ KİMİZ -->
+<section class="section" id="hakkimizda">
+  <div class="section-inner">
+    <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">Biz Kimiz?</span></div>
+    <h2 class="sec-title">İstanbul'un Büro Makinaları<br>Uzmanı</h2>
+    <div class="who-grid reveal">
+      <div class="who-text">
+        <p>2000 yılında İstanbul Sancaktepe'da kurulan <strong>Bilgiteknik Büro Makinaları</strong>, çeyrek asrı aşkın deneyimiyle fotokopi kiralama, yazıcı kiralama ve teknik servis alanında sektörün güvenilir markalarından biri hâline gelmiştir.</p>
+        <p>Dijital çok fonksiyonlu fotokopiler, renkli baskı makineleri, lazer yazıcılar ve çevre dostu baskı çözümleri sunan geniş portföyümüzle küçük ofislerden büyük kurumsal yapılara kadar her ölçekteki işletmeye hizmet veriyoruz.</p>
+        <div class="who-highlight">
+          Kyocera'nın yetkili servis ve satış noktası olarak, sektörün en uzun ömürlü ve düşük maliyetli cihazlarını müşterilerimize sunma ayrıcalığına sahibiz.
+        </div>
+        <p>Kiralama modelimizde toner, yedek parça ve teknik servis masrafları tamamen bize aittir; siz sadece baskı maliyetinizi ödersiniz. Bu sayede işletmeniz donanım yatırımı yapmadan en güncel teknolojiye sahip olur.</p>
+        <div class="who-tags">
+          <span class="who-tag">🖨️ Fotokopi Kiralama</span>
+          <span class="who-tag">🖥️ Yazıcı Kiralama</span>
+          <span class="who-tag">🔧 Teknik Servis</span>
+          <span class="who-tag">📋 Doküman Yönetimi</span>
+          <span class="who-tag">🌐 Network Çözümleri</span>
+          <span class="who-tag">🏷️ Toner & Sarf</span>
+        </div>
+      </div>
+      <div class="who-visual">
+        <div class="who-card-wrap">
+        <div class="who-float-badge">✦ Kyocera Yetkili Servis</div>
+        <div class="who-card">
+          <div class="who-card-title">Neden Bilgiteknik?</div>
+          <div class="who-card-sub">25 yıllık deneyimimizin size kattıkları</div>
+          <div class="who-card-rows">
+            <div class="who-row">
+              <div class="who-row-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L12.5 7.5H18L13.5 11L15.5 17L10 13.5L4.5 17L6.5 11L2 7.5H7.5L10 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="who-row-text">
+                <strong>Güvenilir Marka</strong>
+                <span>2000'den bu yana kesintisiz hizmet</span>
+              </div>
+            </div>
+            <div class="who-row">
+              <div class="who-row-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="who-row-text">
+                <strong>Hızlı Müdahale</strong>
+                <span>En fazla 4 saat içinde yerinde servis</span>
+              </div>
+            </div>
+            <div class="who-row">
+              <div class="who-row-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M6 4V3a4 4 0 018 0v1" stroke="currentColor" stroke-width="1.5"/></svg>
+              </div>
+              <div class="who-row-text">
+                <strong>Sıfır Sürpriz Maliyet</strong>
+                <span>Toner, parça ve servis ücrete dahil</span>
+              </div>
+            </div>
+            <div class="who-row">
+              <div class="who-row-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10c0-3.866 3.134-7 7-7s7 3.134 7 7-3.134 7-7 7-7-3.134-7-7z" stroke="currentColor" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="who-row-text">
+                <strong>Esnek Paketler</strong>
+                <span>Aylık, dönemsel ve sayfa başı seçenekler</span>
+              </div>
+            </div>
+          </div>
+          <div class="who-card-deco"></div>
+        </div>
+        </div><!-- /who-card-wrap -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAYILARLA BİLGİTEKNİK -->
+<section class="stats-section">
+  <div class="stats-inner">
+    <div class="stats-eyebrow sec-eyebrow"><div class="sec-line" style="background:rgba(255,255,255,.3)"></div><span class="sec-tag" style="color:rgba(255,255,255,.55)">Rakamlarla Bilgiteknik</span></div>
+    <h2 class="stats-title">25 Yılın Özeti</h2>
+    <div class="stats-grid reveal">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="stat-num">2000</span>
+        <span class="stat-label">Kuruluş Yılı</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <span class="stat-num">7K<sup>+</sup></span>
+        <span class="stat-label">Kurumsal Müşteri</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <span class="stat-num">500<sup>+</sup></span>
+        <span class="stat-label">Aktif Kiralık Cihaz</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="stat-num">%98</span>
+        <span class="stat-label">Müşteri Memnuniyeti</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MİSYON & VİZYON -->
+<section class="section">
+  <div class="section-inner">
+    <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">Misyon & Vizyon</span></div>
+    <h2 class="sec-title">Değerlerimiz ve Hedeflerimiz</h2>
+    <p class="sec-sub">Hizmet anlayışımızı şekillendiren temel değerler ve geleceğe yönelik hedeflerimiz.</p>
+    <div class="mv-grid reveal">
+      <div class="mv-card mission">
+        <div class="mv-icon">🎯</div>
+        <h3>Misyonumuz</h3>
+        <p>Bilgiteknik olarak kaliteli, güvenilir ve tam zamanında hizmet anlayışıyla fotokopi ve yazıcı kiralama ihtiyaçlarını en son teknolojileri kullanarak karşılamak; müşterilerimizin baskı maliyetlerini minimize ederek iş verimliliğini artırmak.</p>
+        <div class="mv-card-deco"></div>
+      </div>
+      <div class="mv-card vision">
+        <div class="mv-icon">🚀</div>
+        <h3>Vizyonumuz</h3>
+        <p>Yenilikçi, akılcı ve sorumlu servis anlayışımızla büro makinaları sektöründe İstanbul'un ve Türkiye'nin önde gelen markası olmak; sürdürülebilir ve çevre dostu baskı çözümleriyle geleceğe hazır işletmelerin yanında yer almak.</p>
+        <div class="mv-card-deco"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HİZMETLERİMİZ -->
+<section class="section services-section" id="hizmetlerimiz">
+  <div class="section-inner">
+    <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">Hizmetlerimiz</span></div>
+    <h2 class="sec-title">Kurumsal İhtiyaçlarınıza<br>Kapsamlı Çözümler</h2>
+    <p class="sec-sub">Büro makinaları alanında ihtiyacınız olan tüm hizmetleri tek çatı altında sunuyoruz.</p>
+    <div class="svc-grid reveal">
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M6 6V4a2 2 0 012-2h8a2 2 0 012 2v2M8 14h8M8 18h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Fotokopi Kiralama</h3>
+        <p>A3 ve A4, siyah beyaz ve renkli fotokopi makineleri için aylık, sayfa başı ve dönemsel kiralama paketleri. Toner, teknik servis ve yedek parça dahil.</p>
+        <a href="fotokopi-kiralama.html" class="svc-link">Detaylı Bilgi <svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 8V5a2 2 0 012-2h6a2 2 0 012 2v3M7 16h2M11 16h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Yazıcı Kiralama</h3>
+        <p>Masaüstü ve kurumsal kullanıma uygun lazer yazıcılar için esnek kiralama çözümleri. WiFi, ağ bağlantısı ve çift taraflı baskı destekli modeller.</p>
+        <a href="yazici-kiralama.html" class="svc-link">Detaylı Bilgi <svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Teknik Servis</h3>
+        <p>Garantili, yerinde ve hızlı teknik servis hizmetiyle cihazlarınızın kesintisiz çalışmasını sağlıyoruz. İstanbul genelinde maksimum 4 saat müdahale garantisi.</p>
+        <a href="bilgiteknik.html#iletisim" class="svc-link">Servis Talep Et <svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="8" y1="13" x2="16" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="8" y1="17" x2="13" y2="17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Doküman Yönetimi</h3>
+        <p>Dijitalleşme sürecinizde belge arşivleme, tarama ve doküman yönetim sistemleri kurulumu ile ofis süreçlerinizi optimize ediyoruz.</p>
+        <a href="bilgiteknik.html#iletisim" class="svc-link">Bilgi Al <svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="8" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="2" y="14" width="20" height="8" rx="2" stroke="currentColor" stroke-width="1.5"/><line x1="6" y1="6" x2="6.01" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="6" y1="18" x2="6.01" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Network Çözümleri</h3>
+        <p>Ofis ağınıza entegre baskı altyapısı kurulumu, yazıcı sunucu yapılandırması ve ağ güvenliği hizmetleriyle kesintisiz baskı ortamı oluşturuyoruz.</p>
+        <a href="bilgiteknik.html#iletisim" class="svc-link">Bilgi Al <svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" stroke="currentColor" stroke-width="1.5"/><path d="M16 3H8a2 2 0 00-2 2v2h12V5a2 2 0 00-2-2zM8 17v2a2 2 0 002 2h4a2 2 0 002-2v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Toner & Sarf Malzemeleri</h3>
+        <p>Kyocera başta olmak üzere tüm marka ve modeller için orijinal ve muadil toner, drum ve sarf malzemeleri uygun fiyatlarla temin ediyoruz.</p>
+        <a href="bilgiteknik.html#urunler" class="svc-link">Ürünleri Gör <svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEDEN BİLGİTEKNİK -->
+<section class="section">
+  <div class="section-inner">
+    <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">Neden Bizi Seçmelisiniz?</span></div>
+    <h2 class="sec-title">25 Yıllık Farkımız</h2>
+    <p class="sec-sub">Müşterilerimizin bize güvenmesinin ardındaki temel sebepler.</p>
+    <div class="why-grid reveal">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div class="why-content">
+          <h4>Sıfır Gizli Maliyet</h4>
+          <p>Kiralama paketlerimizde toner, teknik servis ve yedek parça ekstra ücret olmaksızın tamamen dahildir. Aylık ödemeniz ne ise o ödersiniz.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div class="why-content">
+          <h4>Kyocera Yetkili Servis Güvencesi</h4>
+          <p>Kyocera'nın yetkili servis ve satış bayisi olarak orijinal yedek parça ve sertifikalı teknisyen güvencesiyle hizmet veriyoruz.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div class="why-content">
+          <h4>Maksimum 4 Saat Müdahale</h4>
+          <p>İstanbul genelinde arıza bildiriminizden itibaren en geç 4 saat içinde teknik ekibimiz sizin yanınızda olur.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <div class="why-content">
+          <h4>Esnek Kiralama Modelleri</h4>
+          <p>Aylık sabit ücret, sayfa başı ödeme veya dönemsel kira seçenekleriyle işletmenizin ihtiyacına en uygun paketi sunuyoruz.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">05</div>
+        <div class="why-content">
+          <h4>Ücretsiz Kurulum ve Eğitim</h4>
+          <p>Cihaz tesliminde kurulum, ağ yapılandırması ve kullanıcı eğitimi ücretsiz olarak tarafımızdan gerçekleştirilir.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">06</div>
+        <div class="why-content">
+          <h4>İstanbul Geneli Hizmet Ağı</h4>
+          <p>İstanbul'un tüm ilçelerinde hizmet veren teknik ekibimizle şehrin her noktasına hızla ulaşıyoruz.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARİHÇE -->
+<section class="section" style="background:var(--gray1)">
+  <div class="section-inner">
+    <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">Tarihçemiz</span></div>
+    <h2 class="sec-title">Büyüme Hikayemiz</h2>
+    <p class="sec-sub">2000'den bu yana aldığımız kilometre taşları.</p>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2000</div>
+        <div class="tl-title">Kuruluş</div>
+        <div class="tl-desc">Bilgiteknik Büro Makinaları, İstanbul Sancaktepe'da fotokopi satış ve servis hizmetleriyle faaliyete başladı.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2005</div>
+        <div class="tl-title">Kyocera Yetkili Bayi</div>
+        <div class="tl-desc">Kyocera'nın yetkili bayi ve servis ağına dahil olarak ürün portföyümüzü ve teknik yetkinliğimizi genişlettik.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2010</div>
+        <div class="tl-title">Kiralama Hizmetleri</div>
+        <div class="tl-desc">Operasyonel kiralama modelini hayata geçirerek müşterilerimize cihaz sahipliği olmadan baskı imkânı sunduk.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2015</div>
+        <div class="tl-title">İstanbul Geneline Yayılma</div>
+        <div class="tl-desc">Teknik servis ekibimizi güçlendirerek İstanbul'un tüm ilçelerine 4 saat içinde müdahale kapasitesine ulaştık.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2020</div>
+        <div class="tl-title">Dijital Dönüşüm Partneri</div>
+        <div class="tl-desc">Doküman yönetimi ve network çözümleri hizmetlerimizi başlatarak müşterilerimizin dijital dönüşüm süreçlerine destek vermeye başladık.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--orange)"></div>
+        <div class="tl-year">Bugün</div>
+        <div class="tl-title">7.000+ Kurumsal Müşteri</div>
+        <div class="tl-desc">Çeyrek asrı aşan deneyimimizle 7.000'i aşkın kurumsal müşteriye hizmet veriyor, İstanbul'un güvenilir büro makinaları uzmanı olmaya devam ediyoruz.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERANSLAR -->
+<section class="refs-section">
+  <div class="refs-inner">
+    <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">Referanslarımız</span></div>
+    <h2 class="sec-title" style="margin-bottom:.5rem">Güvendikleri İsimler</h2>
+    <p class="sec-sub" style="margin-bottom:0">Farklı sektörlerden 7.000'i aşkın firmaya hizmet verdik.</p>
+    <div class="refs-track-wrap">
+      <div class="refs-track">
+        <div class="ref-chip">🏥 Hastaneler & Klinikler</div>
+        <div class="ref-chip">⚖️ Hukuk Büroları</div>
+        <div class="ref-chip">🏗️ İnşaat Firmaları</div>
+        <div class="ref-chip">🏦 Finans & Muhasebe</div>
+        <div class="ref-chip">🎓 Eğitim Kurumları</div>
+        <div class="ref-chip">🏨 Oteller & Konaklama</div>
+        <div class="ref-chip">📦 Lojistik & Taşımacılık</div>
+        <div class="ref-chip">🏭 Üretim & Fabrikalar</div>
+        <div class="ref-chip">🛒 Perakende Zincirleri</div>
+        <div class="ref-chip">🏛️ Kamu Kurumları</div>
+        <div class="ref-chip">💊 Eczaneler & Sağlık</div>
+        <div class="ref-chip">📡 Medya & Reklam</div>
+        <!-- Duplicate for infinite scroll -->
+        <div class="ref-chip">🏥 Hastaneler & Klinikler</div>
+        <div class="ref-chip">⚖️ Hukuk Büroları</div>
+        <div class="ref-chip">🏗️ İnşaat Firmaları</div>
+        <div class="ref-chip">🏦 Finans & Muhasebe</div>
+        <div class="ref-chip">🎓 Eğitim Kurumları</div>
+        <div class="ref-chip">🏨 Oteller & Konaklama</div>
+        <div class="ref-chip">📦 Lojistik & Taşımacılık</div>
+        <div class="ref-chip">🏭 Üretim & Fabrikalar</div>
+        <div class="ref-chip">🛒 Perakende Zincirleri</div>
+        <div class="ref-chip">🏛️ Kamu Kurumları</div>
+        <div class="ref-chip">💊 Eczaneler & Sağlık</div>
+        <div class="ref-chip">📡 Medya & Reklam</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <h2>Birlikte Çalışmaya Başlayalım</h2>
+    <p>2000'den bu yana güven ve kaliteyle hizmet veriyoruz. Şirketinize özel fotokopi veya yazıcı kiralama teklifi için hemen bize ulaşın — ücretsiz keşif ve teklif hizmetimizden yararlanın.</p>
+    <div class="cta-btns">
+      <a href="bilgiteknik.html#iletisim" class="btn-cta-primary">Ücretsiz Teklif Alın</a>
+      <a href="https://wa.me/905326944862" class="btn-cta-ghost">WhatsApp ile Yazın</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-name">Bilgi<span>teknik</span></div>
+        <p class="footer-desc">2000 yılından bu yana büro makinaları alanında faaliyet gösteren, müşteri odaklı yaklaşımıyla fark yaratan güvenilir iş ortağınız.</p>
+        <div class="footer-social">
+          <a href="#" class="f-soc">in</a>
+          <a href="#" class="f-soc">tw</a>
+          <a href="#" class="f-soc">ig</a>
+          <a href="#" class="f-soc">yt</a>
+        </div>
+      </div>
+      <div>
+        <h4>Ürünler</h4>
+        <ul class="f-links">
+          <li><a href="#">Kyocera Yazıcılar</a></li>
+          <li><a href="fotokopi-kiralama.html">Fotokopi Kiralama</a></li>
+          <li><a href="#">Tarayıcılar</a></li>
+          <li><a href="#">Evrak İmhacıları</a></li>
+          <li><a href="#">Para Sayma</a></li>
+          <li><a href="#">Toner &amp; Sarf</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hizmetler</h4>
+        <ul class="f-links">
+          <li><a href="#">Teknik Servis</a></li>
+          <li><a href="#">Periyodik Bakım</a></li>
+          <li><a href="fotokopi-kiralama.html">Fotokopi Kiralama</a></li>
+          <li><a href="yazici-kiralama.html">Yazıcı Kiralama</a></li>
+          <li><a href="#">Proje Danışmanlığı</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>İletişim</h4>
+        <ul class="f-links">
+          <li><a href="#">📍 Sancaktepe, İstanbul</a></li>
+          <li><a href="tel:+905326944862">📞 0532 694 48 62</a></li>
+          <li><a href="https://wa.me/905326944862">💬 WhatsApp Hattı</a></li>
+          <li><a href="mailto:info@bilgiteknik.com.tr">✉ info@bilgiteknik.com.tr</a></li>
+          <li><a href="#">🕐 Pzt–Cum 09–18, Cmt 10–15</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="f-copy">© 2025 Bilgiteknik Büro Makinaları — 2000'den Bu Yana Hizmetinizdeyiz</span>
+      <span class="f-copy">Gizlilik Politikası · Kullanım Koşulları</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<div class="float-wa">
+  <span class="wa-label">WhatsApp ile Yazın</span>
+  <a href="https://wa.me/905326944862?text=Merhaba, büro makinaları için bilgi almak istiyorum." target="_blank" class="wa-btn">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.11 1.523 5.833L.044 23.956l6.29-1.483A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.48-5.16-1.33l-.37-.21-3.73.88.9-3.64-.23-.38A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+  </a>
+</div>
+
+<script>
+/* Scroll Reveal */
+const ro = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) e.target.classList.add('visible');
+}), { threshold: .08 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+</script>
+</body>
+</html>
