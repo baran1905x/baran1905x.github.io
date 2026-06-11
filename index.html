@@ -2,8 +2,13 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="description" content="Bilgiteknik — Üsküdar / Bulgurlu merkezli fotokopi kiralama, yazıcı kiralama, Kyocera yetkili satıcı ve teknik servis. İstanbul genelinde 7/24 destek, ücretsiz kurulum.">
+<link rel="canonical" href="https://www.bilgiteknik.net/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bilgiteknik — Fotokopi, Yazıcı ve Büro Makinaları</title>
+<title>Bilgiteknik | Fotokopi Kiralama & Yazıcı Kiralama İstanbul | Kyocera Yetkili Servis</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -308,16 +313,233 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
 @keyframes marqueeBrands{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
 .reveal.visible{opacity:1;transform:none}
+
+/* ══════════════════════════════════════════════
+   MOBİL UYUMLULUK — Tablet & Telefon
+══════════════════════════════════════════════ */
+
+/* ── HAMBURGER BUTONU ── */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;z-index:901}
+.hamburger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s;display:block}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* ── TABLET (1024px) ── */
+@media(max-width:1024px){
+  .topbar{padding:.45rem 1.5rem}
+  .topbar-left{gap:1rem}
+  nav .nav-inner,.nav-inner{padding:0 1.5rem}
+  section,.blog-layout,.article-layout,.product-layout,.spec-section,.related-section,
+  .services-section,.why-section,.kyocera-section,.brands,.testimonials,.newsletter,
+  .cta-banner,.about-left,.about-right,.rental-inner,.main-content,.main-inner,
+  .contact-cards,.map-header,.footer-inner{padding-left:1.5rem!important;padding-right:1.5rem!important}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .kyo-grid{grid-template-columns:repeat(2,1fr)}
+  .kyo-card.featured{grid-column:span 2}
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .adv-grid{grid-template-columns:repeat(2,1fr)}
+  .pkg-grid{grid-template-columns:repeat(2,1fr)}
+  .test-grid{grid-template-columns:repeat(2,1fr)}
+  .blog-grid{grid-template-columns:repeat(2,1fr)}
+  .related-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .hero-stats{left:1.5rem;right:1.5rem}
+  .about-section{grid-template-columns:1fr}
+  .about-right{border-left:none;border-top:1px solid var(--border)}
+  .newsletter-form,.nl-form{min-width:auto;width:100%}
+  .cta-banner{grid-template-columns:1fr}
+  .rental-inner{grid-template-columns:1fr}
+  .product-layout{grid-template-columns:1fr}
+  .blog-layout{grid-template-columns:1fr}
+  .article-layout{grid-template-columns:1fr}
+  .sidebar{position:static}
+  .main-inner{grid-template-columns:1fr}
+  .cards-inner{grid-template-columns:repeat(2,1fr)}
+  .how-steps{grid-template-columns:repeat(2,1fr);gap:2rem}
+  .how-steps::before{display:none}
+  .quick-stats{grid-template-columns:repeat(2,1fr)}
+  .hero-slider{height:auto;min-height:500px}
+  .slide{grid-template-columns:1fr}
+  .slide-right{display:none}
+  .slide-stats{display:none}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+
+/* ── MOBİL (768px) ── */
+@media(max-width:768px){
+  .topbar{display:none}
+
+  /* Nav hamburger */
+  .hamburger{display:flex}
+  .nav-menu{
+    display:none;position:fixed;top:70px;left:0;right:0;bottom:0;
+    background:#fff;flex-direction:column;padding:2rem 1.5rem;
+    gap:0;overflow-y:auto;z-index:899;border-top:1px solid var(--border);
+    box-shadow:var(--shadow2)
+  }
+  .nav-menu.open{display:flex}
+  .nav-item{border-bottom:1px solid var(--border)}
+  .nav-link{height:auto;padding:1rem 0;font-size:.95rem;color:var(--ink)}
+  .dropdown{position:static;opacity:1;visibility:visible;transform:none;
+    box-shadow:none;border:none;background:var(--gray1);border-radius:var(--rad);
+    margin:.5rem 0;display:none}
+  .nav-item.dd-open .dropdown{display:block}
+  .nav-right{gap:.5rem}
+  .nav-phone{display:none}
+  .btn-whatsapp span{display:none}
+
+  /* Hero */
+  .hero-slider{min-height:auto}
+  .slide-left{padding:3rem 1.5rem 5rem}
+  .slide-title{font-size:1.8rem}
+  .slide-sub{font-size:.85rem}
+  .slider-ctrl{left:1.5rem}
+  .slide-stats{left:1.5rem;right:1.5rem;grid-template-columns:repeat(3,1fr)}
+  .ss-num{font-size:1.4rem}
+
+  /* Genel bölümler */
+  section,.services-section,.kyocera-section,.why-section,.brands,.testimonials,
+  .blog-layout,.article-layout,.spec-section,.related-section,.main-content,
+  .contact-cards,.cta-banner,.rental-banner,.newsletter{
+    padding-left:1.2rem!important;padding-right:1.2rem!important;
+    padding-top:3.5rem!important;padding-bottom:3.5rem!important
+  }
+  footer,.footer-inner{padding-left:1.2rem!important;padding-right:1.2rem!important}
+
+  /* Grid'ler tekil sütuna */
+  .cat-grid,.kyo-grid,.product-grid,.services-grid,.why-grid,.adv-grid,
+  .pkg-grid,.test-grid,.blog-grid,.related-grid,.brands-grid,
+  .how-steps,.cards-inner,.quick-stats,.hero-stat-grid{
+    grid-template-columns:1fr!important
+  }
+  .kyo-card.featured,.kyo-card.wide{grid-column:span 1!important;flex-direction:column!important}
+  .kyo-card.featured .kyo-img-zone,.kyo-card.wide .kyo-img-zone{width:100%!important;border-right:none!important;border-bottom:1px solid var(--border)!important;aspect-ratio:4/3!important}
+
+  /* About */
+  .about-section{grid-template-columns:1fr}
+  .about-left,.about-right{padding:3rem 1.5rem}
+  .about-bg-year{font-size:8rem}
+
+  /* Footer */
+  .footer-top{grid-template-columns:1fr;gap:2rem}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:.5rem}
+
+  /* Newsletter */
+  .nl-form,.newsletter-form{flex-direction:column}
+  .nl-input,.newsletter-input{border-right:1.5px solid var(--border)!important;border-bottom:none;border-radius:8px 8px 0 0!important}
+  .nl-btn,.newsletter-submit{border-radius:0 0 8px 8px!important}
+
+  /* CTA Banner */
+  .cta-banner,.rental-inner{grid-template-columns:1fr;text-align:center}
+  .cta-right,.rental-btns{justify-content:center;flex-wrap:wrap}
+
+  /* Ticker */
+  .ticker-inner{animation-duration:20s}
+
+  /* Map */
+  .map-wrap{height:280px}
+  .map-overlay{left:1rem;right:1rem;bottom:1rem}
+
+  /* FAQ */
+  .faq-inner{grid-template-columns:1fr}
+
+  /* Spec table */
+  .spec-table{font-size:.78rem}
+  .spec-table td,.spec-table th{padding:.6rem .8rem}
+
+  /* Blog */
+  .blog-grid{grid-template-columns:1fr}
+  .article-layout,.blog-layout{grid-template-columns:1fr;padding-top:2rem!important}
+  .related-grid{grid-template-columns:1fr}
+
+  /* Product detail */
+  .product-layout{grid-template-columns:1fr}
+  .key-specs{grid-template-columns:repeat(2,1fr)}
+  .product-gallery{position:static}
+
+  /* İletişim */
+  .faq-inner,.what-inner{grid-template-columns:1fr}
+  .hero-inner{grid-template-columns:1fr!important}
+  .hero-card{display:none}
+
+  /* Brands */
+  .brands-grid{grid-template-columns:repeat(3,1fr)}
+  .brand-cell{padding:1.2rem .5rem}
+  .brand-name{font-size:.85rem}
+
+  /* Tablo scroll */
+  .compare-table-wrap,.spec-section{overflow-x:auto}
+  .compare-table,.spec-table{min-width:500px}
+
+  /* Sections */
+  .section-title,.sec-title,.article-title,.product-name{font-size:1.5rem!important}
+  .sec-sub,.section-sub{font-size:.85rem}
+
+  /* Floating WA */
+  .float-wa{bottom:1rem;right:1rem}
+  .wa-btn{width:50px;height:50px}
+
+  /* Kiralama sayfaları */
+  .pkg-grid{grid-template-columns:1fr}
+  .hero-checks{grid-template-columns:1fr}
+  .slide-badges{display:none}
+}
+
+/* ── KÜÇÜK MOBİL (480px) ── */
+@media(max-width:480px){
+  .nav-inner{padding:0 1rem}
+  .logo-name{font-size:1.1rem}
+  .slide-title{font-size:1.5rem}
+  .article-title,.product-name{font-size:1.3rem!important}
+  .key-specs{grid-template-columns:repeat(2,1fr)}
+  .brands-grid{grid-template-columns:repeat(2,1fr)}
+  .btn-slide-primary,.btn-slide-ghost,.btn-orange,.btn-white-ghost{
+    padding:.75rem 1.5rem;font-size:.85rem
+  }
+}
+
 </style>
+<meta property="og:title" content="Bilgiteknik | Fotokopi Kiralama & Yazıcı Kiralama İstanbul | Kyocera Yetkili Servis">
+<meta property="og:description" content="Bilgiteknik — Üsküdar / Bulgurlu merkezli fotokopi kiralama, yazıcı kiralama, Kyocera yetkili satıcı ve teknik servis. İstanbul genelinde 7/24 destek, ücretsiz kurulum.">
+<meta property="og:url" content="https://www.bilgiteknik.net/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Bilgiteknik",
+  "url": "https://www.bilgiteknik.net",
+  "logo": "https://www.bilgiteknik.net/logo.png",
+  "telephone": "+905326944862",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bulgurlu Mahallesi",
+    "addressLocality": "Üsküdar",
+    "addressRegion": "İstanbul",
+    "addressCountry": "TR"
+  },
+  "sameAs": [
+    "https://www.bilgiteknik.net"
+  ]
+}
+
+
+</script>
 </head>
 <body>
 
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="topbar-left">
-    <span>📍 Sancaktepe, İstanbul</span>
+    <span>📍 Bulgurlu, Üsküdar / İstanbul</span>
     <a href="tel:+905326944862">📞 0532 694 48 62</a>
-    <a href="mailto:bilgiteknik2000@gmail.com">✉ bilgiteknik2000@gmail.com</a>
+    <a href="mailto:info@bilgiteknik.net">✉ info@bilgiteknik.net</a>
   </div>
   <div class="topbar-right">
     <span>Pzt–Cum 09:00–18:00 · Cumartesi 10:00–15:00</span>
@@ -342,37 +564,21 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
         <ul class="nav-menu">
       <li class="nav-item"><a href="fotokopi-kiralama.html" class="nav-link">Fotokopi Kiralama</a></li>
       <li class="nav-item"><a href="yazici-kiralama.html" class="nav-link">Yazıcı Kiralama</a></li>
-      <li class="nav-item">
-        <a href="urunler.html" class="nav-link">Ürünler
-          <svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
-        </a>
-
-        <div class="dropdown">
-          <a href="urunler.html#a4-sb-fotokopi" class="dd-header">Fotokopiler</a>
-          <a href="urunler.html#a4-sb-fotokopi">A4 Siyah Beyaz Fotokopi</a>
-          <a href="urunler.html#a4-renkli-fotokopi">A4 Renkli Fotokopi</a>
-          <a href="urunler.html#a3-sb-fotokopi">A3 Siyah Beyaz Fotokopi</a>
-          <a href="urunler.html#a3-renkli-fotokopi">A3 Renkli Fotokopi</a>
-          <a href="urunler.html#a4-sb-yazici" class="dd-header">Yazıcılar</a>
-          <a href="urunler.html#a4-sb-yazici">A4 Siyah Beyaz Yazıcı</a>
-          <a href="urunler.html#a4-renkli-yazici">A4 Renkli Yazıcı</a>
-          <a href="urunler.html#a3-yazici">A3 Yazıcılar</a>
-          <a href="urunler.html#diger" class="dd-header">Diğer Ürünler</a>
-          <a href="urunler.html#diger">Evrak İmhacıları</a>
-          <a href="urunler.html#diger">Para Sayma Makineleri</a>
-          <a href="urunler.html#diger">Toner &amp; Sarf Malzemeleri</a>
-        </div>
-      </li>
+      <li class="nav-item"><a href="urunler.html" class="nav-link">Ürünler</a></li>
       <li class="nav-item"><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+      <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
     </ul>
 
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
     <div class="nav-right">
       <a href="tel:+905326944862" class="nav-phone">0532 694 48 62</a>
-      <a href="https://wa.me/905326944862" class="btn-whatsapp" target="_blank">
+      <a href="https://wa.me/905318673034" class="btn-whatsapp" target="_blank">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.11 1.523 5.833L.044 23.956l6.29-1.483A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.48-5.16-1.33l-.37-.21-3.73.88.9-3.64-.23-.38A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
         WhatsApp
       </a>
-      <a href="#iletisim" class="btn-teklif-nav">Teklif Al!</a>
+      <a href="iletisim.html" class="btn-teklif-nav">Teklif Al!</a>
     </div>
   </div>
 </nav>
@@ -384,11 +590,11 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
   <div class="slide active">
     <div class="slide-left">
       <div class="slide-eyebrow"><span></span>Kyocera Yetkili Satıcı &amp; Servis</div>
-      <h1 class="slide-title">Kopyalama &amp; Çıktıda<br><em>Profesyonel Çözümler</em></h1>
-      <p class="slide-sub">Japon teknolojisi, son model üretim, büyük ekran ve kolay kullanım. Satış, kiralama ve teknik servis tek çatı altında.</p>
+      <h1 class="slide-title">İstanbul'da<br><em>Fotokopi &amp; Yazıcı Kiralama</em></h1>
+      <p class="slide-sub">Üsküdar merkezli Bilgiteknik ile İstanbul genelinde fotokopi kiralama, yazıcı kiralama ve Kyocera yetkili teknik servis. Satış, kiralama, bakım — tek çatı altında.</p>
       <div class="slide-btns">
         <a href="#kyocera" class="btn-slide-primary">Ürünleri İncele</a>
-        <a href="#iletisim" class="btn-slide-ghost">Teklif Al</a>
+        <a href="iletisim.html" class="btn-slide-ghost">Teklif Al</a>
       </div>
       <div class="slide-badges">
         <span class="s-badge">Ücretsiz Kurulum</span>
@@ -416,11 +622,11 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
   <div class="slide">
     <div class="slide-left">
       <div class="slide-eyebrow"><span></span>Kiralama Hizmeti</div>
-      <h1 class="slide-title">Fotokopi &amp; Yazıcı<br><em>Kiralama Fırsatı</em></h1>
-      <p class="slide-sub">Aylık sabit ücretle cihazı kiralayın, servis &amp; bakım bizden. Sürpriz maliyet yok — düşük sabit gider, yüksek verimlilik.</p>
+      <h1 class="slide-title">Fotokopi &amp; Yazıcı<br><em>Kiralama İstanbul</em></h1>
+      <p class="slide-sub">İstanbul'da aylık sabit ücretle fotokopi ve yazıcı kiralama. Toner, bakım ve teknik servis dahil — sürpriz maliyet yok, yüksek verimlilik.</p>
       <div class="slide-btns">
         <a href="#kiralama" class="btn-slide-primary">Kiralama Planları</a>
-        <a href="#iletisim" class="btn-slide-ghost">Bilgi Al</a>
+        <a href="iletisim.html" class="btn-slide-ghost">Bilgi Al</a>
       </div>
       <div class="slide-badges">
         <span class="s-badge">Sözleşmeli Fiyat</span>
@@ -513,7 +719,7 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
 
 <!-- STATS -->
 <div class="quick-stats">
-  <div class="qs-item"><div class="qs-num">25<sup>yıl</sup></div><div class="qs-label">Sektör Deneyimi (2000'den beri)</div></div>
+  <div class="qs-item"><div class="qs-num">25<sup>yıl</sup></div><div class="qs-label">Yıl Sektör Deneyimi (İstanbul)</div></div>
   <div class="qs-item"><div class="qs-num">20K<sup>+</sup></div><div class="qs-label">Mutlu Müşteri</div></div>
   <div class="qs-item"><div class="qs-num">7K<sup>+</sup></div><div class="qs-label">Kurumsal Firma</div></div>
   <div class="qs-item"><div class="qs-num">500<sup>+</sup></div><div class="qs-label">Ürün Çeşidi</div></div>
@@ -525,8 +731,8 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
     <div class="sec-header">
       <div>
         <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">Hizmetlerimiz</span></div>
-        <h2 class="sec-title">Büro Makinası Çözümleri</h2>
-        <p class="sec-sub">Satın alma, kiralama veya teknik servis — her ihtiyacınıza uygun çözüm sunuyoruz.</p>
+        <h2 class="sec-title">İstanbul Büro Makinası Çözümleri</h2>
+        <p class="sec-sub">Fotokopi kiralama, yazıcı kiralama, satış ve teknik servis — Üsküdar merkezli Bilgiteknik ile İstanbul'un her noktasına hizmet.</p>
       </div>
     </div>
     <div class="service-tabs">
@@ -539,22 +745,22 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
       <div class="svc-card">
         <span class="svc-badge badge-kiralama">Kiralama</span>
         <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="8" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><rect x="7" y="3" width="12" height="6" rx="1" stroke="currentColor" stroke-width="2"/><rect x="8" y="14" width="10" height="4" rx=".5" fill="currentColor" opacity=".3"/></svg></div>
-        <div class="svc-title">Fotokopi Makinesi Kiralama</div>
-        <div class="svc-desc">Aylık sabit ücretle siyah-beyaz veya renkli fotokopi makinesi kiralayın. Bakım, toner ve teknik destek dahil.</div>
+        <div class="svc-title">Fotokopi Makinesi Kiralama İstanbul</div>
+        <div class="svc-desc">İstanbul'da aylık sabit ücretle A4/A3 siyah-beyaz veya renkli fotokopi makinesi kiralayın. Toner, bakım ve teknik servis dahil.</div>
         <a href="#" class="svc-link">Fiyatları Gör</a>
       </div>
       <div class="svc-card">
         <span class="svc-badge badge-kiralama">Kiralama</span>
         <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="2" y="6" width="22" height="16" rx="2" stroke="currentColor" stroke-width="2"/><line x1="2" y1="12" x2="24" y2="12" stroke="currentColor" stroke-width="1.5" opacity=".3"/><rect x="6" y="15" width="6" height="4" rx=".5" fill="currentColor" opacity=".2"/></svg></div>
-        <div class="svc-title">Yazıcı Kiralama</div>
-        <div class="svc-desc">Lazer ve inkjet yazıcıları uygun aylık ödemelerle kiralayın. Kurulum ve kullanıcı eğitimi ücretsiz.</div>
+        <div class="svc-title">Yazıcı Kiralama İstanbul</div>
+        <div class="svc-desc">İstanbul'da lazer yazıcı kiralama. A4/A3, siyah-beyaz ve renkli seçenekler — kurulum ve kullanıcı eğitimi ücretsiz.</div>
         <a href="#" class="svc-link">Planları İncele</a>
       </div>
       <div class="svc-card">
         <span class="svc-badge badge-satis">Satış</span>
         <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 6h18l-2 12H6L4 6z" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="22" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="22" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></div>
-        <div class="svc-title">Kurumsal Fotokopi Satışı</div>
-        <div class="svc-desc">Kyocera, Ricoh ve Canon gibi lider markalardan fotokopi makineleri. Peşin ve taksit seçenekleri mevcut.</div>
+        <div class="svc-title">Kyocera &amp; Canon Fotokopi Satışı</div>
+        <div class="svc-desc">Kyocera, Canon, HP, Ricoh ve Toshiba yetkili satıcısı olarak İstanbul'da fotokopi makinesi satışı. Peşin ve taksit seçenekleri mevcut.</div>
         <a href="#kyocera" class="svc-link">Ürünlere Git</a>
       </div>
       <div class="svc-card">
@@ -567,16 +773,16 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
       <div class="svc-card">
         <span class="svc-badge badge-servis">Servis</span>
         <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="10" stroke="currentColor" stroke-width="2"/><path d="M13 7v6l4 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <div class="svc-title">7/24 Teknik Servis</div>
-        <div class="svc-desc">Üretici sertifikalı 12 kişilik ekibimiz İstanbul genelinde hızlı müdahale. Online destek de dahil.</div>
-        <a href="#iletisim" class="svc-link">Servis İste</a>
+        <div class="svc-title">Fotokopi Teknik Servis İstanbul</div>
+        <div class="svc-desc">Kyocera yetkili teknik servis ekibimiz İstanbul genelinde — Üsküdar, Kadıköy, Ataşehir ve tüm ilçelere hızlı müdahale.</div>
+        <a href="iletisim.html" class="svc-link">Servis İste</a>
       </div>
       <div class="svc-card">
         <span class="svc-badge badge-servis">Servis</span>
         <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3L23 8v10L13 23 3 18V8L13 3z" stroke="currentColor" stroke-width="2"/><circle cx="13" cy="13" r="3" stroke="currentColor" stroke-width="1.5"/></svg></div>
-        <div class="svc-title">Periyodik Bakım Kontratı</div>
-        <div class="svc-desc">Yıllık bakım sözleşmesi ile cihazınızı en iyi performansta tutun. Parça ve işçilik garantisi dahil.</div>
-        <a href="#iletisim" class="svc-link">Teklif Al</a>
+        <div class="svc-title">Fotokopi Bakım &amp; Onarım Kontratı</div>
+        <div class="svc-desc">Fotokopi ve yazıcı bakım anlaşması ile cihazınızı sürekli verimli tutun. Parça, işçilik ve toner dahil yıllık sözleşme.</div>
+        <a href="iletisim.html" class="svc-link">Teklif Al</a>
       </div>
     </div>
   </div>
@@ -592,8 +798,8 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
           <span class="kyo-brand-sub">Yetkili Satıcı &amp; Teknik Servis</span>
         </div>
         <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">Kyocera Fotokopi &amp; Yazıcı Modelleri</span></div>
-        <h2 class="sec-title">Kyocera Ürün Ailesi</h2>
-        <p class="sec-sub">Resimleri sonradan ekleyebilirsiniz — her kutucuğun içine <code>&lt;img&gt;</code> etiketi ile fotoğrafı yerleştirin.</p>
+        <h2 class="sec-title">Kyocera Fotokopi &amp; Yazıcı Modelleri</h2>
+        <p class="sec-sub">Kyocera yetkili satıcısı Bilgiteknik'te İstanbul'a özel fiyatlarla A4/A3 mono ve renkli fotokopi kiralama ve satış seçenekleri.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:.8rem;align-items:flex-end">
         <div class="kyo-filter">
@@ -603,14 +809,14 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
           <button class="kyo-ftag">A3</button>
           <button class="kyo-ftag">Kiralık</button>
         </div>
-        <a href="#iletisim" style="padding:.7rem 1.6rem;background:#E8001D;color:#fff;border-radius:8px;font-size:.85rem;font-weight:700;text-decoration:none">Toplu Teklif Al</a>
+        <a href="iletisim.html" style="padding:.7rem 1.6rem;background:#E8001D;color:#fff;border-radius:8px;font-size:.85rem;font-weight:700;text-decoration:none">Toplu Teklif Al</a>
       </div>
     </div>
 
     <div class="kyo-grid reveal">
 
       <!-- FEATURED — geniş kart -->
-      <div class="kyo-card featured" onclick="openLB('k1')">
+      <div class="kyo-card featured" onclick="window.location.href='kyocera-ecosys-ma4500x.html'">
         <div class="kyo-img-zone" id="k1z">
           <div class="kyo-ribbon">Öne Çıkan</div>
           <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/ECOSYSMA4500X/square-540x540.ECOSYS-MA4500x.png" alt="Kyocera ECOSYS MA4500x">
@@ -636,7 +842,7 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
       </div>
 
       <!-- MODEL 2 -->
-      <div class="kyo-card" onclick="openLB('k2')">
+      <div class="kyo-card" onclick="window.location.href='kyocera-ecosys-ma6000ifx.html'">
         <div class="kyo-img-zone" id="k2z">
           <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/ECOSYSMA6000IFX/MFP_MA6000ifx_left_comb01_01_updated.png" alt="Kyocera ECOSYS MA6000ifx">
           <div class="kyo-ph-icon" style="display:none"><svg width="52" height="52" viewBox="0 0 64 64" fill="none"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 24 L28 34 L40 20 L58 40" stroke="currentColor" stroke-width="1.5" opacity=".5"/><circle cx="20" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity=".5"/></svg></div>
@@ -659,7 +865,7 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
       </div>
 
       <!-- MODEL 3 -->
-      <div class="kyo-card" onclick="openLB('k3')">
+      <div class="kyo-card" onclick="window.location.href='kyocera-taskalfa-2554ci.html'">
         <div class="kyo-img-zone" id="k3z">
           <div class="kyo-ribbon gold">Renkli</div>
           <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA2554CI/square-540x540-taskalfa-2554ci-main-image.png" alt="Kyocera TASKalfa 2554ci">
@@ -683,7 +889,7 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
       </div>
 
       <!-- MODEL 4 -->
-      <div class="kyo-card" onclick="openLB('k4')">
+      <div class="kyo-card" onclick="window.location.href='kyocera-taskalfa-5004i.html'">
         <div class="kyo-img-zone" id="k4z">
           <div class="kyo-ribbon navy">Kurumsal</div>
           <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA5004I/square-540x540-TASKalfa-5004i.png" alt="Kyocera TASKalfa 5004i">
@@ -707,7 +913,7 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
       </div>
 
       <!-- MODEL 5 -->
-      <div class="kyo-card" onclick="openLB('k5')">
+      <div class="kyo-card" onclick="window.location.href='kyocera-ecosys-pa2100cx.html'">
         <div class="kyo-img-zone" id="k5z">
           <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/printers/ECOSYSPA2100CX/mfp-ecosys-pa2100cx_540x540.png" alt="Kyocera ECOSYS PA2100cx">
           <div class="kyo-ph-icon" style="display:none"><svg width="52" height="52" viewBox="0 0 64 64" fill="none"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 24 L28 34 L40 20 L58 40" stroke="currentColor" stroke-width="1.5" opacity=".5"/><circle cx="20" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity=".5"/></svg></div>
@@ -730,7 +936,7 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
       </div>
 
       <!-- MODEL 6 -->
-      <div class="kyo-card" onclick="openLB('k6')">
+      <div class="kyo-card" onclick="window.location.href='kyocera-taskalfa-7054ci.html'">
         <div class="kyo-img-zone" id="k6z">
           <div class="kyo-ribbon">Üretim</div>
           <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA7054CI/square-540x540-TASKalfa_7054ci.png" alt="Kyocera TASKalfa 7054ci">
@@ -754,7 +960,7 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
       </div>
 
       <!-- MODEL 7 -->
-      <div class="kyo-card" onclick="openLB('k7')">
+      <div class="kyo-card" onclick="window.location.href='kyocera-ecosys-m2040dn.html'">
         <div class="kyo-img-zone" id="k7z">
           <img src="https://www.officeequipments.ae/wp-content/uploads/2024/01/Untitled-design-53.jpg" alt="Kyocera ECOSYS M2040dn">
           <div class="kyo-ph-icon" style="display:none"><svg width="52" height="52" viewBox="0 0 64 64" fill="none"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 24 L28 34 L40 20 L58 40" stroke="currentColor" stroke-width="1.5" opacity=".5"/><circle cx="20" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity=".5"/></svg></div>
@@ -777,7 +983,7 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
       </div>
 
       <!-- MODEL 8 -->
-      <div class="kyo-card" onclick="openLB('k8')">
+      <div class="kyo-card" onclick="window.location.href='kyocera-taskalfa-4054ci.html'">
         <div class="kyo-img-zone" id="k8z">
           <div class="kyo-ribbon gold">Renkli</div>
           <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA4054CI/square-540x540-TASKalfa_4054ci.png" alt="Kyocera TASKalfa 4054ci">
@@ -810,8 +1016,8 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
     <div class="sec-header">
       <div>
         <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">Neden Bilgiteknik?</span></div>
-        <h2 class="sec-title">25 Yıldır Yanınızdayız</h2>
-        <p class="sec-sub">2000 yılında kurulan Bilgiteknik, güven ve kaliteyi ön planda tutarak büyümeye devam ediyor.</p>
+        <h2 class="sec-title">Neden Bilgiteknik Fotokopi Kiralama?</h2>
+        <p class="sec-sub">2000'den bu yana İstanbul'da fotokopi kiralama, yazıcı kiralama ve teknik servis alanında 20.000'den fazla müşteriye hizmet verdik.</p>
       </div>
     </div>
     <div class="why-grid reveal">
@@ -829,12 +1035,12 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
 <div class="rental-banner reveal" id="kiralama2">
   <div class="rental-inner">
     <div>
-      <h2 class="rental-title">Satın Almak Yerine<br>Kiralayın — Kâr Edin!</h2>
+      <h2 class="rental-title">İstanbul'da Fotokopi Kiralama<br>ile Kâr Edin!</h2>
       <p class="rental-sub">İlk siparişinizde tanışma indirimi. Aylık sabit ödemelerle premium cihazlar — bakım, toner ve servis dahil.</p>
     </div>
     <div class="rental-btns">
-      <a href="#iletisim" class="btn-orange-lg">Hemen Teklif Al!</a>
-      <a href="https://wa.me/905326944862" class="btn-white-lg" target="_blank">WhatsApp ile Sor</a>
+      <a href="iletisim.html" class="btn-orange-lg">Hemen Teklif Al!</a>
+      <a href="https://wa.me/905318673034" class="btn-white-lg" target="_blank">WhatsApp ile Sor</a>
     </div>
   </div>
 </div>
@@ -846,8 +1052,8 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
     <div class="about-since">★ 2000'den Beri</div>
     <div class="sec-eyebrow"><div class="sec-line" style="background:rgba(255,255,255,.3)"></div><span class="sec-tag" style="color:rgba(255,255,255,.5)">Hakkımızda</span></div>
     <h2 class="sec-title">Bilgiteknik<br>Büro Makinaları</h2>
-    <p class="about-desc">2000 yılında kurulan Bilgiteknik, büro makinaları alanında çeyrek asrı aşkın deneyimiyle İstanbul başta olmak üzere Türkiye genelinde kurumsal ve bireysel müşterilere güvenilir çözümler sunmaktadır.</p>
-    <a href="#iletisim" class="btn-orange-lg" style="width:fit-content">Teklif Alın</a>
+    <p class="about-desc">2000 yılında Üsküdar'da kurulan Bilgiteknik, İstanbul'da fotokopi kiralama, yazıcı kiralama, Kyocera yetkili satıcılık ve teknik servis alanlarında çeyrek asrı aşkın deneyimiyle binlerce kurumsal müşteriye hizmet vermektedir.</p>
+    <a href="iletisim.html" class="btn-orange-lg" style="width:fit-content">Teklif Alın</a>
   </div>
   <div class="about-right">
     <div class="about-row"><div class="about-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L17 6v8L10 18 3 14V6L10 2z" stroke="currentColor" stroke-width="1.5"/></svg></div><div><h4>Yetkili Servis Ağı</h4><p>Kyocera, Ricoh, Canon, Fellowes ve Safescan yetkili satıcı ve teknik servis sertifikalarına sahibiz.</p></div></div>
@@ -885,12 +1091,12 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
     <div class="footer-top">
       <div>
         <div class="footer-logo-name">Bilgi<span>teknik</span></div>
-        <p class="footer-desc">2000 yılından bu yana büro makinaları alanında faaliyet gösteren, müşteri odaklı yaklaşımıyla fark yaratan güvenilir iş ortağınız.</p>
+        <p class="footer-desc">2000'den bu yana İstanbul'da fotokopi kiralama, yazıcı kiralama ve Kyocera yetkili teknik servis. Üsküdar, Kadıköy, Ataşehir, Beykoz ve tüm İstanbul'a hizmet.</p>
         <div class="footer-social"><a href="#" class="f-soc">in</a><a href="#" class="f-soc">tw</a><a href="#" class="f-soc">ig</a><a href="#" class="f-soc">yt</a></div>
       </div>
       <div><h4>Ürünler</h4><ul class="f-links"><li><a href="#">Kyocera Yazıcılar</a></li><li><a href="#">Fotokopi Kiralama</a></li><li><a href="#">Tarayıcılar</a></li><li><a href="#">Evrak İmhacıları</a></li><li><a href="#">Para Sayma</a></li><li><a href="#">Toner &amp; Sarf</a></li></ul></div>
       <div><h4>Hizmetler</h4><ul class="f-links"><li><a href="#">Teknik Servis</a></li><li><a href="#">Periyodik Bakım</a></li><li><a href="#">Kurumsal Kiralama</a></li><li><a href="#">Proje Danışmanlığı</a></li><li><a href="#">Eğitim &amp; Kurulum</a></li></ul></div>
-      <div><h4>İletişim</h4><ul class="f-links"><li><a href="#">Sancaktepe, İstanbul</a></li><li><a href="tel:+905326944862">0532 694 48 62</a></li><li><a href="https://wa.me/905326944862">WhatsApp Hattı</a></li><li><a href="mailto:bilgiteknik2000@gmail.com">bilgiteknik2000@gmail.com</a></li><li><a href="#">Pzt–Cum 09–18, Cmt 10–15</a></li></ul></div>
+      <div><h4>İletişim</h4><ul class="f-links"><li><a href="#">Bulgurlu, Üsküdar / İstanbul</a></li><li><a href="tel:+905326944862">0532 694 48 62</a></li><li><a href="https://wa.me/905318673034">WhatsApp Hattı</a></li><li><a href="mailto:info@bilgiteknik.net">info@bilgiteknik.net</a></li><li><a href="#">Pzt–Cum 09–18, Cmt 10–15</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <span class="f-copy">© 2025 Bilgiteknik Büro Makinaları — 2000'den Bu Yana Hizmetinizdeyiz</span>
@@ -902,7 +1108,7 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
 <!-- FLOATING WHATSAPP -->
 <div class="float-wa">
   <span class="wa-label">WhatsApp ile Yazın</span>
-  <a href="https://wa.me/905326944862?text=Merhaba, büro makinaları için bilgi almak istiyorum." target="_blank" class="wa-btn">
+  <a href="https://wa.me/905318673034?text=Merhaba, ürünleriniz hakkında bilgi almak istiyorum." target="_blank" class="wa-btn">
     <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.11 1.523 5.833L.044 23.956l6.29-1.483A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.48-5.16-1.33l-.37-.21-3.73.88.9-3.64-.23-.38A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
   </a>
 </div>
@@ -938,7 +1144,13 @@ document.querySelectorAll('.s-tab').forEach(b=>b.addEventListener('click',functi
 document.querySelectorAll('.kyo-ftag').forEach(b=>b.addEventListener('click',function(){document.querySelectorAll('.kyo-ftag').forEach(x=>x.classList.remove('active'));this.classList.add('active')}));
 
 /* ── TEKLIF BTNS ── */
-document.querySelectorAll('.btn-kyo-teklif').forEach(b=>b.addEventListener('click',function(){this.textContent='İstek Alındı ✓';this.style.background='#16a34a';setTimeout(()=>{this.textContent='Teklif Al';this.style.background=''},2500)}));
+document.querySelectorAll('.btn-kyo-teklif').forEach(b=>b.addEventListener('click',function(e){
+  e.stopPropagation();
+  this.textContent='İstek Alındı ✓';
+  this.style.background='#16a34a';
+  this.disabled=true;
+  setTimeout(()=>{ window.location.href='iletisim.html'; }, 1500);
+}));
 
 /* ── LIGHTBOX ── */
 function openLB(id){
@@ -953,6 +1165,36 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementB
 
 /* ── NEWSLETTER ── */
 document.querySelector('.nl-btn').addEventListener('click',function(){const i=document.querySelector('.nl-input');if(i.value){this.textContent='Kaydedildi ✓';this.style.background='#16a34a';i.value='';setTimeout(()=>{this.textContent='Abone Ol';this.style.background=''},3000)}});
+</script>
+<script>
+/* ── MOBİL MENÜ ── */
+function toggleMenu(){
+  const menu = document.querySelector('.nav-menu');
+  const btn = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+document.querySelectorAll('.nav-item').forEach(item=>{
+  const link = item.querySelector('.nav-link');
+  const dd = item.querySelector('.dropdown');
+  if(dd){
+    link.addEventListener('click',function(e){
+      if(window.innerWidth<=768){
+        e.preventDefault();
+        item.classList.toggle('dd-open');
+      }
+    });
+  }
+});
+document.addEventListener('click',function(e){
+  if(window.innerWidth>768) return;
+  const menu = document.querySelector('.nav-menu');
+  const btn = document.getElementById('hamburger');
+  if(menu && menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)){
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+  }
+});
 </script>
 </body>
 </html>

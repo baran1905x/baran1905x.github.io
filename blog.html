@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://www.bilgiteknik.net/blog.html">
+<title>Blog | Fotokopi & Yazıcı Kiralama Rehberi | Bilgiteknik</title>
+<meta name="description" content="Fotokopi kiralama, yazıcı kiralama ve büro makinaları hakkında uzman içerikler. Bilgiteknik blog sayfası ile doğru kararı verin.">
+<meta property="og:title" content="Blog | Bilgiteknik Büro Makinaları">
+<meta property="og:description" content="Fotokopi ve yazıcı kiralama rehberi, Kyocera ürün tavsiyeleri ve büro makinaları ipuçları.">
+<meta property="og:url" content="https://www.bilgiteknik.net/blog.html">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1565C0;--blue2:#1976D2;--blue3:#E3F0FF;--blue4:#0D47A1;
+  --orange:#F57C00;--orange2:#FF9800;--orange-pale:#FFF3E0;
+  --white:#FFFFFF;--gray1:#F8F9FC;--gray2:#F0F2F7;--gray3:#E4E8F0;
+  --gray4:#B0BBC8;--ink:#1A2332;--mid:#5A6A80;--light:#8C9BAD;
+  --border:#DCE3EE;--shadow:0 2px 16px rgba(21,101,192,.07);
+  --shadow2:0 8px 40px rgba(21,101,192,.13);--rad:12px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:'Inter',sans-serif;overflow-x:hidden}
+
+.topbar{background:var(--blue4);color:rgba(255,255,255,.85);font-size:.75rem;padding:.45rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.topbar a{color:rgba(255,255,255,.85);text-decoration:none}.topbar a:hover{color:#fff}
+.topbar-left{display:flex;gap:2rem}.topbar-right{display:flex;gap:1.5rem;align-items:center}
+.topbar-badge{background:var(--orange);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.08em;padding:.2rem .6rem;border-radius:3px;text-transform:uppercase}
+
+nav{position:sticky;top:0;z-index:800;background:#fff;border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 3rem;height:70px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nav-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.logo-icon{width:40px;height:40px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;position:relative}
+.logo-icon::after{content:'';position:absolute;width:12px;height:12px;background:var(--orange);border-radius:50%;top:-4px;right:-4px}
+.logo-icon svg{color:#fff}
+.logo-name{font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:700;color:var(--ink)}
+.logo-name span{color:var(--blue)}
+.nav-menu{display:flex;gap:0;list-style:none}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:.35rem;padding:.5rem 1.1rem;font-size:.84rem;font-weight:500;color:var(--mid);text-decoration:none;white-space:nowrap;transition:color .2s;height:70px}
+.nav-link:hover,.nav-link.active{color:var(--blue)}
+.nav-link svg{width:12px;height:12px;transition:transform .2s}
+.nav-item:hover .nav-link svg{transform:rotate(180deg)}
+.dropdown{position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid var(--border);border-radius:0 0 var(--rad) var(--rad);box-shadow:var(--shadow2);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .2s;z-index:100}
+.nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown a{display:block;padding:.7rem 1.2rem;font-size:.82rem;color:var(--mid);text-decoration:none;transition:background .15s,color .15s;border-bottom:1px solid var(--gray3)}
+.dropdown a:last-child{border-bottom:none}
+.dropdown a:hover{background:var(--blue3);color:var(--blue)}
+.dropdown a.dd-header{font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--light);pointer-events:none;background:var(--gray1);padding:.45rem 1.2rem}
+.nav-right{display:flex;align-items:center;gap:.8rem}
+.nav-phone{font-size:.82rem;font-weight:600;color:var(--ink);text-decoration:none}
+.nav-phone:hover{color:var(--blue)}
+.btn-whatsapp{display:flex;align-items:center;gap:.4rem;padding:.55rem 1.1rem;background:#25D366;color:#fff;border-radius:6px;font-size:.78rem;font-weight:600;text-decoration:none;transition:background .2s}
+.btn-whatsapp:hover{background:#1ebe5d}
+.btn-teklif-nav{padding:.55rem 1.4rem;background:var(--orange);color:#fff;border-radius:6px;font-size:.82rem;font-weight:700;text-decoration:none;transition:background .2s}
+.btn-teklif-nav:hover{background:var(--orange2)}
+
+.breadcrumb{background:var(--gray1);border-bottom:1px solid var(--border);padding:.8rem 3rem}
+.breadcrumb-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:var(--light)}
+.breadcrumb a{color:var(--mid);text-decoration:none}.breadcrumb a:hover{color:var(--blue)}
+.breadcrumb span{color:var(--blue);font-weight:600}
+
+/* ── HERO ── */
+.page-hero{background:linear-gradient(135deg,var(--blue4) 0%,var(--blue) 100%);padding:4.5rem 3rem;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:-80px;right:-80px;width:350px;height:350px;border-radius:50%;background:rgba(255,255,255,.04)}
+.hero-inner{max-width:700px;margin:0 auto;position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:.4rem 1rem;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:1.2rem}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:800;color:#fff;line-height:1.1;margin-bottom:1rem}
+.hero-title em{font-style:normal;color:var(--orange2)}
+.hero-sub{font-size:.92rem;color:rgba(255,255,255,.7);line-height:1.8}
+
+/* ── BLOG LAYOUT ── */
+.blog-layout{max-width:1280px;margin:0 auto;padding:5rem 3rem;display:grid;grid-template-columns:1fr 320px;gap:4rem;align-items:start}
+
+/* ── BLOG GRID ── */
+.blog-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+
+.blog-card{background:var(--white);border:1px solid var(--border);border-radius:var(--rad);overflow:hidden;transition:all .25s;display:flex;flex-direction:column}
+.blog-card:hover{box-shadow:var(--shadow2);transform:translateY(-4px);border-color:var(--blue)}
+
+.blog-thumb{width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden}
+.blog-thumb.blue{background:linear-gradient(135deg,var(--blue4),var(--blue2))}
+.blog-thumb.orange{background:linear-gradient(135deg,#E65100,var(--orange))}
+.blog-thumb.green{background:linear-gradient(135deg,#1B5E20,#388E3C)}
+.blog-thumb.purple{background:linear-gradient(135deg,#4A148C,#7B1FA2)}
+.blog-thumb.teal{background:linear-gradient(135deg,#004D40,#00897B)}
+.blog-thumb.red{background:linear-gradient(135deg,#B71C1C,#E53935)}
+.blog-thumb.navy{background:linear-gradient(135deg,#0D47A1,#1565C0)}
+.blog-thumb.brown{background:linear-gradient(135deg,#3E2723,#6D4C41)}
+.blog-thumb.indigo{background:linear-gradient(135deg,#1A237E,#3949AB)}
+.blog-thumb.cyan{background:linear-gradient(135deg,#006064,#00ACC1)}
+.blog-thumb.lime{background:linear-gradient(135deg,#33691E,#7CB342)}
+
+.thumb-icon{font-size:3.5rem;opacity:.85;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))}
+.thumb-num{position:absolute;top:1rem;right:1rem;font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:800;color:rgba(255,255,255,.1);line-height:1}
+
+.blog-body{padding:1.5rem;flex:1;display:flex;flex-direction:column}
+.blog-cat{display:inline-flex;align-items:center;gap:.4rem;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue3);padding:.25rem .7rem;border-radius:20px;margin-bottom:.8rem;width:fit-content}
+.blog-title{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);line-height:1.4;margin-bottom:.6rem;text-decoration:none;display:block}
+.blog-title:hover{color:var(--blue)}
+.blog-excerpt{font-size:.8rem;color:var(--mid);line-height:1.65;margin-bottom:1.2rem;flex:1}
+.blog-footer{display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--border)}
+.blog-meta{font-size:.72rem;color:var(--light)}
+.blog-read{font-size:.75rem;font-weight:700;color:var(--blue);text-decoration:none;display:flex;align-items:center;gap:.3rem;transition:gap .2s}
+.blog-read:hover{gap:.6rem}
+
+/* ── SIDEBAR ── */
+.sidebar{display:flex;flex-direction:column;gap:2rem;position:sticky;top:90px}
+
+.sidebar-card{background:var(--gray1);border:1px solid var(--border);border-radius:var(--rad);overflow:hidden}
+.sidebar-header{background:var(--blue4);padding:1.2rem 1.5rem}
+.sidebar-header h3{font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:700;color:#fff}
+.sidebar-body{padding:1.5rem}
+
+.popular-list{display:flex;flex-direction:column;gap:1rem}
+.popular-item{display:flex;gap:.8rem;align-items:flex-start;text-decoration:none;transition:opacity .2s}
+.popular-item:hover{opacity:.75}
+.pop-num{width:28px;height:28px;background:var(--blue3);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-size:.75rem;font-weight:800;color:var(--blue);flex-shrink:0}
+.pop-title{font-size:.8rem;font-weight:600;color:var(--ink);line-height:1.4}
+
+.tag-cloud{display:flex;flex-wrap:wrap;gap:.5rem}
+.tag{font-size:.72rem;font-weight:600;padding:.3rem .8rem;background:#fff;border:1.5px solid var(--border);border-radius:20px;color:var(--mid);text-decoration:none;transition:all .2s;cursor:pointer}
+.tag:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+
+.cta-sidebar{background:linear-gradient(135deg,var(--orange),#E65100);border-radius:var(--rad);padding:2rem;text-align:center}
+.cta-sidebar h3{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:.5rem}
+.cta-sidebar p{font-size:.78rem;color:rgba(255,255,255,.8);line-height:1.6;margin-bottom:1.2rem}
+.btn-cta-s{display:block;padding:.8rem;background:#fff;color:var(--orange);border-radius:8px;font-family:'Poppins',sans-serif;font-size:.85rem;font-weight:700;text-decoration:none;transition:background .2s}
+.btn-cta-s:hover{background:var(--orange-pale)}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);color:#fff;padding:4rem 3rem 2rem;margin-top:2rem;border-top:1px solid var(--border)}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3.5rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-logo-name{font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.footer-logo-name span{color:var(--orange2)}
+.footer-desc{font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.7;margin-bottom:1.5rem}
+.footer-social{display:flex;gap:.6rem}
+.f-soc{width:34px;height:34px;border-radius:8px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.76rem;font-weight:700;text-decoration:none;transition:all .2s}
+.f-soc:hover{border-color:var(--orange2);color:var(--orange2)}
+.f-col h4{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:1.2rem}
+.f-links{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.f-links a{font-size:.83rem;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+.f-links a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;flex-wrap:wrap;gap:1rem}
+.f-copy{font-size:.72rem;color:rgba(255,255,255,.25)}
+
+/* ── FLOAT WA ── */
+.float-wa{position:fixed;bottom:2rem;right:2rem;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:.6rem}
+.wa-btn{width:58px;height:58px;border-radius:50%;background:#25D366;box-shadow:0 4px 20px rgba(37,211,102,.4);display:flex;align-items:center;justify-content:center;text-decoration:none;animation:waPulse 3s ease-in-out infinite}
+.wa-btn:hover{transform:scale(1.1)}
+.wa-btn svg{width:30px;height:30px}
+.wa-label{background:var(--ink);color:#fff;font-size:.72rem;font-weight:600;padding:.35rem .85rem;border-radius:20px;white-space:nowrap;opacity:0;transform:translateX(10px);transition:all .2s}
+.float-wa:hover .wa-label{opacity:1;transform:translateX(0)}
+
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 28px rgba(37,211,102,.7)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:none}
+
+/* ══════════════════════════════════════════════
+   MOBİL UYUMLULUK — Tablet & Telefon
+══════════════════════════════════════════════ */
+
+/* ── HAMBURGER BUTONU ── */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;z-index:901}
+.hamburger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s;display:block}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* ── TABLET (1024px) ── */
+@media(max-width:1024px){
+  .topbar{padding:.45rem 1.5rem}
+  .topbar-left{gap:1rem}
+  nav .nav-inner,.nav-inner{padding:0 1.5rem}
+  section,.blog-layout,.article-layout,.product-layout,.spec-section,.related-section,
+  .services-section,.why-section,.kyocera-section,.brands,.testimonials,.newsletter,
+  .cta-banner,.about-left,.about-right,.rental-inner,.main-content,.main-inner,
+  .contact-cards,.map-header,.footer-inner{padding-left:1.5rem!important;padding-right:1.5rem!important}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .kyo-grid{grid-template-columns:repeat(2,1fr)}
+  .kyo-card.featured{grid-column:span 2}
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .adv-grid{grid-template-columns:repeat(2,1fr)}
+  .pkg-grid{grid-template-columns:repeat(2,1fr)}
+  .test-grid{grid-template-columns:repeat(2,1fr)}
+  .blog-grid{grid-template-columns:repeat(2,1fr)}
+  .related-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .hero-stats{left:1.5rem;right:1.5rem}
+  .about-section{grid-template-columns:1fr}
+  .about-right{border-left:none;border-top:1px solid var(--border)}
+  .newsletter-form,.nl-form{min-width:auto;width:100%}
+  .cta-banner{grid-template-columns:1fr}
+  .rental-inner{grid-template-columns:1fr}
+  .product-layout{grid-template-columns:1fr}
+  .blog-layout{grid-template-columns:1fr}
+  .article-layout{grid-template-columns:1fr}
+  .sidebar{position:static}
+  .main-inner{grid-template-columns:1fr}
+  .cards-inner{grid-template-columns:repeat(2,1fr)}
+  .how-steps{grid-template-columns:repeat(2,1fr);gap:2rem}
+  .how-steps::before{display:none}
+  .quick-stats{grid-template-columns:repeat(2,1fr)}
+  .hero-slider{height:auto;min-height:500px}
+  .slide{grid-template-columns:1fr}
+  .slide-right{display:none}
+  .slide-stats{display:none}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+
+/* ── MOBİL (768px) ── */
+@media(max-width:768px){
+  .topbar{display:none}
+
+  /* Nav hamburger */
+  .hamburger{display:flex}
+  .nav-menu{
+    display:none;position:fixed;top:70px;left:0;right:0;bottom:0;
+    background:#fff;flex-direction:column;padding:2rem 1.5rem;
+    gap:0;overflow-y:auto;z-index:899;border-top:1px solid var(--border);
+    box-shadow:var(--shadow2)
+  }
+  .nav-menu.open{display:flex}
+  .nav-item{border-bottom:1px solid var(--border)}
+  .nav-link{height:auto;padding:1rem 0;font-size:.95rem;color:var(--ink)}
+  .dropdown{position:static;opacity:1;visibility:visible;transform:none;
+    box-shadow:none;border:none;background:var(--gray1);border-radius:var(--rad);
+    margin:.5rem 0;display:none}
+  .nav-item.dd-open .dropdown{display:block}
+  .nav-right{gap:.5rem}
+  .nav-phone{display:none}
+  .btn-whatsapp span{display:none}
+
+  /* Hero */
+  .hero-slider{min-height:auto}
+  .slide-left{padding:3rem 1.5rem 5rem}
+  .slide-title{font-size:1.8rem}
+  .slide-sub{font-size:.85rem}
+  .slider-ctrl{left:1.5rem}
+  .slide-stats{left:1.5rem;right:1.5rem;grid-template-columns:repeat(3,1fr)}
+  .ss-num{font-size:1.4rem}
+
+  /* Genel bölümler */
+  section,.services-section,.kyocera-section,.why-section,.brands,.testimonials,
+  .blog-layout,.article-layout,.spec-section,.related-section,.main-content,
+  .contact-cards,.cta-banner,.rental-banner,.newsletter{
+    padding-left:1.2rem!important;padding-right:1.2rem!important;
+    padding-top:3.5rem!important;padding-bottom:3.5rem!important
+  }
+  footer,.footer-inner{padding-left:1.2rem!important;padding-right:1.2rem!important}
+
+  /* Grid'ler tekil sütuna */
+  .cat-grid,.kyo-grid,.product-grid,.services-grid,.why-grid,.adv-grid,
+  .pkg-grid,.test-grid,.blog-grid,.related-grid,.brands-grid,
+  .how-steps,.cards-inner,.quick-stats,.hero-stat-grid{
+    grid-template-columns:1fr!important
+  }
+  .kyo-card.featured,.kyo-card.wide{grid-column:span 1!important;flex-direction:column!important}
+  .kyo-card.featured .kyo-img-zone,.kyo-card.wide .kyo-img-zone{width:100%!important;border-right:none!important;border-bottom:1px solid var(--border)!important;aspect-ratio:4/3!important}
+
+  /* About */
+  .about-section{grid-template-columns:1fr}
+  .about-left,.about-right{padding:3rem 1.5rem}
+  .about-bg-year{font-size:8rem}
+
+  /* Footer */
+  .footer-top{grid-template-columns:1fr;gap:2rem}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:.5rem}
+
+  /* Newsletter */
+  .nl-form,.newsletter-form{flex-direction:column}
+  .nl-input,.newsletter-input{border-right:1.5px solid var(--border)!important;border-bottom:none;border-radius:8px 8px 0 0!important}
+  .nl-btn,.newsletter-submit{border-radius:0 0 8px 8px!important}
+
+  /* CTA Banner */
+  .cta-banner,.rental-inner{grid-template-columns:1fr;text-align:center}
+  .cta-right,.rental-btns{justify-content:center;flex-wrap:wrap}
+
+  /* Ticker */
+  .ticker-inner{animation-duration:20s}
+
+  /* Map */
+  .map-wrap{height:280px}
+  .map-overlay{left:1rem;right:1rem;bottom:1rem}
+
+  /* FAQ */
+  .faq-inner{grid-template-columns:1fr}
+
+  /* Spec table */
+  .spec-table{font-size:.78rem}
+  .spec-table td,.spec-table th{padding:.6rem .8rem}
+
+  /* Blog */
+  .blog-grid{grid-template-columns:1fr}
+  .article-layout,.blog-layout{grid-template-columns:1fr;padding-top:2rem!important}
+  .related-grid{grid-template-columns:1fr}
+
+  /* Product detail */
+  .product-layout{grid-template-columns:1fr}
+  .key-specs{grid-template-columns:repeat(2,1fr)}
+  .product-gallery{position:static}
+
+  /* İletişim */
+  .faq-inner,.what-inner{grid-template-columns:1fr}
+  .hero-inner{grid-template-columns:1fr!important}
+  .hero-card{display:none}
+
+  /* Brands */
+  .brands-grid{grid-template-columns:repeat(3,1fr)}
+  .brand-cell{padding:1.2rem .5rem}
+  .brand-name{font-size:.85rem}
+
+  /* Tablo scroll */
+  .compare-table-wrap,.spec-section{overflow-x:auto}
+  .compare-table,.spec-table{min-width:500px}
+
+  /* Sections */
+  .section-title,.sec-title,.article-title,.product-name{font-size:1.5rem!important}
+  .sec-sub,.section-sub{font-size:.85rem}
+
+  /* Floating WA */
+  .float-wa{bottom:1rem;right:1rem}
+  .wa-btn{width:50px;height:50px}
+
+  /* Kiralama sayfaları */
+  .pkg-grid{grid-template-columns:1fr}
+  .hero-checks{grid-template-columns:1fr}
+  .slide-badges{display:none}
+}
+
+/* ── KÜÇÜK MOBİL (480px) ── */
+@media(max-width:480px){
+  .nav-inner{padding:0 1rem}
+  .logo-name{font-size:1.1rem}
+  .slide-title{font-size:1.5rem}
+  .article-title,.product-name{font-size:1.3rem!important}
+  .key-specs{grid-template-columns:repeat(2,1fr)}
+  .brands-grid{grid-template-columns:repeat(2,1fr)}
+  .btn-slide-primary,.btn-slide-ghost,.btn-orange,.btn-white-ghost{
+    padding:.75rem 1.5rem;font-size:.85rem
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span>📍 Bulgurlu, Üsküdar / İstanbul</span>
+    <a href="tel:+905326944862">📞 0532 694 48 62</a>
+    <a href="mailto:info@bilgiteknik.net">✉ info@bilgiteknik.net</a>
+  </div>
+  <div class="topbar-right">
+    <span>Pzt–Cum 09:00–18:00 · Cumartesi 10:00–15:00</span>
+    <span class="topbar-badge">2000'den Bu Yana</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <rect x="3" y="8" width="16" height="11" rx="1.5" stroke="white" stroke-width="1.5"/>
+          <rect x="6" y="3" width="10" height="6" rx="1" stroke="white" stroke-width="1.5"/>
+          <rect x="6" y="14" width="10" height="3" rx=".5" fill="white" opacity=".4"/>
+        </svg>
+      </div>
+      <span class="logo-name">Bilgi<span>teknik</span></span>
+    </a>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="fotokopi-kiralama.html" class="nav-link">Fotokopi Kiralama</a></li>
+      <li class="nav-item"><a href="yazici-kiralama.html" class="nav-link">Yazıcı Kiralama</a></li>
+      <li class="nav-item"><a href="urunler.html" class="nav-link">Ürünler</a></li>
+      <li class="nav-item"><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+      <li class="nav-item"><a href="blog.html" class="nav-link active">Blog</a></li>
+    </ul>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    <div class="nav-right">
+      <a href="tel:+905326944862" class="nav-phone">0532 694 48 62</a>
+      <a href="https://wa.me/905318673034?text=Merhaba, bilgi almak istiyorum." class="btn-whatsapp" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.11 1.523 5.833L.044 23.956l6.29-1.483A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.48-5.16-1.33l-.37-.21-3.73.88.9-3.64-.23-.38A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp
+      </a>
+      <a href="iletisim.html" class="btn-teklif-nav">Teklif Al!</a>
+    </div>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Ana Sayfa</a>
+    <span>›</span>
+    <span>Blog</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="hero-inner">
+    <div class="hero-badge">📚 Uzman İçerikler</div>
+    <h1 class="hero-title">Büro Makinaları<br><em>Rehber & Blog</em></h1>
+    <p class="hero-sub">Fotokopi kiralama, yazıcı seçimi ve büro makinaları hakkında doğru kararlar için uzman içeriklerimizi inceleyin.</p>
+  </div>
+</div>
+
+<!-- BLOG LAYOUT -->
+<div class="blog-layout">
+
+  <!-- BLOG GRID -->
+  <div>
+    <div class="blog-grid">
+
+      <!-- 1 -->
+      <div class="blog-card">
+        <div class="blog-thumb blue">
+          <span class="thumb-icon">🤔</span>
+          <span class="thumb-num">01</span>
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">📋 Kiralama Rehberi</span>
+          <a href="blog-fotokopi-alsam-mi-kiralasam-mi.html" class="blog-title">Fotokopi mi Alsam, Kiralasam mı? Hangisi Daha Mantıklı?</a>
+          <p class="blog-excerpt">Fotokopi makinesi almak mı yoksa kiralamak mı daha avantajlı? Maliyet analizi, esneklik ve teknik destek açısından kapsamlı karşılaştırma.</p>
+          <div class="blog-footer">
+            <span class="blog-meta">5 dk okuma</span>
+            <a href="blog-fotokopi-alsam-mi-kiralasam-mi.html" class="blog-read">Devamını Oku →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="blog-card">
+        <div class="blog-thumb navy">
+          <span class="thumb-icon">🖨️</span>
+          <span class="thumb-num">02</span>
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">⭐ Kyocera</span>
+          <a href="blog-kyocera-fotokopi-secimi.html" class="blog-title">Kyocera Fotokopi Seçerken Nelere Dikkat Edilmeli?</a>
+          <p class="blog-excerpt">Kyocera fotokopi modelleri arasında nasıl seçim yapılır? Baskı hızı, toner maliyeti ve kurumsal ihtiyaçlara göre doğru model rehberi.</p>
+          <div class="blog-footer">
+            <span class="blog-meta">6 dk okuma</span>
+            <a href="blog-kyocera-fotokopi-secimi.html" class="blog-read">Devamını Oku →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="blog-card">
+        <div class="blog-thumb orange">
+          <span class="thumb-icon">🖥️</span>
+          <span class="thumb-num">03</span>
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">💡 Yazıcı Rehberi</span>
+          <a href="blog-ofis-yazici-secimi.html" class="blog-title">Ofis İçin Doğru Yazıcı Nasıl Seçilir?</a>
+          <p class="blog-excerpt">Ofis yazıcısı seçerken baskı hacmi, sayfa maliyeti ve bağlantı seçenekleri nasıl değerlendirilmeli? Adım adım rehber.</p>
+          <div class="blog-footer">
+            <span class="blog-meta">4 dk okuma</span>
+            <a href="blog-ofis-yazici-secimi.html" class="blog-read">Devamını Oku →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="blog-card">
+        <div class="blog-thumb green">
+          <span class="thumb-icon">🔧</span>
+          <span class="thumb-num">04</span>
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">🛠️ Bakım & Servis</span>
+          <a href="blog-fotokopi-bakim.html" class="blog-title">Fotokopi Bakımı Ne Zaman Yapılmalı? Belirtiler ve Çözümler</a>
+          <p class="blog-excerpt">Fotokopi makinenizin periyodik bakıma ihtiyaç duyduğunu gösteren belirtiler nelerdir? Erken müdahale ile cihaz ömrünü uzatın.</p>
+          <div class="blog-footer">
+            <span class="blog-meta">4 dk okuma</span>
+            <a href="blog-fotokopi-bakim.html" class="blog-read">Devamını Oku →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="blog-card">
+        <div class="blog-thumb purple">
+          <span class="thumb-icon">📐</span>
+          <span class="thumb-num">05</span>
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">📏 Format Rehberi</span>
+          <a href="blog-a3-mi-a4-mu.html" class="blog-title">A3 mü A4 mü? Ofisiniz İçin Hangi Format Gerekli?</a>
+          <p class="blog-excerpt">A3 ve A4 fotokopi makineleri arasındaki farklar, kullanım alanları ve hangi işletmenin hangisine ihtiyaç duyduğu hakkında kapsamlı rehber.</p>
+          <div class="blog-footer">
+            <span class="blog-meta">3 dk okuma</span>
+            <a href="blog-a3-mi-a4-mu.html" class="blog-read">Devamını Oku →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="blog-card">
+        <div class="blog-thumb teal">
+          <span class="thumb-icon">💡</span>
+          <span class="thumb-num">06</span>
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">💰 Tasarruf İpuçları</span>
+          <a href="blog-toner-tasarrufu.html" class="blog-title">Toner Tasarrufu İçin 7 Etkili İpucu</a>
+          <p class="blog-excerpt">Toner maliyetlerinizi %40'a kadar düşürebilirsiniz. Baskı ayarları, toner seçimi ve kullanım alışkanlıkları ile tasarruf rehberi.</p>
+          <div class="blog-footer">
+            <span class="blog-meta">3 dk okuma</span>
+            <a href="blog-toner-tasarrufu.html" class="blog-read">Devamını Oku →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="blog-card">
+        <div class="blog-thumb red">
+          <span class="thumb-icon">🧮</span>
+          <span class="thumb-num">07</span>
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">📊 Maliyet Analizi</span>
+          <a href="blog-fotokopi-kiralama-maliyeti.html" class="blog-title">Fotokopi Kiralama Maliyeti Nasıl Hesaplanır?</a>
+          <p class="blog-excerpt">Aylık kiralama bedeli, sayfa başı maliyet ve toplam sahip olma maliyeti nasıl hesaplanır? Gerçek rakamlarla karşılaştırmalı analiz.</p>
+          <div class="blog-footer">
+            <span class="blog-meta">5 dk okuma</span>
+            <a href="blog-fotokopi-kiralama-maliyeti.html" class="blog-read">Devamını Oku →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="blog-card">
+        <div class="blog-thumb indigo">
+          <span class="thumb-icon">🖨️</span>
+          <span class="thumb-num">08</span>
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">📖 Yazıcı Rehberi</span>
+          <a href="blog-yazici-cesitleri.html" class="blog-title">Yazıcı Çeşitleri Nelerdir? Lazer mi Inkjet mi?</a>
+          <p class="blog-excerpt">Lazer, inkjet, termal ve nokta vuruşlu yazıcılar arasındaki farklar nelerdir? Ofis ihtiyacınıza göre doğru yazıcı türünü seçin.</p>
+          <div class="blog-footer">
+            <span class="blog-meta">5 dk okuma</span>
+            <a href="blog-yazici-cesitleri.html" class="blog-read">Devamını Oku →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="blog-card">
+        <div class="blog-thumb cyan">
+          <span class="thumb-icon">✅</span>
+          <span class="thumb-num">09</span>
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">📋 Kiralama Rehberi</span>
+          <a href="blog-yazici-kiralama-avantajlari.html" class="blog-title">Yazıcı Kiralamanın Avantajları — Neden Tercih Edilmeli?</a>
+          <p class="blog-excerpt">Yazıcı satın almak yerine kiralamak neden daha mantıklı? Maliyet, esneklik, teknik destek ve vergi avantajları ile kapsamlı analiz.</p>
+          <div class="blog-footer">
+            <span class="blog-meta">4 dk okuma</span>
+            <a href="blog-yazici-kiralama-avantajlari.html" class="blog-read">Devamını Oku →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="blog-card">
+        <div class="blog-thumb brown">
+          <span class="thumb-icon">📜</span>
+          <span class="thumb-num">10</span>
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">🏛️ Tarihçe</span>
+          <a href="blog-fotokopi-tarihcesi.html" class="blog-title">Fotokopi Makinesinin Tarihçesi — Chester Carlson'dan Günümüze</a>
+          <p class="blog-excerpt">1938'de Chester Carlson'ın icat ettiği kserogörafiden günümüzün akıllı MFP sistemlerine fotokopi makinesinin 80 yıllık evrimi.</p>
+          <div class="blog-footer">
+            <span class="blog-meta">6 dk okuma</span>
+            <a href="blog-fotokopi-tarihcesi.html" class="blog-read">Devamını Oku →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="blog-card">
+        <div class="blog-thumb lime">
+          <span class="thumb-icon">📄</span>
+          <span class="thumb-num">11</span>
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">💼 Kiralama Rehberi</span>
+          <a href="blog-sayfabasi-fotokopi-kiralama.html" class="blog-title">Neden Sayfa Başı Fotokopi Kiralama Sistemi?</a>
+          <p class="blog-excerpt">Sayfa başı fotokopi kiralama sistemi nedir, nasıl çalışır? Aylık sabit kira ile kıyaslandığında hangi işletmelere daha uygun?</p>
+          <div class="blog-footer">
+            <span class="blog-meta">4 dk okuma</span>
+            <a href="blog-sayfabasi-fotokopi-kiralama.html" class="blog-read">Devamını Oku →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <!-- Popüler Yazılar -->
+    <div class="sidebar-card">
+      <div class="sidebar-header"><h3>🔥 Popüler Yazılar</h3></div>
+      <div class="sidebar-body">
+        <div class="popular-list">
+          <a href="blog-fotokopi-alsam-mi-kiralasam-mi.html" class="popular-item">
+            <div class="pop-num">1</div>
+            <div class="pop-title">Fotokopi mi Alsam, Kiralasam mı?</div>
+          </a>
+          <a href="blog-fotokopi-kiralama-maliyeti.html" class="popular-item">
+            <div class="pop-num">2</div>
+            <div class="pop-title">Fotokopi Kiralama Maliyeti Nasıl Hesaplanır?</div>
+          </a>
+          <a href="blog-kyocera-fotokopi-secimi.html" class="popular-item">
+            <div class="pop-num">3</div>
+            <div class="pop-title">Kyocera Fotokopi Seçerken Nelere Dikkat Edilmeli?</div>
+          </a>
+          <a href="blog-toner-tasarrufu.html" class="popular-item">
+            <div class="pop-num">4</div>
+            <div class="pop-title">Toner Tasarrufu İçin 7 Etkili İpucu</div>
+          </a>
+          <a href="blog-a3-mi-a4-mu.html" class="popular-item">
+            <div class="pop-num">5</div>
+            <div class="pop-title">A3 mü A4 mü? Hangi Format Gerekli?</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Etiketler -->
+    <div class="sidebar-card">
+      <div class="sidebar-header"><h3>🏷️ Etiketler</h3></div>
+      <div class="sidebar-body">
+        <div class="tag-cloud">
+          <span class="tag">Fotokopi Kiralama</span>
+          <span class="tag">Yazıcı Kiralama</span>
+          <span class="tag">Kyocera</span>
+          <span class="tag">Toner</span>
+          <span class="tag">A3</span>
+          <span class="tag">A4</span>
+          <span class="tag">Teknik Servis</span>
+          <span class="tag">Bakım</span>
+          <span class="tag">Maliyet</span>
+          <span class="tag">Sayfa Başı</span>
+          <span class="tag">İstanbul</span>
+          <span class="tag">Lazer Yazıcı</span>
+          <span class="tag">MFP</span>
+          <span class="tag">Siyah Beyaz</span>
+          <span class="tag">Renkli</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-sidebar">
+      <h3>Ücretsiz Teklif Alın!</h3>
+      <p>Fotokopi veya yazıcı kiralama için hemen teklif isteyin, size özel fiyat sunalım.</p>
+      <a href="iletisim.html" class="btn-cta-s">Teklif Al →</a>
+    </div>
+
+    <!-- İletişim -->
+    <div class="sidebar-card">
+      <div class="sidebar-header"><h3>📞 Bize Ulaşın</h3></div>
+      <div class="sidebar-body" style="display:flex;flex-direction:column;gap:.8rem">
+        <a href="tel:+905326944862" style="display:flex;align-items:center;gap:.8rem;text-decoration:none;color:var(--ink);font-size:.85rem;font-weight:600">
+          <span style="font-size:1.2rem">📞</span> 0532 694 48 62
+        </a>
+        <a href="https://wa.me/905318673034" target="_blank" style="display:flex;align-items:center;gap:.8rem;text-decoration:none;color:#25D366;font-size:.85rem;font-weight:600">
+          <span style="font-size:1.2rem">💬</span> WhatsApp: 0531 867 30 34
+        </a>
+        <a href="mailto:info@bilgiteknik.net" style="display:flex;align-items:center;gap:.8rem;text-decoration:none;color:var(--mid);font-size:.85rem">
+          <span style="font-size:1.2rem">✉️</span> info@bilgiteknik.net
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-name">Bilgi<span>teknik</span></div>
+        <p class="footer-desc">2000'den bu yana İstanbul'da fotokopi kiralama, yazıcı kiralama ve Kyocera yetkili teknik servis.</p>
+        <div class="footer-social"><a href="#" class="f-soc">in</a><a href="#" class="f-soc">ig</a><a href="#" class="f-soc">yt</a></div>
+      </div>
+      <div><h4>Hizmetler</h4><ul class="f-links"><li><a href="fotokopi-kiralama.html">Fotokopi Kiralama</a></li><li><a href="yazici-kiralama.html">Yazıcı Kiralama</a></li><li><a href="urunler.html">Ürünler</a></li><li><a href="hakkimizda.html">Hakkımızda</a></li><li><a href="iletisim.html">İletişim</a></li></ul></div>
+      <div><h4>Blog</h4><ul class="f-links"><li><a href="blog-fotokopi-alsam-mi-kiralasam-mi.html">Alsam mı Kiralasam mı?</a></li><li><a href="blog-kyocera-fotokopi-secimi.html">Kyocera Fotokopi Seçimi</a></li><li><a href="blog-fotokopi-kiralama-maliyeti.html">Kiralama Maliyeti</a></li><li><a href="blog-toner-tasarrufu.html">Toner Tasarrufu</a></li><li><a href="blog-fotokopi-tarihcesi.html">Fotokopi Tarihçesi</a></li></ul></div>
+      <div><h4>İletişim</h4><ul class="f-links"><li><a href="#">Bulgurlu, Üsküdar / İstanbul</a></li><li><a href="tel:+905326944862">0532 694 48 62</a></li><li><a href="https://wa.me/905318673034">WhatsApp: 0531 867 30 34</a></li><li><a href="mailto:info@bilgiteknik.net">info@bilgiteknik.net</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span class="f-copy">© 2026 Bilgiteknik Büro Makinaları — 2000'den Bu Yana</span>
+      <span class="f-copy">Gizlilik Politikası · KVKK</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOAT WA -->
+<div class="float-wa">
+  <span class="wa-label">WhatsApp ile Yazın</span>
+  <a href="https://wa.me/905318673034?text=Merhaba, bilgi almak istiyorum." target="_blank" class="wa-btn">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.11 1.523 5.833L.044 23.956l6.29-1.483A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.48-5.16-1.33l-.37-.21-3.73.88.9-3.64-.23-.38A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+  </a>
+</div>
+
+<script>
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+
+  }
+});
+// Dışarı tıklayınca kapat
+document.addEventListener('click',function(e){
+  const menu = document.querySelector('.nav-menu');
+  const btn = document.getElementById('hamburger');
+  if(menu && menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)){
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+  }
+});
+
+</script>
+<script>
+/* ── MOBİL MENÜ ── */
+function toggleMenu(){
+  const menu = document.querySelector('.nav-menu');
+  const btn = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+document.querySelectorAll('.nav-item').forEach(item=>{
+  const link = item.querySelector('.nav-link');
+  const dd = item.querySelector('.dropdown');
+  if(dd){
+    link.addEventListener('click',function(e){
+      if(window.innerWidth<=768){
+        e.preventDefault();
+        item.classList.toggle('dd-open');
+      }
+    });
+  }
+});
+document.addEventListener('click',function(e){
+  if(window.innerWidth>768) return;
+  const menu = document.querySelector('.nav-menu');
+  const btn = document.getElementById('hamburger');
+  if(menu && menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)){
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
