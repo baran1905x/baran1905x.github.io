@@ -502,7 +502,140 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
     padding:.75rem 1.5rem;font-size:.85rem
   }
 }
+/* ══════════════════════════════════════════════
+   KESİN MOBİL TAŞMA DÜZELTMELERİ (TELEFON & TABLET)
+══════════════════════════════════════════════ */
 
+/* Genel Ekran Güvenliği */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Dışarı sarkanları kesinlikle engelle */
+}
+
+/* ── TABLET VE TELEFON ORTAK AYARLAR (992px ve altı) ── */
+@media (max-width: 992px) {
+  /* Büyük Kenar Boşluklarını Azaltalım */
+  .services-section, .kyocera-section, .why-section, .testimonials, .newsletter, footer {
+    padding: 3rem 1.5rem !important;
+  }
+  
+  /* Hızlı İstatistikleri Tablette 2 Sütun Yapalım */
+  .quick-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .qs-item {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+  }
+  .qs-item:nth-child(even) { border-right: none !important; }
+  .qs-item:last-child { border-bottom: none !important; }
+
+  /* Hizmetler ve Neden Biz Alanlarını Alt Alta Alalım */
+  .services-grid, .why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Kyocera Ürün Kartları Grid Yapısı */
+  .kyo-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* Tablette yan yana 2 adet */
+    gap: 1rem !important;
+  }
+  /* Öne çıkan geniş kartı sıfırlayalım ki taşmasın */
+  .kyo-card.featured {
+    grid-column: span 2 !important;
+    flex-direction: column !important;
+  }
+  .kyo-card.featured .kyo-img-zone {
+    width: 100% !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border) !important;
+  }
+
+  /* Kiralama Bannerı Alanı */
+  .rental-inner {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 2rem !important;
+  }
+  .rental-btns {
+    justify-content: center;
+  }
+
+  /* Hakkımızda Bölümü */
+  .about-section {
+    grid-template-columns: 1fr !important;
+  }
+  .about-left, .about-right {
+    padding: 3rem 1.5rem !important;
+  }
+  .about-right {
+    border-left: none !important;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Müşteri Yorumları */
+  .test-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* ── TAM TELEFON AYARLARI (576px ve altı) ── */
+@media (max-width: 576px) {
+  /* Üst Barı Telefon Uyumlu Yapalım */
+  .topbar {
+    flex-direction: column;
+    gap: .5rem;
+    text-align: center;
+    padding: .5rem 1rem !important;
+  }
+  .topbar-left, .topbar-right {
+    flex-direction: column;
+    gap: .3rem;
+  }
+
+  /* Hızlı İstatistikleri Telefonda Tek Sütun Yapalım */
+  .quick-stats {
+    grid-template-columns: 1fr !important;
+    padding: 1.5rem 1rem !important;
+  }
+
+  /* Kyocera Ürün Kartlarını Telefonda Tek Sütuna Düşürelim */
+  .kyo-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .kyo-card.featured {
+    grid-column: span 1 !important;
+  }
+
+  /* Bülten (Newsletter) Formu Taşma Engelleme */
+  .nl-inner {
+    text-align: center;
+    gap: 1.5rem !important;
+  }
+  .nl-form {
+    min-width: 100% !important;
+    width: 100%;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  .nl-input {
+    border-radius: 8px !important;
+    border-right: 1px solid var(--border) !important;
+    text-align: center;
+  }
+  .nl-btn {
+    border-radius: 8px !important;
+  }
+
+  /* Footer Sütunları Üst Üste Gelecek */
+  .footer-top {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
 </style>
 <meta property="og:title" content="Bilgiteknik | Fotokopi Kiralama & Yazıcı Kiralama İstanbul | Kyocera Yetkili Servis">
 <meta property="og:description" content="Bilgiteknik — Üsküdar / Bulgurlu merkezli fotokopi kiralama, yazıcı kiralama, Kyocera yetkili satıcı ve teknik servis. İstanbul genelinde 7/24 destek, ücretsiz kurulum.">
