@@ -160,7 +160,13 @@ nav{position:sticky;top:0;z-index:800;background:#fff;border-bottom:1px solid va
 .kyo-brand-sub{font-size:.7rem;color:var(--light);padding-left:.8rem;border-left:1px solid var(--border)}
 .kyo-filter{display:flex;gap:.5rem;flex-wrap:wrap}
 .kyo-ftag{padding:.45rem 1rem;background:#fff;border:1.5px solid var(--border);border-radius:6px;font-size:.75rem;font-weight:600;color:var(--mid);cursor:pointer;transition:all .2s}
-.kyo-ftag:hover,.kyo-ftag.active{background:#E8001D;border-color:#E8001D;color:#fff}
+.kyo-ftag:hover,.kyo-ftag.active{background:#E8001D;border-color:#E8001D;color:#fff;box-shadow:0 2px 8px rgba(232,0,29,.2)}
+.kyocera-header-intro{flex:1;min-width:0}
+.kyocera-header-actions{display:flex;flex-direction:column;gap:.9rem;align-items:flex-end;min-width:260px}
+.kyo-filter-label{display:none;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--light)}
+.btn-toplu-teklif{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.85rem 1.75rem;background:linear-gradient(135deg,#E8001D 0%,#c9001a 100%);color:#fff;border-radius:10px;font-size:.9rem;font-weight:700;text-decoration:none;transition:background .2s,transform .18s,box-shadow .2s;white-space:nowrap;box-shadow:0 4px 16px rgba(232,0,29,.28);min-height:48px}
+.btn-toplu-teklif svg{width:18px;height:18px;flex-shrink:0}
+.btn-toplu-teklif:hover{background:linear-gradient(135deg,#ff1a2e 0%,#E8001D 100%);transform:translateY(-2px);box-shadow:0 6px 22px rgba(232,0,29,.35)}
 
 /* Kyocera Grid */
 .kyo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
@@ -394,7 +400,7 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
   .btn-whatsapp span{display:none}
 
   /* Hero */
-  .hero-slider{min-height:auto}
+  .hero-slider{min-height:min(520px,88svh)}
   .slide-left{padding:3rem 1.5rem 5rem}
   .slide-title{font-size:1.8rem}
   .slide-sub{font-size:.85rem}
@@ -572,6 +578,8 @@ html, body {
     width: 100% !important;
     border-right: none !important;
     border-bottom: 1px solid var(--border) !important;
+    aspect-ratio: 4/3 !important;
+    min-height: 180px !important;
   }
 
   /* Kiralama Bannerı Alanı */
@@ -657,6 +665,537 @@ html, body {
     gap: 2rem !important;
   }
 }
+/* ══════════════════════════════════════════════
+   TABLET (10 İNÇ), MOBİL VE MENÜ GÜNCELLEMELERİ
+══════════════════════════════════════════════ */
+
+/* Masaüstünde hamburger menü içindeki butonları gizle */
+.mobile-only-btns {
+  display: none;
+}
+
+/* ── 1. TABLET AYARI (1024px ve altı): Hamburger Menü Burada Başlasın, Topbar Düzelsin ── */
+/* ==========================================================================
+   BİLGİTEKNİK - MOBİL/TABLET DETAYLI ESTETİK GÜNCELLEMELERİ
+   ========================================================================== */
+
+/* Masaüstünde menü içi mobil butonları gizli tut */
+.nav-menu-mobile-buttons {
+  display: none;
+}
+
+/* ── HAMBURGER MENÜNÜN DEVREYE GİRDİĞİ SINIR (1024px ve altı) ── */
+@media (max-width: 1024px) {
+  
+  /* İSTEK 1: Hamburger devreye girdiği andan itibaren en üstteki şirket bilgileri GÖZÜKMESİN */
+  .topbar {
+    display: none !important;
+  }
+  
+  /* İSTEK 3 (ÇÖZÜM): Menü açılıp kaydırıldığında Logo ve Kapatma tuşunun kaybolmasını engellemek için Navbar'ı Çakılı Tutuyoruz */
+  nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 70px !important;
+    z-index: 1000 !important;
+    background: #fff !important;
+  }
+
+  .nav-inner {
+    padding: 0 1.5rem !important;
+    height: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important; /* Logo en solda, hamburger en sağda kalır */
+    align-items: center !important;
+  }
+
+  /* İSTEK 2: Hamburger menü tuşunun daima en sağda (ortalamadan) durmasını sağlama */
+  .hamburger {
+    display: flex !important;
+    margin-left: auto !important; /* Butonu zorla sağ tarafa yaslar */
+    position: relative !important;
+    z-index: 1001 !important; /* Kapatma tuşu her şeyin üzerinde kalsın */
+  }
+
+  /* Navbardaki masaüstü butonlarını gizle */
+  .nav-right .btn-whatsapp,
+  .nav-right .btn-teklif-nav,
+  .nav-right .nav-phone {
+    display: none !important;
+  }
+
+  /* İSTEK 3 (ÇÖZÜM DEVAMI): Açılan panel artık tam ekran sabit (fixed) ve içeriği kendi içinde kayabilir */
+  .nav-menu {
+    position: fixed !important;
+    top: 70px !important; /* Navbar yüksekliği kadar aşağıdan başlar */
+    left: 0 !important;
+    width: 100% !important;
+    height: calc(100vh - 70px) !important; /* Ekranın kalan kısmını tam kaplar */
+    background: #fff !important;
+    border-top: 1px solid var(--border) !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    padding: 1.5rem !important;
+    overflow-y: auto !important; /* Sadece menü linkleri kendi içinde kayar, logo sabit kalır */
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-10px) !important;
+    transition: all 0.3s ease !important;
+    box-shadow: var(--shadow2) !important;
+    z-index: 999 !important;
+  }
+
+  /* Menü açıkken devreye giren aktifleştirme kodu */
+  .nav-menu.open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  .nav-link {
+    height: auto !important;
+    padding: 1rem 0 !important;
+    font-size: 1rem !important;
+    border-bottom: 1px solid var(--gray2) !important;
+  }
+
+  .dropdown {
+    position: relative !important;
+    top: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding-left: 1rem !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    transition: max-height 0.3s ease !important;
+  }
+
+  .nav-item.dd-open .dropdown {
+    max-height: 500px !important;
+  }
+
+  /* Hamburger İçindeki Mobil Butonlar */
+  .nav-menu-mobile-buttons {
+    display: flex !important;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px dashed var(--gray3);
+  }
+
+  .nav-menu-mobile-buttons .mob-phone {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-menu-mobile-buttons .mob-wa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #25D366;
+    color: #fff !important;
+    padding: 0.85rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .nav-menu-mobile-buttons .mob-teklif {
+    background: var(--orange);
+    color: #fff !important;
+    padding: 0.85rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  /* Alt kısımlardaki genel grid yapıları (Taşma önleyiciler) */
+  .services-section, .kyocera-section, .why-section, .testimonials, .newsletter, footer, .rental-banner {
+    padding: 3.5rem 1.5rem !important;
+  }
+
+  /* Sayfa fixed navbar yüzünden 70px yukarı kaymasın diye ana içerik alanına üst boşluk veriyoruz */
+  body {
+    padding-top: 70px !important;
+  }
+
+  .services-grid, .why-grid, .quick-stats, .kyo-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+  .qs-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,.12); }
+  .qs-item:nth-last-child(-n+2) { border-bottom: none !important; }
+  .kyo-card.featured { grid-column: span 2 !important; }
+  .rental-inner { grid-template-columns: 1fr !important; text-align: center; gap: 2rem !important; }
+  .rental-btns { justify-content: center; }
+  .about-section { grid-template-columns: 1fr !important; }
+  .about-right { border-left: none !important; border-top: 1px solid var(--border); }
+  .test-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── TAM CEP TELEFONU AYARI (576px ve altı) ── */
+@media (max-width: 576px) {
+  .services-grid, .why-grid, .quick-stats, .kyo-grid, .footer-top {
+    grid-template-columns: 1fr !important;
+  }
+  .qs-item { border-bottom: 1px solid rgba(255,255,255,.12) !important; }
+  .qs-item:last-child { border-bottom: none !important; }
+  
+  .kyo-card.featured { grid-column: span 1 !important; flex-direction: column !important; }
+  .kyo-card.featured .kyo-img-zone { width: 100% !important; border-right: none !important; border-bottom: 1px solid var(--border) !important; }
+  
+  .nl-inner { text-align: center; gap: 1.5rem !important; }
+  .nl-form { min-width: 100% !important; width: 100%; flex-direction: column; gap: 0.5rem; }
+  .nl-input { border-radius: 8px !important; border-right: 1px solid var(--border) !important; text-align: center; }
+  .nl-btn { border-radius: 8px !important; }
+  
+  .slide { grid-template-columns: 1fr !important; height: auto; }
+  .hero-slider { height: auto; min-height: 520px; }
+  .slide-left { padding: 3rem 1.5rem !important; text-align: center; align-items: center; }
+  .slide-sub { margin-left: auto; margin-right: auto; }
+  .slide-btns { justify-content: center; }
+  .slide-right { display: none !important; }
+  .slider-ctrl { left: 50% !important; transform: translateX(-50%); bottom: 1rem; }
+}
+
+/* ── 2. TAM TELEFON AYARI (576px ve altı) ── */
+@media (max-width: 576px) {
+  /* Telefon ekranında üst şirket barını dikey yapıp ortala */
+  .topbar {
+    flex-direction: column !important;
+    gap: 0.4rem !important;
+    text-align: center;
+  }
+  .topbar-left, .topbar-right {
+    flex-direction: column !important;
+    gap: 0.2rem !important;
+  }
+
+  /* Telefonda her şeyi tek sütuna düşür */
+  .services-grid, .why-grid, .quick-stats, .kyo-grid, .footer-top {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .kyo-card.featured {
+    grid-column: span 1 !important;
+  }
+}
+/* ==========================================================================
+   BİLGİTEKNİK - TÜM MOBİL, TABLET VE TAŞMA DÜZELTMELERİ PAKETİ
+   ========================================================================== */
+
+/* 1. MASAÜSTÜ KORUMASI: Menü içi mobil butonları bilgisayarda gizle */
+.nav-menu-mobile-buttons {
+  display: none;
+}
+
+/* 2. TABLET AYARI (1024px ve altı): 10" Tabletler, Üst Bar ve Hamburger Menü Geçişi */
+@media (max-width: 1024px) {
+  /* Şirket yazılarının olduğu üst barı kibarlaştır */
+  .topbar {
+    padding: 0.5rem 1.5rem !important;
+    font-size: 0.8rem !important;
+  }
+  .topbar-left { gap: 1rem !important; }
+  
+  /* Navbar kenar boşluklarını daralt */
+  .nav-inner {
+    padding: 0 1.5rem !important;
+  }
+  
+  /* Hamburger butonunu 10 inç tablette de görünür yap */
+  .hamburger {
+    display: flex !important;
+  }
+  
+  /* Navbardaki ana butonları gizle (Hamburgerin içine taşındığı için) */
+  .nav-right .btn-whatsapp,
+  .nav-right .btn-teklif-nav,
+  .nav-right .nav-phone {
+    display: none !important;
+  }
+  
+  /* Menüyü tam ekran açılır mobil menüye çevir */
+  .nav-menu {
+    position: fixed !important;
+    top: 70px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: calc(100vh - 70px) !important;
+    background: #fff !important;
+    border-top: 1px solid var(--border) !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    padding: 2rem 1.5rem !important;
+    overflow-y: auto !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-10px) !important;
+    transition: all 0.3s ease !important;
+    box-shadow: var(--shadow2) !important;
+  }
+  
+  /* Menü açıldığında devreye girecek kural */
+  .nav-menu.open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+  
+  .nav-link {
+    height: auto !important;
+    padding: 1rem 0 !important;
+    font-size: 1rem !important;
+    border-bottom: 1px solid var(--gray2) !important;
+  }
+  
+  /* Akordeon alt menü (dropdown) tasarımı */
+  .dropdown {
+    position: relative !important;
+    top: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding-left: 1rem !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    transition: max-height 0.3s ease !important;
+  }
+  
+  .nav-item.dd-open .dropdown {
+    max-height: 500px !important;
+  }
+  
+  /* Hamburger menünün altındaki mobil butonların şekillendirilmesi */
+  .nav-menu-mobile-buttons {
+    display: flex !important;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px dashed var(--gray3);
+  }
+  
+  .nav-menu-mobile-buttons .mob-phone {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+  }
+  
+  .nav-menu-mobile-buttons .mob-wa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #25D366;
+    color: #fff !important;
+    padding: 0.85rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .nav-menu-mobile-buttons .mob-teklif {
+    background: var(--orange);
+    color: #fff !important;
+    padding: 0.85rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  /* Tüm genel bölümlerin (gridlerin) taşmasını engellemek için 2'li düzene geçiş */
+  .services-section, .kyocera-section, .why-section, .testimonials, .newsletter, footer, .rental-banner {
+    padding: 3.5rem 1.5rem !important;
+  }
+  
+  .services-grid, .why-grid, .quick-stats, .kyo-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+  
+  .qs-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,.12); }
+  .qs-item:nth-last-child(-n+2) { border-bottom: none !important; }
+  .kyo-card.featured { grid-column: span 2 !important; }
+  .rental-inner { grid-template-columns: 1fr !important; text-align: center; gap: 2rem !important; }
+  .rental-btns { justify-content: center; }
+  .about-section { grid-template-columns: 1fr !important; }
+  .about-right { border-left: none !important; border-top: 1px solid var(--border); }
+  .test-grid { grid-template-columns: 1fr !important; }
+}
+
+/* 3. CEP TELEFONU AYARI (576px ve altı): Tam Dikey Hizalama ve Taşma Önleme */
+@media (max-width: 576px) {
+  /* En üst şirket barını telefonda alt alta listele */
+  .topbar {
+    flex-direction: column !important;
+    gap: 0.4rem !important;
+    text-align: center;
+  }
+  .topbar-left, .topbar-right {
+    flex-direction: column !important;
+    gap: 0.3rem !important;
+  }
+  
+  /* Tüm ızgara (grid) yapılarını tek sütuna düşür (Taşmayı sıfırlar) */
+  .services-grid, .why-grid, .quick-stats, .kyo-grid, .footer-top {
+    grid-template-columns: 1fr !important;
+  }
+  .qs-item { border-bottom: 1px solid rgba(255,255,255,.12) !important; }
+  .qs-item:last-child { border-bottom: none !important; }
+  
+  .kyo-card.featured { grid-column: span 1 !important; flex-direction: column !important; }
+  .kyo-card.featured .kyo-img-zone { width: 100% !important; border-right: none !important; border-bottom: 1px solid var(--border) !important; }
+  
+  /* Bülten formu (Newsletter) telefonda sığsın ve taşmasın */
+  .nl-inner { text-align: center; gap: 1.5rem !important; }
+  .nl-form { min-width: 100% !important; width: 100%; flex-direction: column; gap: 0.5rem; }
+  .nl-input { border-radius: 8px !important; border-right: 1px solid var(--border) !important; text-align: center; }
+  .nl-btn { border-radius: 8px !important; }
+  
+  /* Hero Slider telefonda resmi gizleyerek alanı korur */
+  .slide { grid-template-columns: 1fr !important; height: auto; }
+  .hero-slider { height: auto; min-height: 520px; }
+  .slide-left { padding: 3rem 1.5rem !important; text-align: center; align-items: center; }
+  .slide-sub { margin-left: auto; margin-right: auto; }
+  .slide-btns { justify-content: center; }
+  .slide-right { display: none !important; }
+  .slider-ctrl { left: 50% !important; transform: translateX(-50%); bottom: 1rem; }
+}
+
+/* ── MOBİL/TABLET KESİN DÜZELTMELER (tek kaynak) ── */
+@media (max-width: 1024px) {
+  .hero-slider {
+    height: auto !important;
+    min-height: 0 !important;
+    display: grid !important;
+    overflow: hidden;
+  }
+  .slide {
+    position: relative !important;
+    inset: auto !important;
+    grid-area: 1 / 1 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: min(460px, 82svh) !important;
+    grid-template-columns: 1fr !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity .7s ease !important;
+  }
+  .slide.active {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+  .slide-right { display: none !important; }
+  .slide-left {
+    padding: 2.5rem 1.5rem 4.5rem !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+  .slide-sub { margin-left: auto !important; margin-right: auto !important; }
+  .slide-btns { justify-content: center !important; }
+  .slider-ctrl {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 1rem !important;
+  }
+  .kyo-img-zone,
+  .kyo-card.featured .kyo-img-zone,
+  .kyo-card.wide .kyo-img-zone {
+    aspect-ratio: 4/3 !important;
+    min-height: 180px !important;
+    flex-shrink: 0 !important;
+  }
+}
+@media (max-width: 1024px) {
+  .kyocera-header-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 2rem !important;
+  }
+  .kyocera-header-intro {
+    text-align: center !important;
+  }
+  .kyocera-header-intro .sec-eyebrow,
+  .kyocera-header-intro .kyocera-brand-pill {
+    justify-content: center !important;
+  }
+  .kyocera-header-intro .sec-sub {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .kyocera-header-actions {
+    align-items: stretch !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin-top: 0 !important;
+    padding: 1.35rem 1.25rem 1.5rem !important;
+    background: #fff !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 4px 24px rgba(21, 101, 192, .07) !important;
+  }
+  .kyo-filter-label {
+    display: block !important;
+    text-align: center !important;
+    margin-bottom: .15rem !important;
+  }
+  .kyo-filter {
+    justify-content: center !important;
+    gap: .55rem !important;
+  }
+  .kyo-ftag {
+    padding: .55rem 1.05rem !important;
+    font-size: .8rem !important;
+    border-radius: 20px !important;
+  }
+  .btn-toplu-teklif {
+    width: 100% !important;
+    min-height: 54px !important;
+    padding: 1rem 1.6rem !important;
+    font-size: 1rem !important;
+    border-radius: 12px !important;
+    margin-top: .35rem !important;
+    box-shadow: 0 6px 20px rgba(232, 0, 29, .3) !important;
+  }
+  .btn-toplu-teklif svg { width: 20px !important; height: 20px !important; }
+}
+@media (max-width: 768px) {
+  .kyocera-header-intro .sec-title { font-size: 1.45rem !important; }
+  .kyocera-header-intro .sec-sub { font-size: .88rem !important; line-height: 1.65 !important; }
+  .kyocera-brand-pill { padding: .65rem 1.1rem !important; }
+  .kyo-brand-name { font-size: 1rem !important; }
+}
+@media (max-width: 1024px) and (max-height: 740px) {
+  .btn-toplu-teklif {
+    min-height: 58px !important;
+    padding: 1.1rem 1.6rem !important;
+    font-size: 1.05rem !important;
+  }
+  .kyo-ftag {
+    padding: .6rem 1.1rem !important;
+    font-size: .82rem !important;
+  }
+}
 </style>
 <meta property="og:title" content="Bilgiteknik | Fotokopi Kiralama & Yazıcı Kiralama İstanbul | Kyocera Yetkili Servis">
 <meta property="og:description" content="Bilgiteknik — Üsküdar / Bulgurlu merkezli fotokopi kiralama, yazıcı kiralama, Kyocera yetkili satıcı ve teknik servis. İstanbul genelinde 7/24 destek, ücretsiz kurulum.">
@@ -687,6 +1226,7 @@ html, body {
 </script>
 </head>
 <body>
+
 
 <!-- TOP BAR -->
 <div class="topbar">
@@ -721,11 +1261,17 @@ html, body {
       <li class="nav-item"><a href="urunler.html" class="nav-link">Ürünler</a></li>
       <li class="nav-item"><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
       <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+      <!-- Hamburger menünün en altına (</ul> etiketinden hemen önce) eklenecek kısım -->
+<div class="nav-menu-mobile-buttons">
+  <a href="https://wa.me/90XXXXXXXXXX" class="mob-wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Destek</a>
+  <a href="#teklif" class="mob-teklif">Ücretsiz Teklif Al</a>
+</div>
     </ul>
 
       <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menü">
         <span></span><span></span><span></span>
       </button>
+      
     <div class="nav-right">
       <a href="tel:+905326944862" class="nav-phone">0532 694 48 62</a>
       <a href="https://wa.me/905318673034" class="btn-whatsapp" target="_blank">
@@ -946,7 +1492,7 @@ html, body {
 <section class="kyocera-section" id="kyocera">
   <div class="container">
     <div class="kyocera-header-row">
-      <div>
+      <div class="kyocera-header-intro">
         <div class="kyocera-brand-pill">
           <span class="kyo-brand-name">KYOCERA</span>
           <span class="kyo-brand-sub">Yetkili Satıcı &amp; Teknik Servis</span>
@@ -955,7 +1501,8 @@ html, body {
         <h2 class="sec-title">Kyocera Fotokopi &amp; Yazıcı Modelleri</h2>
         <p class="sec-sub">Kyocera yetkili satıcısı Bilgiteknik'te İstanbul'a özel fiyatlarla A4/A3 mono ve renkli fotokopi kiralama ve satış seçenekleri.</p>
       </div>
-      <div style="display:flex;flex-direction:column;gap:.8rem;align-items:flex-end">
+      <div class="kyocera-header-actions">
+        <span class="kyo-filter-label">Ürünleri filtrele</span>
         <div class="kyo-filter">
           <button class="kyo-ftag active">Tümü</button>
           <button class="kyo-ftag">Mono</button>
@@ -963,7 +1510,10 @@ html, body {
           <button class="kyo-ftag">A3</button>
           <button class="kyo-ftag">Kiralık</button>
         </div>
-        <a href="iletisim.html" style="padding:.7rem 1.6rem;background:#E8001D;color:#fff;border-radius:8px;font-size:.85rem;font-weight:700;text-decoration:none">Toplu Teklif Al</a>
+        <a href="iletisim.html" class="btn-toplu-teklif">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="9" y="3" width="6" height="4" rx="1" stroke="currentColor" stroke-width="2"/><path d="M9 12h6M9 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Toplu Teklif Al
+        </a>
       </div>
     </div>
 
@@ -1322,31 +1872,58 @@ document.querySelector('.nl-btn').addEventListener('click',function(){const i=do
 </script>
 <script>
 /* ── MOBİL MENÜ ── */
-function toggleMenu(){
+/* ── MOBİL MENÜ AÇMA/KAPAMA VE ARKA PLAN KİLİTLEME ── */
+function toggleMenu() {
   const menu = document.querySelector('.nav-menu');
   const btn = document.getElementById('hamburger');
+  
   menu.classList.toggle('open');
   btn.classList.toggle('open');
+  
+  // ÇÖZÜM: Menü açıkken arka plandaki tüm kaydırmaları hem PC hem Mobil için kilitler
+  if (menu.classList.contains('open')) {
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh'; // Ekran yüksekliğini sabitler
+    
+    // Mobil cihazlarda dokunarak arka planı kaydırmayı engelleme testi
+    document.addEventListener('touchmove', preventScroll, { passive: false });
+  } else {
+    document.body.style.overflow = '';
+    document.body.style.height = '';
+    
+    // Menü kapanınca kilidi kaldırır
+    document.removeEventListener('touchmove', preventScroll);
+  }
 }
-document.querySelectorAll('.nav-item').forEach(item=>{
+
+// Yardımcı kilit fonksiyonu (Dokunmatik ekranlar için)
+function preventScroll(e) {
+  // Eğer kaydırılan yer açılan menünün kendisi değilse, kaydırmayı engelle
+  if (!e.target.closest('.nav-menu')) {
+    e.preventDefault();
+  }
+}
+/* Mobil Alt Menü (Dropdown) Tıklama Limiti 1024px'e çekildi */
+document.querySelectorAll('.nav-item').forEach(item => {
   const link = item.querySelector('.nav-link');
   const dd = item.querySelector('.dropdown');
-  if(dd){
-    link.addEventListener('click',function(e){
-      if(window.innerWidth<=768){
+  if (dd) {
+    link.addEventListener('click', function(e) {
+      if (window.innerWidth <= 1024) { 
         e.preventDefault();
         item.classList.toggle('dd-open');
       }
     });
   }
 });
-document.addEventListener('click',function(e){
-  if(window.innerWidth>768) return;
+
+/* Dışarı Tıklayınca Kapanma Limiti de 1024px yapıldı */
+document.addEventListener('click', function(e) {
+  if (window.innerWidth > 1024) return;
   const menu = document.querySelector('.nav-menu');
   const btn = document.getElementById('hamburger');
-  if(menu && menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)){
-    menu.classList.remove('open');
-    btn.classList.remove('open');
+  if (menu && menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)) {
+    toggleMenu(); // senin mevcut menü açma kapama fonksiyonun
   }
 });
 </script>
