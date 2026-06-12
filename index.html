@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="description" content="Bilgiteknik — Üsküdar / Bulgurlu merkezli fotokopi kiralama, yazıcı kiralama, Kyocera yetkili satıcı ve teknik servis. İstanbul genelinde 7/24 destek, ücretsiz kurulum.">
@@ -37,6 +38,7 @@ nav{position:sticky;top:0;z-index:800;background:#fff;border-bottom:1px solid va
 .logo-icon{width:40px;height:40px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;position:relative}
 .logo-icon::after{content:'';position:absolute;width:12px;height:12px;background:var(--orange);border-radius:50%;top:-4px;right:-4px}
 .logo-icon svg{color:#fff}
+.nav-logo-img{width:100%;height:100%;object-fit:contain;border-radius:6px}
 .logo-name{font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:700;color:var(--ink)}
 .logo-name span{color:var(--blue)}
 .nav-menu{display:flex;gap:0;list-style:none}
@@ -1205,24 +1207,54 @@ html, body {
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "LocalBusiness",
   "name": "Bilgiteknik",
   "url": "https://www.bilgiteknik.net",
   "logo": "https://www.bilgiteknik.net/logo.png",
+  "image": "https://www.bilgiteknik.net/logo.png",
   "telephone": "+905326944862",
+  "email": "info@bilgiteknik.net",
+  "priceRange": "₺₺",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Bulgurlu Mahallesi",
+    "streetAddress": "Bulgurlu Mahallesi, Libadiye Caddesi",
     "addressLocality": "Üsküdar",
     "addressRegion": "İstanbul",
+    "postalCode": "34696",
     "addressCountry": "TR"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.0159,
+    "longitude": 29.0575
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "10:00",
+      "closes": "15:00"
+    }
+  ],
   "sameAs": [
-    "https://www.bilgiteknik.net"
+    "https://wa.me/905318673034"
   ]
 }
+</script>
 
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Bilgiteknik",
+  "url": "https://www.bilgiteknik.net"
+}
 </script>
 </head>
 <body>
@@ -1246,11 +1278,7 @@ html, body {
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
       <div class="logo-icon">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-          <rect x="3" y="8" width="16" height="11" rx="1.5" stroke="white" stroke-width="1.5"/>
-          <rect x="6" y="3" width="10" height="6" rx="1" stroke="white" stroke-width="1.5"/>
-          <rect x="6" y="14" width="10" height="3" rx=".5" fill="white" opacity=".4"/>
-        </svg>
+        <img src="logo.png" alt="Bilgiteknik" class="nav-logo-img">
       </div>
       <span class="logo-name">Bilgi<span>teknik</span></span>
     </a>
@@ -1803,7 +1831,7 @@ html, body {
       <div><h4>İletişim</h4><ul class="f-links"><li><a href="#">Bulgurlu, Üsküdar / İstanbul</a></li><li><a href="tel:+905326944862">0532 694 48 62</a></li><li><a href="https://wa.me/905318673034">WhatsApp Hattı</a></li><li><a href="mailto:info@bilgiteknik.net">info@bilgiteknik.net</a></li><li><a href="#">Pzt–Cum 09–18, Cmt 10–15</a></li></ul></div>
     </div>
     <div class="footer-bottom">
-      <span class="f-copy">© 2025 Bilgiteknik Büro Makinaları — 2000'den Bu Yana Hizmetinizdeyiz</span>
+      <span class="f-copy">© 2025 bilgiteknik.net — 2000'den Bu Yana Hizmetinizdeyiz</span>
       <span class="f-copy">Gizlilik Politikası · Kullanım Koşulları</span>
     </div>
   </div>

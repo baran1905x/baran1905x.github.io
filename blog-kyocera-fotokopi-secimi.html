@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +25,7 @@ nav{position:sticky;top:0;z-index:800;background:#fff;border-bottom:1px solid va
 .logo-icon{width:40px;height:40px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;position:relative}
 .logo-icon::after{content:'';position:absolute;width:12px;height:12px;background:var(--orange);border-radius:50%;top:-4px;right:-4px}
 .logo-icon svg{color:#fff}
+.nav-logo-img{width:100%;height:100%;object-fit:contain;border-radius:6px}
 .logo-name{font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:700;color:var(--ink)}.logo-name span{color:var(--blue)}
 .nav-menu{display:flex;gap:0;list-style:none}.nav-item{position:relative}
 .nav-link{display:flex;align-items:center;gap:.35rem;padding:.5rem 1.1rem;font-size:.84rem;font-weight:500;color:var(--mid);text-decoration:none;white-space:nowrap;transition:color .2s;height:70px}
@@ -305,7 +307,55 @@ footer{background:var(--ink);color:#fff;padding:4rem 3rem 2rem;margin-top:2rem}
   }
 }
 
+/* ── MOBİL BUTONLAR (HAMBURGER İÇİ) ── */
+.nav-menu-mobile-buttons{display:none}
+
+@media(max-width:1024px){
+  .topbar{display:none!important}
+  nav{position:fixed!important;top:0!important;left:0!important;width:100%!important;height:70px!important;z-index:1000!important;background:#fff!important}
+  .nav-inner{padding:0 1.5rem!important;height:100%!important;display:flex!important;justify-content:space-between!important;align-items:center!important}
+  .hamburger{display:flex!important;margin-left:auto!important;position:relative!important;z-index:1001!important}
+  .nav-right .btn-whatsapp,.nav-right .btn-teklif-nav,.nav-right .nav-phone{display:none!important}
+  .nav-menu{position:fixed!important;top:70px!important;left:0!important;width:100%!important;height:calc(100vh - 70px)!important;background:#fff!important;border-top:1px solid var(--border)!important;flex-direction:column!important;gap:0!important;padding:1.5rem!important;overflow-y:auto!important;opacity:0!important;visibility:hidden!important;transform:translateY(-10px)!important;transition:all 0.3s ease!important;box-shadow:var(--shadow2)!important;z-index:999!important}
+  .nav-menu.open{opacity:1!important;visibility:visible!important;transform:translateY(0)!important}
+  .nav-link{height:auto!important;padding:1rem 0!important;font-size:1rem!important;border-bottom:1px solid var(--gray2)!important}
+  .dropdown{position:relative!important;top:0!important;box-shadow:none!important;border:none!important;padding-left:1rem!important;max-height:0!important;overflow:hidden!important;opacity:1!important;visibility:visible!important;transform:none!important;transition:max-height 0.3s ease!important}
+  .nav-item.dd-open .dropdown{max-height:500px!important}
+  .nav-menu-mobile-buttons{display:flex!important;flex-direction:column;gap:1rem;margin-top:2rem;padding-top:1.5rem;border-top:2px dashed var(--gray3)}
+  .nav-menu-mobile-buttons .mob-phone{text-align:center;font-size:1rem;font-weight:700;color:var(--ink);text-decoration:none;margin-bottom:0.5rem}
+  .nav-menu-mobile-buttons .mob-wa{display:flex;align-items:center;justify-content:center;gap:0.5rem;background:#25D366;color:#fff!important;padding:0.85rem;border-radius:8px;font-weight:600;text-decoration:none}
+  .nav-menu-mobile-buttons .mob-teklif{background:var(--orange);color:#fff!important;padding:0.85rem;border-radius:8px;font-weight:700;text-decoration:none;text-align:center}
+  body{padding-top:70px!important}
+}
+
+@media(max-width:576px){
+  .services-grid,.why-grid,.quick-stats,.kyo-grid,.footer-top{grid-template-columns:1fr!important}
+  .qs-item{border-bottom:1px solid rgba(255,255,255,.12)!important}
+  .qs-item:last-child{border-bottom:none!important}
+  .kyo-card.featured{grid-column:span 1!important;flex-direction:column!important}
+  .kyo-card.featured .kyo-img-zone{width:100%!important;border-right:none!important;border-bottom:1px solid var(--border)!important}
+  .nl-inner{text-align:center;gap:1.5rem!important}
+  .nl-form{min-width:100%!important;width:100%;flex-direction:column;gap:0.5rem}
+  .nl-input{border-radius:8px!important;border-right:1px solid var(--border)!important;text-align:center}
+  .nl-btn{border-radius:8px!important}
+  .slide{grid-template-columns:1fr!important;height:auto}
+  .hero-slider{height:auto;min-height:520px}
+  .slide-left{padding:3rem 1.5rem!important;text-align:center;align-items:center}
+  .slide-sub{margin-left:auto;margin-right:auto}
+  .slide-btns{justify-content:center}
+  .slide-right{display:none!important}
+  .slider-ctrl{left:50%!important;transform:translateX(-50%);bottom:1rem}
+}
+
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Bilgiteknik",
+  "url": "https://www.bilgiteknik.net"
+}
+</script>
 </head>
 <body>
 <div class="topbar">
@@ -322,7 +372,9 @@ footer{background:var(--ink);color:#fff;padding:4rem 3rem 2rem;margin-top:2rem}
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <div class="logo-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="8" width="16" height="11" rx="1.5" stroke="white" stroke-width="1.5"/><rect x="6" y="3" width="10" height="6" rx="1" stroke="white" stroke-width="1.5"/><rect x="6" y="14" width="10" height="3" rx=".5" fill="white" opacity=".4"/></svg></div>
+      <div class="logo-icon">
+        <img src="logo.png" alt="Bilgiteknik" class="nav-logo-img">
+      </div>
       <span class="logo-name">Bilgi<span>teknik</span></span>
     </a>
     <ul class="nav-menu">
@@ -331,6 +383,11 @@ footer{background:var(--ink);color:#fff;padding:4rem 3rem 2rem;margin-top:2rem}
       <li class="nav-item"><a href="urunler.html" class="nav-link">Ürünler</a></li>
       <li class="nav-item"><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
       <li class="nav-item"><a href="blog.html" class="nav-link active">Blog</a></li>
+      <div class="nav-menu-mobile-buttons">
+        <a href="tel:+905326944862" class="mob-phone">📞 0532 694 48 62</a>
+        <a href="https://wa.me/905318673034" class="mob-wa" target="_blank">WhatsApp Destek</a>
+        <a href="iletisim.html" class="mob-teklif">Ücretsiz Teklif Al</a>
+      </div>
     </ul>
       <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menü">
         <span></span><span></span><span></span>
@@ -446,7 +503,7 @@ footer{background:var(--ink);color:#fff;padding:4rem 3rem 2rem;margin-top:2rem}
       <div><h4>Blog</h4><ul class="f-links"><li><a href="blog.html">Tüm Yazılar</a></li><li><a href="blog-fotokopi-alsam-mi-kiralasam-mi.html">Alsam mı Kiralasam mı?</a></li><li><a href="blog-kyocera-fotokopi-secimi.html">Kyocera Seçimi</a></li><li><a href="blog-toner-tasarrufu.html">Toner Tasarrufu</a></li></ul></div>
       <div><h4>İletişim</h4><ul class="f-links"><li><a href="#">Bulgurlu, Üsküdar / İstanbul</a></li><li><a href="tel:+905326944862">0532 694 48 62</a></li><li><a href="https://wa.me/905318673034">WhatsApp: 0531 867 30 34</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span class="f-copy">© 2026 Bilgiteknik Büro Makinaları</span><span class="f-copy">Gizlilik Politikası · KVKK</span></div>
+    <div class="footer-bottom"><span class="f-copy">© 2026 bilgiteknik.net</span><span class="f-copy">Gizlilik Politikası · KVKK</span></div>
   </div>
 </footer>
 <div class="float-wa">
@@ -471,18 +528,30 @@ document.addEventListener('click',function(e){
 </script>
 <script>
 /* ── MOBİL MENÜ ── */
-function toggleMenu(){
+function toggleMenu() {
   const menu = document.querySelector('.nav-menu');
   const btn = document.getElementById('hamburger');
   menu.classList.toggle('open');
   btn.classList.toggle('open');
+  if (menu.classList.contains('open')) {
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
+    document.addEventListener('touchmove', preventScroll, { passive: false });
+  } else {
+    document.body.style.overflow = '';
+    document.body.style.height = '';
+    document.removeEventListener('touchmove', preventScroll);
+  }
+}
+function preventScroll(e) {
+  if (!e.target.closest('.nav-menu')) { e.preventDefault(); }
 }
 document.querySelectorAll('.nav-item').forEach(item=>{
   const link = item.querySelector('.nav-link');
   const dd = item.querySelector('.dropdown');
   if(dd){
     link.addEventListener('click',function(e){
-      if(window.innerWidth<=768){
+      if(window.innerWidth<=1024){
         e.preventDefault();
         item.classList.toggle('dd-open');
       }
@@ -490,12 +559,11 @@ document.querySelectorAll('.nav-item').forEach(item=>{
   }
 });
 document.addEventListener('click',function(e){
-  if(window.innerWidth>768) return;
+  if(window.innerWidth>1024) return;
   const menu = document.querySelector('.nav-menu');
   const btn = document.getElementById('hamburger');
   if(menu && menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)){
-    menu.classList.remove('open');
-    btn.classList.remove('open');
+    toggleMenu();
   }
 });
 </script>
