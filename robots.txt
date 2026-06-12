@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.bilgiteknik.net/sitemap.xml
+Sitemap: https://bilgiteknik.net/sitemap.xml
