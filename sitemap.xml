@@ -2,35 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- ANA SAYFALAR -->
-  <url><loc>https://www.bilgiteknik.net</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.bilgiteknik.net/fotokopi-kiralama.html</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.bilgiteknik.net/yazici-kiralama.html</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.bilgiteknik.net/urunler.html</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.bilgiteknik.net/hakkimizda.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.bilgiteknik.net/iletisim.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.bilgiteknik.net/blog.html</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net</loc><lastmod>2026-06-21</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://bilgiteknik.net/fotokopi-kiralama.html</loc><lastmod>2026-06-21</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://bilgiteknik.net/yazici-kiralama.html</loc><lastmod>2026-06-21</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler.html</loc><lastmod>2026-06-21</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://bilgiteknik.net/hakkimizda.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bilgiteknik.net/iletisim.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/blog.html</loc><lastmod>2026-06-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/driver-indir.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bilgiteknik.net/galeri.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://bilgiteknik.net/kartus-dolum.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bilgiteknik.net/toner-dolum.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bilgiteknik.net/yazici-servis.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bilgiteknik.net/referanslar.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://bilgiteknik.net/yorumlar.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://bilgiteknik.net/sss.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
-  <!-- KYOCERA ÜRÜN DETAY SAYFALARI -->
-  <url><loc>https://www.bilgiteknik.net/kyocera-ecosys-ma4500x.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.bilgiteknik.net/kyocera-ecosys-ma6000ifx.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.bilgiteknik.net/kyocera-taskalfa-2554ci.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.bilgiteknik.net/kyocera-taskalfa-5004i.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.bilgiteknik.net/kyocera-ecosys-pa2100cx.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.bilgiteknik.net/kyocera-taskalfa-7054ci.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.bilgiteknik.net/kyocera-ecosys-m2040dn.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.bilgiteknik.net/kyocera-taskalfa-4054ci.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- KYOCERA ÜRÜN DETAY SAYFALARI (28 adet) -->
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-ecosys-m2040dn.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-ecosys-m2640idw.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-ecosys-m2735dw.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-ecosys-m3145idn.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-ecosys-m3645idn.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-ecosys-m3860idnf.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-ecosys-m5526cdn.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-ecosys-m5526cdw.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-ecosys-m6230cidn.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-ecosys-ma4500x.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-ecosys-ma6000ifx.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-ecosys-pa2000.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-ecosys-pa2100cx.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-ecosys-pa3500cx.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-ecosys-pa4500cx.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-ecosys-pa4500x.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-ecosys-pa6000x.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-taskalfa-2553ci.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-taskalfa-2554ci.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-taskalfa-308ci.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-taskalfa-3212i.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-taskalfa-352ci.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-taskalfa-4004i.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-taskalfa-4054ci.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-taskalfa-5004i.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-taskalfa-5054ci.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-taskalfa-6004i.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bilgiteknik.net/urunler/kyocera-taskalfa-7054ci.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- BLOG YAZILARI -->
-  <url><loc>https://www.bilgiteknik.net/blog-fotokopi-alsam-mi-kiralasam-mi.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.bilgiteknik.net/blog-kyocera-fotokopi-secimi.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.bilgiteknik.net/blog-ofis-yazici-secimi.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.bilgiteknik.net/blog-fotokopi-bakim.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.bilgiteknik.net/blog-a3-mi-a4-mu.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.bilgiteknik.net/blog-toner-tasarrufu.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.bilgiteknik.net/blog-fotokopi-kiralama-maliyeti.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.bilgiteknik.net/blog-yazici-cesitleri.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.bilgiteknik.net/blog-yazici-kiralama-avantajlari.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.bilgiteknik.net/blog-fotokopi-tarihcesi.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.bilgiteknik.net/blog-sayfabasi-fotokopi-kiralama.html</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bilgiteknik.net/blog-sayfabasi-fotokopi-kiralama.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bilgiteknik.net/blog-a3-mi-a4-mu.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bilgiteknik.net/blog-fotokopi-alsam-mi-kiralasam-mi.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bilgiteknik.net/blog-fotokopi-bakim.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bilgiteknik.net/blog-fotokopi-kiralama-maliyeti.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bilgiteknik.net/blog-fotokopi-tarihcesi.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bilgiteknik.net/blog-kyocera-fotokopi-secimi.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bilgiteknik.net/blog-ofis-yazici-secimi.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bilgiteknik.net/blog-toner-tasarrufu.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bilgiteknik.net/blog-yazici-cesitleri.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bilgiteknik.net/blog-yazici-kiralama-avantajlari.html</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
 </urlset>

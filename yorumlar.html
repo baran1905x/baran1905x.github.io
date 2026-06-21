@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="canonical" href="https://bilgiteknik.net/yorumlar.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Müşteri Yorumları | Bilgiteknik Hakkında Görüşler</title>
+<meta name="description" content="Bilgiteknik müşteri yorumları. Fotokopi kiralama, yazıcı kiralama ve servis hizmetlerimiz hakkında müşteri görüşleri.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1565C0;--blue2:#1976D2;--blue3:#E3F0FF;--blue4:#0D47A1;
+  --orange:#F57C00;--orange2:#FF9800;--orange-pale:#FFF3E0;
+  --white:#FFFFFF;--gray1:#F8F9FC;--gray2:#F0F2F7;--gray3:#E4E8F0;
+  --gray4:#B0BBC8;--ink:#1A2332;--mid:#5A6A80;--light:#8C9BAD;
+  --border:#DCE3EE;--shadow:0 2px 16px rgba(21,101,192,.07);
+  --shadow2:0 8px 40px rgba(21,101,192,.13);--rad:12px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:'Inter',sans-serif;font-weight:400;overflow-x:hidden}
+.topbar{background:var(--blue4);color:rgba(255,255,255,.85);font-size:.75rem;padding:.45rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.topbar a{color:rgba(255,255,255,.85);text-decoration:none}.topbar a:hover{color:#fff}
+.topbar-left{display:flex;gap:2rem;align-items:center}
+.topbar-right{display:flex;gap:1.5rem;align-items:center}
+.topbar-badge{background:var(--orange);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.08em;padding:.2rem .6rem;border-radius:3px;text-transform:uppercase}
+nav{position:sticky;top:0;z-index:800;background:#fff;border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 3rem;height:70px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nav-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex-shrink:0}
+.logo-icon{width:40px;height:40px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;position:relative}
+.logo-icon::after{content:'';position:absolute;width:12px;height:12px;background:var(--orange);border-radius:50%;top:-4px;right:-4px}
+.logo-icon svg{color:#fff}
+.nav-logo-img{width:100%;height:100%;object-fit:contain;border-radius:6px}
+.logo-name{font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:700;color:var(--ink)}
+.logo-name span{color:var(--blue)}
+.nav-menu{display:flex;gap:0;list-style:none}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:.35rem;padding:.5rem 1.1rem;font-size:.84rem;font-weight:500;color:var(--mid);text-decoration:none;white-space:nowrap;transition:color .2s;cursor:pointer;height:70px}
+.nav-link:hover,.nav-link.active{color:var(--blue)}
+.nav-link svg{width:12px;height:12px;transition:transform .2s}
+.nav-item:hover .nav-link svg{transform:rotate(180deg)}
+.dropdown{position:absolute;top:100%;left:0;min-width:220px;background:#fff;border:1px solid var(--border);border-radius:0 0 var(--rad) var(--rad);box-shadow:var(--shadow2);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .2s;z-index:100}
+.nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown a{display:block;padding:.7rem 1.2rem;font-size:.82rem;color:var(--mid);text-decoration:none;transition:background .15s,color .15s;border-bottom:1px solid var(--gray3)}
+.dropdown a:last-child{border-bottom:none;border-radius:0 0 var(--rad) var(--rad)}
+.dropdown a:hover{background:var(--blue3);color:var(--blue)}
+.dropdown a.dd-header{font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--light);pointer-events:none;background:var(--gray1);padding:.45rem 1.2rem;cursor:default}
+.nav-right{display:flex;align-items:center;gap:.8rem;flex-shrink:0}
+.nav-phone{font-size:.82rem;font-weight:600;color:var(--ink);text-decoration:none}
+.nav-phone:hover{color:var(--blue)}
+.btn-whatsapp{display:flex;align-items:center;gap:.4rem;padding:.55rem 1.1rem;background:#25D366;color:#fff;border-radius:6px;font-size:.78rem;font-weight:600;text-decoration:none;transition:background .2s}
+.btn-whatsapp:hover{background:#1ebe5d}
+.btn-teklif-nav{padding:.55rem 1.4rem;background:var(--orange);color:#fff;border-radius:6px;font-size:.82rem;font-weight:700;text-decoration:none;transition:background .2s;white-space:nowrap}
+.btn-teklif-nav:hover{background:var(--orange2)}
+.breadcrumb{background:var(--gray1);border-bottom:1px solid var(--border);padding:.8rem 3rem}
+.breadcrumb-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:var(--light)}
+.breadcrumb a{color:var(--mid);text-decoration:none}.breadcrumb a:hover{color:var(--blue)}
+.breadcrumb span{color:var(--light)}
+.about-hero{background:linear-gradient(135deg,var(--blue4) 0%,var(--blue2) 60%,#1a3a7a 100%);padding:5rem 3rem 4rem;position:relative;overflow:hidden}
+.about-hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.about-hero::after{content:'';position:absolute;right:-120px;top:-80px;width:500px;height:500px;background:rgba(255,255,255,.03);border-radius:50%;pointer-events:none}
+.hero-inner{max-width:1280px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:.35rem 1rem;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:1.5rem}
+.hero-eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--orange2);animation:pulse 2s infinite}
+.about-hero h1{font-family:'Poppins',sans-serif;font-size:clamp(2.2rem,4vw,3.4rem);font-weight:800;color:#fff;line-height:1.1;margin-bottom:1.2rem}
+.about-hero h1 em{font-style:normal;color:var(--orange2)}
+.about-hero-sub{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.75;max-width:560px;margin-bottom:2rem}
+.hero-cta-row{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn-hero-primary{padding:.85rem 2rem;background:var(--orange);color:#fff;border-radius:8px;font-size:.9rem;font-weight:700;text-decoration:none;transition:all .2s}
+.btn-hero-primary:hover{background:var(--orange2);transform:translateY(-2px)}
+.btn-hero-ghost{padding:.85rem 2rem;background:rgba(255,255,255,.1);color:#fff;border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.3);transition:background .2s}
+.btn-hero-ghost:hover{background:rgba(255,255,255,.2)}
+.hero-badge-strip{display:flex;gap:1.2rem;margin-top:2rem;flex-wrap:wrap}
+.h-badge{display:flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:600;color:rgba(255,255,255,.7)}
+.h-badge::before{content:'\2713';color:var(--orange2);font-weight:800}
+.section{padding:5rem 3rem}
+.section-inner{max-width:1280px;margin:0 auto}
+.sec-eyebrow{display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem}
+.sec-line{width:2rem;height:2px;background:var(--orange);border-radius:2px}
+.sec-tag{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange)}
+.sec-title{font-family:'Poppins',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--ink);line-height:1.2;margin-bottom:1rem}
+.sec-sub{font-size:.95rem;color:var(--mid);line-height:1.75;max-width:620px}
+.testimonials-section{background:var(--gray1)}
+.cta-section{background:linear-gradient(135deg,var(--blue4),var(--blue2));padding:5rem 3rem;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.cta-inner{position:relative;z-index:2;max-width:700px;margin:0 auto}
+.cta-section h2{font-family:'Poppins',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:#fff;margin-bottom:1rem}
+.cta-section p{font-size:.95rem;color:rgba(255,255,255,.7);line-height:1.75;margin-bottom:2.5rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-cta-primary{padding:1rem 2.4rem;background:var(--orange);color:#fff;border-radius:8px;font-size:.95rem;font-weight:700;text-decoration:none;transition:all .2s}
+.btn-cta-primary:hover{background:var(--orange2);transform:translateY(-2px)}
+.btn-cta-ghost{padding:1rem 2.4rem;background:rgba(255,255,255,.1);color:#fff;border-radius:8px;font-size:.95rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.3);transition:background .2s}
+.btn-cta-ghost:hover{background:rgba(255,255,255,.18)}
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:3.5rem 3rem 1.5rem}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:2.5rem}
+.footer-logo-name{font-family:'Poppins',sans-serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.footer-logo-name span{color:var(--blue2)}
+.footer-desc{font-size:.82rem;line-height:1.8;color:rgba(255,255,255,.5);margin-bottom:1.2rem}
+.footer-social{display:flex;gap:.6rem}
+.f-soc{width:32px;height:32px;background:rgba(255,255,255,.08);border-radius:6px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.72rem;font-weight:700;text-decoration:none;transition:background .2s}
+.f-soc:hover{background:var(--blue);color:#fff}
+footer h4{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:1rem}
+.f-links{list-style:none}
+.f-links li{margin-bottom:.5rem}
+.f-links a{font-size:.82rem;color:rgba(255,255,255,.5);text-decoration:none;transition:color .15s}
+.f-links a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+.f-copy{font-size:.75rem;color:rgba(255,255,255,.35)}
+.float-wa{position:fixed;right:1.5rem;bottom:1.5rem;z-index:999;display:flex;align-items:center;gap:.6rem}
+.wa-label{background:rgba(0,0,0,.75);color:#fff;font-size:.72rem;font-weight:600;padding:.4rem .8rem;border-radius:6px;backdrop-filter:blur(6px);opacity:0;transform:translateX(8px);transition:all .2s;pointer-events:none}
+.float-wa:hover .wa-label{opacity:1;transform:translateX(0)}
+.wa-btn{width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);animation:waPulse 2s infinite}
+.wa-btn svg{width:26px;height:26px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:none}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 28px rgba(37,211,102,.7)}}
+
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;z-index:901}
+.hamburger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s;display:block}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* ¦¦ TESTIMONIAL GRID ¦¦ */
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.test-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.8rem;transition:all .25s;position:relative}
+.test-card:hover{box-shadow:var(--shadow2);transform:translateY(-4px);border-color:transparent}
+.test-stars{display:flex;gap:.2rem;margin-bottom:.8rem}
+.test-stars span{color:#f59e0b;font-size:.9rem}
+.test-text{font-size:.84rem;color:var(--mid);line-height:1.75;margin-bottom:1.2rem;font-style:italic}
+.test-author{display:flex;align-items:center;gap:.8rem;border-top:1px solid var(--gray2);padding-top:1rem}
+.test-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;color:#fff;flex-shrink:0}
+.test-name{font-size:.82rem;font-weight:700;color:var(--ink);display:block}
+.test-title{font-size:.7rem;color:var(--light);display:block}
+
+/* ¦¦ WHY WE'RE PREFERRED ¦¦ */
+.pref-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
+.pref-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:2rem;display:flex;gap:1.2rem;align-items:flex-start;transition:all .2s}
+.pref-card:hover{box-shadow:var(--shadow);border-color:transparent}
+.pref-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem}
+.pref-icon.blue-bg{background:var(--blue3)}
+.pref-icon.green-bg{background:#e8f5e9}
+.pref-icon.orange-bg{background:var(--orange-pale)}
+.pref-icon.purple-bg{background:#f3e5f5}
+.pref-content h4{font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:.3rem}
+.pref-content p{font-size:.82rem;color:var(--mid);line-height:1.7}
+
+/* ¦¦ REVIEW CTA ¦¦ */
+.review-cta{text-align:center;background:var(--gray2);border:2px dashed var(--border);border-radius:16px;padding:3rem;margin-top:3rem}
+.review-cta h3{font-family:'Poppins',sans-serif;font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:.6rem}
+.review-cta p{font-size:.88rem;color:var(--mid);margin-bottom:1.5rem}
+.review-cta .btn-google{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 2rem;background:#fff;color:var(--ink);border:1px solid var(--border);border-radius:8px;font-size:.88rem;font-weight:600;text-decoration:none;transition:all .2s}
+.review-cta .btn-google:hover{background:var(--gray1);box-shadow:var(--shadow)}
+
+@media(max-width:900px){
+  .topbar{padding:.45rem 1.2rem}.topbar-left{gap:1rem}
+  nav .nav-inner{padding:0 1.2rem}
+  .about-hero{padding:3rem 1.5rem}
+  .hero-inner{grid-template-columns:1fr;gap:2rem}
+  .section{padding:3rem 1.5rem}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .breadcrumb{padding:.8rem 1.5rem}
+  .cta-section{padding:3.5rem 1.5rem}
+  .test-grid{grid-template-columns:1fr}
+  .pref-grid{grid-template-columns:1fr}
+}
+@media(max-width:991px){
+  .topbar{padding:.45rem 1.5rem}
+  .topbar-left{gap:1rem}
+  nav .nav-inner,.nav-inner{padding:0 1.5rem}
+  section,.section,.cta-section{padding-left:1.5rem!important;padding-right:1.5rem!important}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+  .hero-inner{grid-template-columns:1fr}
+  .test-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .topbar{display:none}
+  .hamburger{display:flex}
+  .nav-menu{display:none;position:fixed;top:70px;left:0;right:0;bottom:0;background:#fff;flex-direction:column;padding:2rem 1.5rem;gap:0;overflow-y:auto;z-index:899;border-top:1px solid var(--border);box-shadow:var(--shadow2)}
+  .nav-menu.open{display:flex}
+  .nav-item{border-bottom:1px solid var(--border)}
+  .nav-link{height:auto;padding:1rem 0;font-size:.95rem;color:var(--ink)}
+  .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;background:var(--gray1);border-radius:var(--rad);margin:.5rem 0;display:none}
+  .nav-item.dd-open .dropdown{display:block}
+  .nav-item:hover .nav-link svg{transform:none}
+  .nav-item.dd-open .nav-link svg{transform:rotate(180deg)}
+  .nav-right{gap:.5rem}
+  .nav-phone{display:none}
+  .btn-whatsapp span{display:none}
+  .section,.cta-section{padding-left:1.2rem!important;padding-right:1.2rem!important;padding-top:3.5rem!important;padding-bottom:3.5rem!important}
+  footer,.footer-inner{padding-left:1.2rem!important;padding-right:1.2rem!important}
+  .footer-top{grid-template-columns:1fr;gap:2rem}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:.5rem}
+  .about-hero{padding:3rem 1.5rem}
+  .hero-inner{grid-template-columns:1fr!important}
+  .float-wa{bottom:1rem;right:1rem}
+  .wa-btn{width:50px;height:50px}
+  .test-grid{grid-template-columns:1fr}
+  .pref-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .nav-inner{padding:0 1rem}
+  .logo-name{font-size:1.1rem}
+}
+.nav-menu-mobile-buttons{display:none}
+@media(max-width:991px){
+  .topbar{display:none!important}
+  nav{position:fixed!important;top:0!important;left:0!important;width:100%!important;height:70px!important;z-index:1000!important;background:#fff!important}
+  .nav-inner{padding:0 1.5rem!important;height:100%!important;display:flex!important;justify-content:space-between!important;align-items:center!important}
+  .hamburger{display:flex!important;margin-left:auto!important;position:relative!important;z-index:1001!important}
+  .nav-right .btn-whatsapp,.nav-right .btn-teklif-nav,.nav-right .nav-phone{display:none!important}
+  .nav-menu{position:fixed!important;top:70px!important;left:0!important;width:100%!important;height:calc(100vh - 70px)!important;background:#fff!important;border-top:1px solid var(--border)!important;flex-direction:column!important;gap:0!important;padding:1.5rem!important;overflow-y:auto!important;opacity:0!important;visibility:hidden!important;transform:translateY(-10px)!important;transition:all 0.3s ease!important;box-shadow:var(--shadow2)!important;z-index:999!important}
+  .nav-menu.open{opacity:1!important;visibility:visible!important;transform:translateY(0)!important}
+  .nav-link{height:auto!important;padding:1rem 0!important;font-size:1rem!important;border-bottom:1px solid var(--gray2)!important}
+  .dropdown{position:relative!important;top:0!important;box-shadow:none!important;border:none!important;padding-left:1rem!important;max-height:0!important;overflow:hidden!important;opacity:1!important;visibility:visible!important;transform:none!important;transition:max-height 0.3s ease!important}
+  .nav-item.dd-open .dropdown{max-height:500px!important}
+  .nav-item:hover .nav-link svg{transform:none!important}
+  .nav-item.dd-open .nav-link svg{transform:rotate(180deg)}
+  .nav-menu-mobile-buttons{display:flex!important;flex-direction:column;gap:1rem;margin-top:2rem;padding-top:1.5rem;border-top:2px dashed var(--gray3)}
+  .nav-menu-mobile-buttons .mob-phone{text-align:center;font-size:1rem;font-weight:700;color:var(--ink);text-decoration:none;margin-bottom:0.5rem}
+  .nav-menu-mobile-buttons .mob-wa{display:flex;align-items:center;justify-content:center;gap:0.5rem;background:#25D366;color:#fff!important;padding:0.85rem;border-radius:8px;font-weight:600;text-decoration:none}
+  .nav-menu-mobile-buttons .mob-teklif{background:var(--orange);color:#fff!important;padding:0.85rem;border-radius:8px;font-weight:700;text-decoration:none;text-align:center}
+  body{padding-top:70px!important}
+}
+@media(max-width:576px){
+  .footer-top{grid-template-columns:1fr!important}
+}
+</style>
+<meta property="og:title" content="Müşteri Yorumları | Bilgiteknik Hakkında Görüşler">
+<meta property="og:description" content="Bilgiteknik müşteri yorumları. Fotokopi kiralama, yazıcı kiralama ve servis hizmetlerimiz hakkında müşteri görüşleri.">
+<meta property="og:url" content="https://bilgiteknik.net/yorumlar.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Bilgiteknik",
+  "url": "https://bilgiteknik.net",
+  "logo": "https://bilgiteknik.net/logo.png",
+  "image": "https://bilgiteknik.net/logo.png",
+  "telephone": "+905326944862",
+  "email": "info@bilgiteknik.net",
+  "priceRange": "??",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bulgurlu Mahallesi, Libadiye Caddesi",
+    "addressLocality": "Üsküdar",
+    "addressRegion": "İstanbul",
+    "postalCode": "34696",
+    "addressCountry": "TR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.0159,
+    "longitude": 29.0575
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "10:00",
+      "closes": "15:00"
+    }
+  ],
+  "sameAs": [
+    "https://wa.me/905318673034"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Bilgiteknik",
+  "url": "https://bilgiteknik.net"
+}
+</script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <span>📍 Bulgurlu, Üsküdar / İstanbul</span>
+    <a href="tel:+905326944862">📞 0532 694 48 62</a>
+    <a href="mailto:info@bilgiteknik.net">✉️ info@bilgiteknik.net</a>
+  </div>
+  <div class="topbar-right">
+    <span>Pzt–Cum 09:00–18:00 · Cumartesi 10:00–15:00</span>
+    <span class="topbar-badge">2000'den Bu Yana</span>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">
+        <img src="logo.png" alt="Bilgiteknik" class="nav-logo-img">
+      </div>
+      <span class="logo-name">Bilgi<span>teknik</span></span>
+    </a>
+        <ul class="nav-menu">
+  <li class="nav-item"><a href="urunler.html" class="nav-link">Ürünler</a></li>
+  <li class="nav-item">
+    <a href="#" class="nav-link">Hizmetler <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <div class="dropdown">
+      <a href="fotokopi-kiralama.html">Fotokopi Kiralama</a>
+      <a href="yazici-kiralama.html">Yazıcı Kiralama</a>
+      <a href="toner-dolum.html">Toner Dolum</a>
+      <a href="kartus-dolum.html">Kartuş Dolum</a>
+      <a href="yazici-servis.html">Yazıcı Servis</a>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a href="#" class="nav-link">Kurumsal <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <div class="dropdown">
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="sss.html">SSS</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="referanslar.html">Referanslar</a>
+      <a href="blog.html">Blog</a>
+      <a href="driver-indir.html">Driver İndir</a>
+    </div>
+  </li>
+  <li class="nav-item"><a href="iletisim.html" class="nav-link">İletişim</a></li>
+  <div class="nav-menu-mobile-buttons">
+    <a href="tel:+905326944862" class="mob-phone">📞 0532 694 48 62</a>
+    <a href="https://wa.me/905318673034" class="mob-wa" target="_blank">WhatsApp Destek</a>
+    <a href="iletisim.html" class="mob-teklif">Ücretsiz Teklif Al</a>
+  </div>
+</ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right">
+      <a href="tel:+905326944862" class="nav-phone">0532 694 48 62</a>
+      <a href="https://wa.me/905318673034" class="btn-whatsapp" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.11 1.523 5.833L.044 23.956l6.29-1.483A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.48-5.16-1.33l-.37-.21-3.73.88.9-3.64-.23-.38A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp
+      </a>
+      <a href="iletisim.html" class="btn-teklif-nav">Teklif Al!</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Ana Sayfa</a>
+    <span>›</span>
+    <span>Müşteri Yorumları</span>
+  </div>
+</div>
+
+<section class="about-hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        Müşterilerimizin Sesi
+      </div>
+      <h1>Müşterilerimiz Ne <em>Diyor?</em></h1>
+      <p class="about-hero-sub">7.000'i aşkın kurumsal müşterimizin hizmetlerimiz hakkındaki samimi görüşleri. Bilgiteknik farkını müşterilerimizin sözlerinden keşfedin.</p>
+      <div class="hero-cta-row">
+        <a href="#musteri-yorumlari" class="btn-hero-primary">Yorumları Oku</a>
+        <a href="iletisim.html" class="btn-hero-ghost">Siz de Yorum Yapın</a>
+      </div>
+      <div class="hero-badge-strip">
+        <span class="h-badge">12+ Gerçek Yorum</span>
+        <span class="h-badge">Ortalama 4.8 Puan</span>
+        <span class="h-badge">Her Sektörden Görüş</span>
+        <span class="h-badge">%98 Memnuniyet</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section testimonials-section" id="musteri-yorumlari">
+  <div class="section-inner">
+    <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">Yorumlar</span></div>
+    <h2 class="sec-title">Müşterilerimizin Görüşleri</h2>
+    <p class="sec-sub">Fotokopi kiralama, yazıcı kiralama ve teknik servis hizmetlerimiz hakkında değerli müşterilerimizin yorumları.</p>
+
+    <div class="test-grid reveal">
+      <div class="test-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="test-text">Bilgiteknik ile iki yıldır çalışıyoruz ve her açıdan memnunuz. Fotokopi makinemiz hiç beklemediğimiz bir anda bozulduğunda aynı gün içinde teknik ekipleri gelip sorunu çözdü. Tonerler zamanında geliyor, hiçbir aksama yağamadık.</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#1565C0">AY</div>
+          <div><span class="test-name">Ahmet Yılmaz</span><span class="test-title">İşletme Müdürü, Akdeniz Katılım Bankası</span></div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="test-text">Okulumuzdaki tüm idari ofislerde Bilgiteknik cihazları kullanıyoruz. Özellikle yoğun sınav dönemlerinde binlerce sayfa baskı almamız gerekiyor ve cihazlar asla yarı yolda bırakmıyor. Servis ekibi de her zaman güler yüzlü ve profesyonel.</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#43a047">AD</div>
+          <div><span class="test-name">Ayşe Demir</span><span class="test-title">Okul Müdürü, İstanbul Koleji</span></div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="test-text">Sanayi tesisimizde 5 farklı noktada Kyocera cihaz kullanıyoruz. Yetkili servis oldukları için orijinal parça kullanımı ve hızlı müdahale konusunda çok güven veriyorlar. Üretim durmazsa biz kazanırız, bu bilinçle hareket ediyorlar.</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:var(--orange)">MK</div>
+          <div><span class="test-name">Mehmet Kaya</span><span class="test-title">Fabrika Müdürü, Marmara Ambalaj Sanayi</span></div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="test-text">Hastanemizde belge yoğunluğu çok fazla. Hasta dosyaları, reçeteler, raporlar derken cihazlarımız sürekli çalışıyor. Bilgiteknik'in sunduğu toner ve servis dahil paket sayesinde bütçemizi çok rahat kontrol edebiliyoruz.</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#7b1fa2">ZS</div>
+          <div><span class="test-name">Dr. Zeynep Şahin</span><span class="test-title">Hastane Müdürü, Medikal Park sağlık Grubu</span></div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="test-text">Avukatlık büromuzda gizlilik ve güvenilirlik çok önemli. Bilgiteknik'in sağladışı cihazlar ve sunduğu profesyonel hizmet bu konuda bize tam güven veriyor. Ayrıca sayfa başı ödeme modelimiz çok ekonomik.</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#00838f">AS</div>
+          <div><span class="test-name">Av. Ali Sönmez</span><span class="test-title">Kurucu Ortak, Bilge Hukuk Bürosu</span></div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="test-text">Otelimizde resepsiyon, muhasebe ve yönetim ofislerinde kullandığımız yazıcıların tamamı Bilgiteknik'ten kiralama. Kurulumdan eğitime, bakımdan toner değişimine kadar her şeyi onlar hall ediyor. Kesintisiz hizmet sundukları için çok memnunuz.</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#e65100">BT</div>
+          <div><span class="test-name">Burak Tağçı</span><span class="test-title">Genel Müdür, Golden City Otel</span></div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="test-text">Kargo firmamızda günlük binlerce irsaliye ve fatura çıktısı alıyoruz. Cihazlarımız neredeyse hiç arıza yapmıyor ama yaptığında da saatler içinde çözülüyor. Kyocera makinelerinin dayanıklılığı ve Bilgiteknik desteği harika bir kombinasyon.</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#2e7d32">CY</div>
+          <div><span class="test-name">Canan Yıldız</span><span class="test-title">Operasyon Şefi, Mega Lojistik</span></div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="test-text">Dört yıldır Bilgiteknik ile çalışıyoruz. Sadece bir kere toner tedarikinde bir günlük gecikme oldu ama onun dışında her şey mükemmel. Fiyat-performans dengesi gerçekten çok iyi. Özellikle esnek sözleşme seçenekleri çok işimize yarıyor.</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#37474f">EO</div>
+          <div><span class="test-name">Emre Öztürk</span><span class="test-title">IT Müdürü, Plus Danışmanlık</span></div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="test-text">Radyo istasyonumuzda baskı hacmimiz çok yoğun olmasa da güvenilir bir hizmet ortağına ihtiyacımız vardı. Bilgiteknik küçük işletmelere de büyük müşterilere gösterdikleri özeni aynen gösteriyor. Kesinlikle tavsiye ediyorum.</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#6a1b9a">DA</div>
+          <div><span class="test-name">Deniz Arslan</span><span class="test-title">Yayın Koordinatörü, Radyo Frekans Medya</span></div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="test-text">üniversitemiz kütüphanesi ve idari binalarında 10'a yakın cihaz kullanıyoruz. Bilgiteknik ekibi kurulum aşamasında çok profesyoneldi. Eğitim verdiler, personelimiz rahatça kullanmaya başladı. Aradığımızda hemen ulaşabiliyoruz.</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#0d47a1">PY</div>
+          <div><span class="test-name">Prof. Dr. Pelin Yalçın</span><span class="test-title">Kütüphane Müdürü, Yeni Ufuklar üniversitesi</span></div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="test-text">üretim tesisimizdeki ofisler için 3 adet çok fonksiyonlu yazıcı kiralıyoruz. Özellikle çift taraflı baskı ve tarama özellikleri iş akışımızı hızlandırdı. Kağıt tüketimimizde %40'a varan tasarruf sağladık.</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#f57f17">HK</div>
+          <div><span class="test-name">Hakan Korkmaz</span><span class="test-title">Satın Alma Müdürü, Bereket Gıda</span></div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="test-text">Diş klinişimizde hasta kayıtları ve raporlar için fotokopi makinesi kiralıyoruz. Kompakt bir model seçtik, az yer kaplıyor ve çok sessiz çalışıyor. Hasta mahremiyeti konusunda hassas davranmaları da ayrıca takdire değer.</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#00695c">DY</div>
+          <div><span class="test-name">Dt. Fikret Yıldırım</span><span class="test-title">Kurucu, doğuş Diş Poliklinişi</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">Neden Biz?</span></div>
+    <h2 class="sec-title">Müşterilerimiz Neden Bizi Tercih Ediyor?</h2>
+    <p class="sec-sub">25 yıllık deneyimimiz boyunca müşterilerimizin bize güvenmesinin ardındaki temel nedenler.</p>
+    <div class="pref-grid reveal">
+      <div class="pref-card">
+        <div class="pref-icon blue-bg">👍</div>
+        <div class="pref-content">
+          <h4>Güvenilir ve Şeffaf Hizmet</h4>
+          <p>Sözleşmelerimizde gizli madde veya sürpriz maliyet bulunmaz. Toner, servis ve yedek parça dahil, ne ödeyeceşinizi en başından bilirsiniz. 25 yıldır verdişimiz sözlerin arkasında duruyoruz.</p>
+        </div>
+      </div>
+      <div class="pref-card">
+        <div class="pref-icon green-bg">?</div>
+        <div class="pref-content">
+          <h4>Hızlı Müdahale Garantisi</h4>
+          <p>İstanbul genelinde en geç 4 saat içinde yerinizdeyiz. Arıza bildiriminizden çözüme kadar geçen sürede sürekli bilgilendirme yaparak operasyonel sürekliliğinizi garanti altına alıyoruz.</p>
+        </div>
+      </div>
+      <div class="pref-card">
+        <div class="pref-icon orange-bg">??</div>
+        <div class="pref-content">
+          <h4>Maliyet Avantajı</h4>
+          <p>Kiralama modelimizle cihaz satın alma maliyetinden kurtulur, bütçenizi aylık sabit gidere dönüştürürsünüz. Ortalama %60 maliyet tasarrufu sağlayan müşterilerimizle gurur duyuyoruz.</p>
+        </div>
+      </div>
+      <div class="pref-card">
+        <div class="pref-icon purple-bg">??</div>
+        <div class="pref-content">
+          <h4>Uzun Soluklu İş Ortaklışı</h4>
+          <p>Müşterilerimizin %90'ı sözleşme yenileme oranıyla sadakatimizi kanıtlıyor. Sadece hizmet sağlayıcı değil, işinizin büyümesine katkıda bulunan bir iş ortağı olarak yanınızdayız.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--gray1)">
+  <div class="section-inner">
+    <div class="review-cta reveal">
+      <h3>Siz de Görüşlerinizi Paylaşın</h3>
+      <p>Bilgiteknik hizmetlerinden memnun kaldıysanız, deneyimlerinizi Google üzerinden paylaşarak diğer işletmelere de yol gösterin. Yorumlarınız bizim için çok değerli.</p>
+      <a href="https://search.google.com/local/writereview?placeid=PLACEHOLDER_ID" target="_blank" class="btn-google">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        Google'da Yorum Yapın
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <h2>Müşteri Memnuniyeti Bizim Öncelişimiz</h2>
+    <p>Siz de 7.000'den fazla mutlu müşterimiz arasında yer almak isterseniz, hemen bizimle iletişime geçin. İhtiyaçlarınıza özel çözümler sunmak için sabırsızlanıyoruz.</p>
+    <div class="cta-btns">
+      <a href="iletisim.html" class="btn-cta-primary">ücretsiz Teklif Alın</a>
+      <a href="https://wa.me/905318673034" class="btn-cta-ghost">WhatsApp ile Yazın</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+                <div class="footer-top">
+          <div>
+            <div class="footer-logo-name">Bilgi<span>teknik</span></div>
+            <p class="footer-desc">2000 yılından bu yana büro makinaları alanında faaliyet gösteren, müşteri odaklı yaklaşımıyla fark yaratan güvenilir iş ortağınız.</p>
+            <div class="footer-social">
+              <a href="#" class="f-soc">in</a>
+              <a href="#" class="f-soc">tw</a>
+              <a href="#" class="f-soc">ig</a>
+              <a href="#" class="f-soc">yt</a>
+            </div>
+          </div>
+          <div>
+            <h4>Hizmetler</h4>
+            <ul class="f-links">
+              <li><a href="fotokopi-kiralama.html">Fotokopi Kiralama</a></li>
+              <li><a href="yazici-kiralama.html">Yazıcı Kiralama</a></li>
+              <li><a href="toner-dolum.html">Toner Dolum</a></li>
+              <li><a href="kartus-dolum.html">Kartuş Dolum</a></li>
+              <li><a href="yazici-servis.html">Yazıcı Servis</a></li>
+              <li><a href="sss.html">SSS</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Kurumsal</h4>
+            <ul class="f-links">
+              <li><a href="urunler.html">ürünler</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="hakkimizda.html">Hakkımızda</a></li>
+              <li><a href="referanslar.html">Referanslar</a></li>
+              <li><a href="sss.html">SSS</a></li>
+              <li><a href="galeri.html">Galeri</a></li>
+              <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>İletişim</h4>
+            <ul class="f-links">
+              <li><a href="#">Bulgurlu, Üsküdar / İstanbul</a></li>
+              <li><a href="tel:+905326944862">0532 694 48 62</a></li>
+              <li><a href="https://wa.me/905318673034">WhatsApp Hattı</a></li>
+              <li><a href="mailto:info@bilgiteknik.net">info@bilgiteknik.net</a></li>
+              <li><a href="#">Pzt–Cum 09–18, Cmt 10–15</a></li>
+            </ul>
+          </div>
+        </div><div class="footer-bottom">
+      <span class="f-copy">© 2025 bilgiteknik.net — 2000'den Bu Yana Hizmetinizdeyiz</span>
+      <span class="f-copy">Gizlilik Politikası · Kullanım Koşulları</span>
+    </div>
+  </div>
+</footer>
+
+<div class="float-wa">
+  <span class="wa-label">WhatsApp ile Yazın</span>
+  <a href="https://wa.me/905318673034?text=Merhaba, ürünleriniz hakkında bilgi almak istiyorum." target="_blank" class="wa-btn">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.11 1.523 5.833L.044 23.956l6.29-1.483A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.48-5.16-1.33l-.37-.21-3.73.88.9-3.64-.23-.38A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+  </a>
+</div>
+
+<script>
+const ro = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) e.target.classList.add('visible');
+}), { threshold: .08 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+</script>
+<script>
+function toggleMenu() {
+  const menu = document.querySelector('.nav-menu');
+  const btn = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+  if (menu.classList.contains('open')) {
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
+    document.addEventListener('touchmove', preventScroll, { passive: false });
+  } else {
+    document.body.style.overflow = '';
+    document.body.style.height = '';
+    document.removeEventListener('touchmove', preventScroll);
+  }
+}
+function preventScroll(e) {
+  if (!e.target.closest('.nav-menu')) { e.preventDefault(); }
+}
+document.querySelectorAll('.nav-item').forEach(item=>{
+  const link = item.querySelector('.nav-link');
+  const dd = item.querySelector('.dropdown');
+  if(dd){
+    link.addEventListener('click',function(e){
+      if(window.innerWidth<=1024){
+        e.preventDefault();
+        item.classList.toggle('dd-open');
+      }
+    });
+  }
+});
+document.addEventListener('click',function(e){
+  if(window.innerWidth>1024) return;
+  const menu = document.querySelector('.nav-menu');
+  const btn = document.getElementById('hamburger');
+  if(menu && menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)){
+    toggleMenu();
+  }
+});
+</script>
+</body>
+</html>

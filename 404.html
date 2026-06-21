@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sayfa Bulunamadı — Bilgiteknik</title>
+<style>
+body{font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:#F8F9FC;color:#1A2332}
+.container{text-align:center;padding:2rem}
+h1{font-size:6rem;margin:0;color:#1565C0;font-weight:800}
+p{font-size:1.1rem;color:#5A6A80;margin:1rem 0 2rem}
+a{display:inline-block;padding:.8rem 2rem;background:#1565C0;color:#fff;border-radius:8px;text-decoration:none;font-weight:600}
+a:hover{background:#0D47A1}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>404</h1>
+  <p>Aradığınız sayfa taşınmış veya kaldırılmış olabilir.</p>
+  <a href="/">Ana Sayfaya Dön</a>
+</div>
+<script>
+(function(){
+  var path = window.location.pathname;
+  var file = path.split('/').pop();
+  if (file.match(/^(kyocera-ecosys-|kyocera-taskalfa-)/)) {
+    window.location.replace('/urunler/' + file);
+  }
+})();
+</script>
+</body>
+</html>

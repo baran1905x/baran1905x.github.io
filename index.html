@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="description" content="Bilgiteknik — Üsküdar / Bulgurlu merkezli fotokopi kiralama, yazıcı kiralama, Kyocera yetkili satıcı ve teknik servis. İstanbul genelinde 7/24 destek, ücretsiz kurulum.">
-<link rel="canonical" href="https://www.bilgiteknik.net/">
+<link rel="canonical" href="https://bilgiteknik.net/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bilgiteknik | Fotokopi Kiralama & Yazıcı Kiralama İstanbul | Kyocera Yetkili Servis</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -259,7 +259,7 @@ nav{position:sticky;top:0;z-index:800;background:#fff;border-bottom:1px solid va
 .testimonials .container{max-width:1280px;margin:0 auto}
 .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
 .test-card{background:#fff;border:1px solid var(--border);border-radius:var(--rad);padding:2rem;transition:box-shadow .2s}
-.test-card:hover{box-shadow:var(--shadow2)}
+.test-card:hover{box-shadow:var(--shadow2);transform:translateY(-4px);border-color:transparent}
 .stars{color:#F59E0B;font-size:.9rem;margin-bottom:1rem;letter-spacing:.1rem}
 .test-text{font-size:.85rem;color:var(--mid);line-height:1.75;margin-bottom:1.5rem;font-style:italic}
 .test-author{display:flex;align-items:center;gap:.8rem;padding-top:1rem;border-top:1px solid var(--border)}
@@ -296,7 +296,7 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
 .f-copy{font-size:.72rem;color:rgba(255,255,255,.25)}
 
 /* ── FLOATING WHATSAPP ── */
-.float-wa{position:fixed;bottom:2rem;right:2rem;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:.6rem}
+.float-wa{position:fixed;bottom:2rem;right:2rem;z-index:1001;display:flex;flex-direction:column;align-items:flex-end;gap:.6rem}
 .wa-btn{width:58px;height:58px;border-radius:50%;background:#25D366;box-shadow:0 4px 20px rgba(37,211,102,.4);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform .2s,box-shadow .2s;animation:waPulse 3s ease-in-out infinite}
 .wa-btn:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,211,102,.5)}
 .wa-btn svg{width:30px;height:30px}
@@ -333,8 +333,8 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
 .hamburger.open span:nth-child(2){opacity:0}
 .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
-/* ── TABLET (1024px) ── */
-@media(max-width:1024px){
+/* ── TABLET (991px) ── */
+@media(max-width:991px){
   .topbar{padding:.45rem 1.5rem}
   .topbar-left{gap:1rem}
   nav .nav-inner,.nav-inner{padding:0 1.5rem}
@@ -397,6 +397,8 @@ footer{background:var(--ink);color:#fff;padding:5rem 3rem 2rem}
     box-shadow:none;border:none;background:var(--gray1);border-radius:var(--rad);
     margin:.5rem 0;display:none}
   .nav-item.dd-open .dropdown{display:block}
+  .nav-item:hover .nav-link svg{transform:none}
+  .nav-item.dd-open .nav-link svg{transform:rotate(180deg)}
   .nav-right{gap:.5rem}
   .nav-phone{display:none}
   .btn-whatsapp span{display:none}
@@ -687,7 +689,7 @@ html, body {
 }
 
 /* ── HAMBURGER MENÜNÜN DEVREYE GİRDİĞİ SINIR (1024px ve altı) ── */
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
   
   /* İSTEK 1: Hamburger devreye girdiği andan itibaren en üstteki şirket bilgileri GÖZÜKMESİN */
   .topbar {
@@ -780,6 +782,9 @@ html, body {
   .nav-item.dd-open .dropdown {
     max-height: 500px !important;
   }
+
+  .nav-item:hover .nav-link svg{transform:none!important}
+  .nav-item.dd-open .nav-link svg{transform:rotate(180deg)}
 
   /* Hamburger İçindeki Mobil Butonlar */
   .nav-menu-mobile-buttons {
@@ -904,7 +909,7 @@ html, body {
 }
 
 /* 2. TABLET AYARI (1024px ve altı): 10" Tabletler, Üst Bar ve Hamburger Menü Geçişi */
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
   /* Şirket yazılarının olduğu üst barı kibarlaştır */
   .topbar {
     padding: 0.5rem 1.5rem !important;
@@ -1084,7 +1089,7 @@ html, body {
 }
 
 /* ── MOBİL/TABLET KESİN DÜZELTMELER (tek kaynak) ── */
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
   .hero-slider {
     height: auto !important;
     min-height: 0 !important;
@@ -1128,7 +1133,7 @@ html, body {
     flex-shrink: 0 !important;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
   .kyocera-header-row {
     flex-direction: column !important;
     align-items: stretch !important;
@@ -1201,7 +1206,7 @@ html, body {
 </style>
 <meta property="og:title" content="Bilgiteknik | Fotokopi Kiralama & Yazıcı Kiralama İstanbul | Kyocera Yetkili Servis">
 <meta property="og:description" content="Bilgiteknik — Üsküdar / Bulgurlu merkezli fotokopi kiralama, yazıcı kiralama, Kyocera yetkili satıcı ve teknik servis. İstanbul genelinde 7/24 destek, ücretsiz kurulum.">
-<meta property="og:url" content="https://www.bilgiteknik.net/">
+<meta property="og:url" content="https://bilgiteknik.net/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="tr_TR">
 <script type="application/ld+json">
@@ -1209,9 +1214,9 @@ html, body {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Bilgiteknik",
-  "url": "https://www.bilgiteknik.net",
-  "logo": "https://www.bilgiteknik.net/logo.png",
-  "image": "https://www.bilgiteknik.net/logo.png",
+  "url": "https://bilgiteknik.net",
+  "logo": "https://bilgiteknik.net/logo.png",
+  "image": "https://bilgiteknik.net/logo.png",
   "telephone": "+905326944862",
   "email": "info@bilgiteknik.net",
   "priceRange": "₺₺",
@@ -1253,7 +1258,7 @@ html, body {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Bilgiteknik",
-  "url": "https://www.bilgiteknik.net"
+  "url": "https://bilgiteknik.net"
 }
 </script>
 </head>
@@ -1284,12 +1289,29 @@ html, body {
     </a>
 
         <ul class="nav-menu">
-      <li class="nav-item"><a href="fotokopi-kiralama.html" class="nav-link">Fotokopi Kiralama</a></li>
-      <li class="nav-item"><a href="yazici-kiralama.html" class="nav-link">Yazıcı Kiralama</a></li>
       <li class="nav-item"><a href="urunler.html" class="nav-link">Ürünler</a></li>
-      <li class="nav-item"><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
-      <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-      <!-- Hamburger menünün en altına (</ul> etiketinden hemen önce) eklenecek kısım -->
+      <li class="nav-item">
+        <a href="#" class="nav-link">Hizmetler <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dropdown">
+          <a href="fotokopi-kiralama.html">Fotokopi Kiralama</a>
+          <a href="yazici-kiralama.html">Yazıcı Kiralama</a>
+          <a href="toner-dolum.html">Toner Dolum</a>
+          <a href="kartus-dolum.html">Kartuş Dolum</a>
+          <a href="yazici-servis.html">Yazıcı Servis</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Kurumsal <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dropdown">
+          <a href="hakkimizda.html">Hakkımızda</a>
+          <a href="sss.html">SSS</a>
+          <a href="galeri.html">Galeri</a>
+          <a href="referanslar.html">Referanslar</a>
+          <a href="blog.html">Blog</a>
+          <a href="driver-indir.html">Driver İndir</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="iletisim.html" class="nav-link">İletişim</a></li><!-- Hamburger menünün en altına (</ul> etiketinden hemen önce) eklenecek kısım -->
 <div class="nav-menu-mobile-buttons">
   <a href="https://wa.me/905318673034" class="mob-wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Destek</a>
   <a href="#teklif" class="mob-teklif">Ücretsiz Teklif Al</a>
@@ -1548,7 +1570,7 @@ html, body {
     <div class="kyo-grid reveal">
 
       <!-- FEATURED — geniş kart -->
-      <div class="kyo-card featured" onclick="window.location.href='kyocera-ecosys-ma4500x.html'">
+      <div class="kyo-card featured" onclick="window.location.href='urunler/kyocera-ecosys-ma4500x.html'">
         <div class="kyo-img-zone" id="k1z">
           <div class="kyo-ribbon">Öne Çıkan</div>
           <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/ECOSYSMA4500X/square-540x540.ECOSYS-MA4500x.png" alt="Kyocera ECOSYS MA4500x">
@@ -1574,7 +1596,7 @@ html, body {
       </div>
 
       <!-- MODEL 2 -->
-      <div class="kyo-card" onclick="window.location.href='kyocera-ecosys-ma6000ifx.html'">
+      <div class="kyo-card" onclick="window.location.href='urunler/kyocera-ecosys-ma6000ifx.html'">
         <div class="kyo-img-zone" id="k2z">
           <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/ECOSYSMA6000IFX/MFP_MA6000ifx_left_comb01_01_updated.png" alt="Kyocera ECOSYS MA6000ifx">
           <div class="kyo-ph-icon" style="display:none"><svg width="52" height="52" viewBox="0 0 64 64" fill="none"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 24 L28 34 L40 20 L58 40" stroke="currentColor" stroke-width="1.5" opacity=".5"/><circle cx="20" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity=".5"/></svg></div>
@@ -1597,7 +1619,7 @@ html, body {
       </div>
 
       <!-- MODEL 3 -->
-      <div class="kyo-card" onclick="window.location.href='kyocera-taskalfa-2554ci.html'">
+      <div class="kyo-card" onclick="window.location.href='urunler/kyocera-taskalfa-2554ci.html'">
         <div class="kyo-img-zone" id="k3z">
           <div class="kyo-ribbon gold">Renkli</div>
           <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA2554CI/square-540x540-taskalfa-2554ci-main-image.png" alt="Kyocera TASKalfa 2554ci">
@@ -1621,7 +1643,7 @@ html, body {
       </div>
 
       <!-- MODEL 4 -->
-      <div class="kyo-card" onclick="window.location.href='kyocera-taskalfa-5004i.html'">
+      <div class="kyo-card" onclick="window.location.href='urunler/kyocera-taskalfa-5004i.html'">
         <div class="kyo-img-zone" id="k4z">
           <div class="kyo-ribbon navy">Kurumsal</div>
           <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA5004I/square-540x540-TASKalfa-5004i.png" alt="Kyocera TASKalfa 5004i">
@@ -1645,7 +1667,7 @@ html, body {
       </div>
 
       <!-- MODEL 5 -->
-      <div class="kyo-card" onclick="window.location.href='kyocera-ecosys-pa2100cx.html'">
+      <div class="kyo-card" onclick="window.location.href='urunler/kyocera-ecosys-pa2100cx.html'">
         <div class="kyo-img-zone" id="k5z">
           <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/printers/ECOSYSPA2100CX/mfp-ecosys-pa2100cx_540x540.png" alt="Kyocera ECOSYS PA2100cx">
           <div class="kyo-ph-icon" style="display:none"><svg width="52" height="52" viewBox="0 0 64 64" fill="none"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 24 L28 34 L40 20 L58 40" stroke="currentColor" stroke-width="1.5" opacity=".5"/><circle cx="20" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity=".5"/></svg></div>
@@ -1668,7 +1690,7 @@ html, body {
       </div>
 
       <!-- MODEL 6 -->
-      <div class="kyo-card" onclick="window.location.href='kyocera-taskalfa-7054ci.html'">
+      <div class="kyo-card" onclick="window.location.href='urunler/kyocera-taskalfa-7054ci.html'">
         <div class="kyo-img-zone" id="k6z">
           <div class="kyo-ribbon">Üretim</div>
           <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA7054CI/square-540x540-TASKalfa_7054ci.png" alt="Kyocera TASKalfa 7054ci">
@@ -1692,7 +1714,7 @@ html, body {
       </div>
 
       <!-- MODEL 7 -->
-      <div class="kyo-card" onclick="window.location.href='kyocera-ecosys-m2040dn.html'">
+      <div class="kyo-card" onclick="window.location.href='urunler/kyocera-ecosys-m2040dn.html'">
         <div class="kyo-img-zone" id="k7z">
           <img src="https://www.officeequipments.ae/wp-content/uploads/2024/01/Untitled-design-53.jpg" alt="Kyocera ECOSYS M2040dn">
           <div class="kyo-ph-icon" style="display:none"><svg width="52" height="52" viewBox="0 0 64 64" fill="none"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 36 L18 24 L28 34 L40 20 L58 40" stroke="currentColor" stroke-width="1.5" opacity=".5"/><circle cx="20" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity=".5"/></svg></div>
@@ -1715,7 +1737,7 @@ html, body {
       </div>
 
       <!-- MODEL 8 -->
-      <div class="kyo-card" onclick="window.location.href='kyocera-taskalfa-4054ci.html'">
+      <div class="kyo-card" onclick="window.location.href='urunler/kyocera-taskalfa-4054ci.html'">
         <div class="kyo-img-zone" id="k8z">
           <div class="kyo-ribbon gold">Renkli</div>
           <img src="https://www.kyoceradocumentsolutions.com.tr/content/dam/kyocera/common/products/mfp/TASKALFA4054CI/square-540x540-TASKalfa_4054ci.png" alt="Kyocera TASKalfa 4054ci">
@@ -1827,7 +1849,14 @@ html, body {
         <div class="footer-social"><a href="#" class="f-soc">in</a><a href="#" class="f-soc">tw</a><a href="#" class="f-soc">ig</a><a href="#" class="f-soc">yt</a></div>
       </div>
       <div><h4>Ürünler</h4><ul class="f-links"><li><a href="#">Kyocera Yazıcılar</a></li><li><a href="#">Fotokopi Kiralama</a></li><li><a href="#">Tarayıcılar</a></li><li><a href="#">Evrak İmhacıları</a></li><li><a href="#">Para Sayma</a></li><li><a href="#">Toner &amp; Sarf</a></li></ul></div>
-      <div><h4>Hizmetler</h4><ul class="f-links"><li><a href="#">Teknik Servis</a></li><li><a href="#">Periyodik Bakım</a></li><li><a href="#">Kurumsal Kiralama</a></li><li><a href="#">Proje Danışmanlığı</a></li><li><a href="#">Eğitim &amp; Kurulum</a></li></ul></div>
+      <div><h4>Hizmetler</h4><ul class="f-links">
+              <li><a href="fotokopi-kiralama.html">Fotokopi Kiralama</a></li>
+              <li><a href="yazici-kiralama.html">Yazıcı Kiralama</a></li>
+              <li><a href="toner-dolum.html">Toner Dolum</a></li>
+              <li><a href="kartus-dolum.html">Kartuş Dolum</a></li>
+              <li><a href="yazici-servis.html">Yazıcı Servis</a></li>
+              <li><a href="sss.html">SSS</a></li>
+            </ul></div>
       <div><h4>İletişim</h4><ul class="f-links"><li><a href="#">Bulgurlu, Üsküdar / İstanbul</a></li><li><a href="tel:+905326944862">0532 694 48 62</a></li><li><a href="https://wa.me/905318673034">WhatsApp Hattı</a></li><li><a href="mailto:info@bilgiteknik.net">info@bilgiteknik.net</a></li><li><a href="#">Pzt–Cum 09–18, Cmt 10–15</a></li></ul></div>
     </div>
     <div class="footer-bottom">
