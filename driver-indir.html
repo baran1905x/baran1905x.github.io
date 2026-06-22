@@ -270,6 +270,10 @@ footer h4{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:up
   .nav-menu{position:fixed!important;top:70px!important;left:0!important;width:100%!important;height:calc(100vh - 70px)!important;background:#fff!important;border-top:1px solid var(--border)!important;flex-direction:column!important;gap:0!important;padding:1.5rem!important;overflow-y:auto!important;opacity:0!important;visibility:hidden!important;transform:translateY(-10px)!important;transition:all 0.3s ease!important;box-shadow:var(--shadow2)!important;z-index:999!important}
   .nav-menu.open{opacity:1!important;visibility:visible!important;transform:translateY(0)!important}
   .nav-link{height:auto!important;padding:1rem 0!important;font-size:1rem!important;border-bottom:1px solid var(--gray2)!important}
+  .dropdown{position:relative!important;top:0!important;box-shadow:none!important;border:none!important;padding-left:1rem!important;max-height:0!important;overflow:hidden!important;opacity:1!important;visibility:visible!important;transform:none!important;transition:max-height 0.3s ease!important}
+    .nav-item.dd-open .dropdown{max-height:500px!important}
+    .nav-item:hover .nav-link svg{transform:none!important}
+    .nav-item.dd-open .nav-link svg{transform:rotate(180deg)}
   .nav-menu-mobile-buttons{display:flex!important;flex-direction:column;gap:1rem;margin-top:2rem;padding-top:1.5rem;border-top:2px dashed var(--gray3)}
   .nav-menu-mobile-buttons .mob-phone{text-align:center;font-size:1rem;font-weight:700;color:var(--ink);text-decoration:none;margin-bottom:0.5rem}
   .nav-menu-mobile-buttons .mob-wa{display:flex;align-items:center;justify-content:center;gap:0.5rem;background:#25D366;color:#fff!important;padding:0.85rem;border-radius:8px;font-weight:600;text-decoration:none}
@@ -666,6 +670,13 @@ document.addEventListener('click',function(e){
   if(menu && menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)){
     toggleMenu();
   }
+});
+document.querySelectorAll('.nav-item').forEach(item=>{
+  const link=item.querySelector('.nav-link');
+  const dd=item.querySelector('.dropdown');
+  if(dd){link.addEventListener('click',function(e){
+    if(window.innerWidth<=1024){e.preventDefault();item.classList.toggle('dd-open')}
+  })}
 });
 </script>
 </body>
