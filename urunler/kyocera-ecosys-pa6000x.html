@@ -93,7 +93,7 @@ nav{position:sticky;top:0;z-index:800;background:#fff;border-bottom:1px solid va
 /* SPEC TABLE */
 .spec-section{max-width:1280px;margin:0 auto;padding:0 3rem 5rem}
 .spec-title{font-family:'Poppins',sans-serif;font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:1.5rem;padding-bottom:.7rem;border-bottom:2px solid var(--blue3)}
-.spec-table{width:100%;border-collapse:collapse;font-size:.88rem}
+.spec-table{width:100%;table-layout:fixed;border-collapse:collapse;font-size:.88rem;word-break:break-word}
 .spec-table tr:nth-child(even) td,.spec-table tr:nth-child(even) th{background:var(--gray1)}
 .spec-table th{background:var(--blue4);color:#fff;padding:.85rem 1.2rem;text-align:left;font-weight:700;font-size:.82rem}
 .spec-table .spec-group-header td{background:var(--blue3);color:var(--blue4);font-weight:800;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;padding:.6rem 1.2rem}
@@ -300,8 +300,8 @@ footer{background:var(--ink);color:#fff;padding:4rem 3rem 2rem}
   .brand-name{font-size:.85rem}
 
   /* Tablo scroll */
-  .compare-table-wrap,.spec-section{overflow-x:auto}
-  .compare-table,.spec-table{min-width:500px}
+  .compare-table-wrap{overflow-x:auto}
+  .compare-table{min-width:500px}
 
   /* Sections */
   .section-title,.sec-title,.article-title,.product-name{font-size:1.5rem!important}
@@ -445,7 +445,7 @@ footer{background:var(--ink);color:#fff;padding:4rem 3rem 2rem}
   <div class="breadcrumb-inner">
     <a href="../index.html">Ana Sayfa</a><span>›</span>
     <a href="../urunler.html">Ürünler</a><span>›</span>
-    <a href="urunler.html#a4-sb-yazici">A4 SB Yazıcı</a><span>›</span>
+    <a href="../urunler.html#a4-sb-yazici">A4 SB Yazıcı</a><span>›</span>
     <span>Kyocera ECOSYS PA6000x</span>
   </div>
 </div>
